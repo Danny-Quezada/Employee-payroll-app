@@ -36,6 +36,11 @@ namespace NominasTrabajo
 				btnModificar.Visible = true;
 				btnEliminar.Visible = true;
 			}
+			else
+			{
+				btnModificar.Visible = false;
+				btnEliminar.Visible = false;
+			}
 		}
 
 		private void pbExit_Click(object sender, EventArgs e)
@@ -92,6 +97,11 @@ namespace NominasTrabajo
 		{
 			FrmEditarEmpleado frmEditar = new FrmEditarEmpleado();
 			frmEditar.Show();
+		}
+
+		private void btnEliminar_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

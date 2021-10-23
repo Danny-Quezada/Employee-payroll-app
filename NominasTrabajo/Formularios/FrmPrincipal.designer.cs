@@ -30,9 +30,9 @@ namespace NominasTrabajo
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
 			this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
 			this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,7 +49,6 @@ namespace NominasTrabajo
 			this.NetoARecibir = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.INSSPatronal = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-			this.lblNomina = new System.Windows.Forms.Label();
 			this.btnAgregar = new Guna.UI2.WinForms.Guna2ImageButton();
 			this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
 			this.pbExit = new System.Windows.Forms.PictureBox();
@@ -57,7 +56,7 @@ namespace NominasTrabajo
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.btnModificar = new Guna.UI2.WinForms.Guna2ImageButton();
 			this.btnEliminar = new Guna.UI2.WinForms.Guna2ImageButton();
-			this.guna2ResizeForm1 = new Guna.UI2.WinForms.Guna2ResizeForm(this.components);
+			this.lblNomina = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbExit)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -68,8 +67,8 @@ namespace NominasTrabajo
 			// 
 			this.guna2DataGridView1.AllowUserToAddRows = false;
 			this.guna2DataGridView1.AllowUserToDeleteRows = false;
-			dataGridViewCellStyle31.BackColor = System.Drawing.Color.White;
-			this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle31;
+			dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+			this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
 			this.guna2DataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -78,14 +77,14 @@ namespace NominasTrabajo
 			this.guna2DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.guna2DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
 			this.guna2DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
-			dataGridViewCellStyle32.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-			dataGridViewCellStyle32.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
+			dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
+			dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+			dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
 			this.guna2DataGridView1.ColumnHeadersHeight = 59;
 			this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Numero,
@@ -101,17 +100,17 @@ namespace NominasTrabajo
             this.TotalDeducciones,
             this.NetoARecibir,
             this.INSSPatronal});
-			dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle33.BackColor = System.Drawing.Color.White;
-			dataGridViewCellStyle33.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(244)))));
-			dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle33;
+			dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+			dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(244)))));
+			dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle15;
 			this.guna2DataGridView1.EnableHeadersVisualStyles = false;
 			this.guna2DataGridView1.GridColor = System.Drawing.Color.White;
-			this.guna2DataGridView1.Location = new System.Drawing.Point(12, 68);
+			this.guna2DataGridView1.Location = new System.Drawing.Point(17, 70);
 			this.guna2DataGridView1.Name = "guna2DataGridView1";
 			this.guna2DataGridView1.ReadOnly = true;
 			this.guna2DataGridView1.RowHeadersVisible = false;
@@ -223,45 +222,34 @@ namespace NominasTrabajo
 			// 
 			// guna2BorderlessForm1
 			// 
-			this.guna2BorderlessForm1.BorderRadius = 20;
+			this.guna2BorderlessForm1.BorderRadius = 21;
 			this.guna2BorderlessForm1.ContainerControl = this;
-			// 
-			// lblNomina
-			// 
-			this.lblNomina.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.lblNomina.AutoSize = true;
-			this.lblNomina.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblNomina.ForeColor = System.Drawing.Color.DarkGray;
-			this.lblNomina.Location = new System.Drawing.Point(507, 9);
-			this.lblNomina.Name = "lblNomina";
-			this.lblNomina.Size = new System.Drawing.Size(133, 45);
-			this.lblNomina.TabIndex = 2;
-			this.lblNomina.Text = "Nómina";
 			// 
 			// btnAgregar
 			// 
 			this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnAgregar.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
 			this.btnAgregar.CheckedState.Parent = this.btnAgregar;
+			this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnAgregar.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
 			this.btnAgregar.HoverState.ImageSize = new System.Drawing.Size(64, 64);
 			this.btnAgregar.HoverState.Parent = this.btnAgregar;
 			this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-			this.btnAgregar.ImageFlip = Guna.UI2.WinForms.Enums.FlipOrientation.Horizontal;
 			this.btnAgregar.ImageOffset = new System.Drawing.Point(0, 0);
 			this.btnAgregar.ImageRotate = 0F;
 			this.btnAgregar.ImageSize = new System.Drawing.Size(70, 70);
-			this.btnAgregar.Location = new System.Drawing.Point(969, 160);
+			this.btnAgregar.Location = new System.Drawing.Point(964, 161);
 			this.btnAgregar.Name = "btnAgregar";
 			this.btnAgregar.PressedState.ImageSize = new System.Drawing.Size(64, 64);
 			this.btnAgregar.PressedState.Parent = this.btnAgregar;
 			this.btnAgregar.ShadowDecoration.Parent = this.btnAgregar;
-			this.btnAgregar.Size = new System.Drawing.Size(65, 76);
+			this.btnAgregar.Size = new System.Drawing.Size(79, 76);
 			this.btnAgregar.TabIndex = 3;
 			this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
 			// 
 			// guna2Elipse1
 			// 
-			this.guna2Elipse1.BorderRadius = 15;
+			this.guna2Elipse1.BorderRadius = 16;
 			this.guna2Elipse1.TargetControl = this.guna2DataGridView1;
 			// 
 			// pbExit
@@ -311,19 +299,20 @@ namespace NominasTrabajo
 			this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnModificar.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
 			this.btnModificar.CheckedState.Parent = this.btnModificar;
-			this.btnModificar.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+			this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnModificar.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+			this.btnModificar.HoverState.ImageSize = new System.Drawing.Size(56, 56);
 			this.btnModificar.HoverState.Parent = this.btnModificar;
 			this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-			this.btnModificar.ImageFlip = Guna.UI2.WinForms.Enums.FlipOrientation.Horizontal;
 			this.btnModificar.ImageOffset = new System.Drawing.Point(0, 0);
 			this.btnModificar.ImageRotate = 0F;
 			this.btnModificar.ImageSize = new System.Drawing.Size(60, 60);
-			this.btnModificar.Location = new System.Drawing.Point(964, 293);
+			this.btnModificar.Location = new System.Drawing.Point(964, 301);
 			this.btnModificar.Name = "btnModificar";
 			this.btnModificar.PressedState.ImageSize = new System.Drawing.Size(64, 64);
 			this.btnModificar.PressedState.Parent = this.btnModificar;
 			this.btnModificar.ShadowDecoration.Parent = this.btnModificar;
-			this.btnModificar.Size = new System.Drawing.Size(70, 75);
+			this.btnModificar.Size = new System.Drawing.Size(84, 81);
 			this.btnModificar.TabIndex = 8;
 			this.btnModificar.Visible = false;
 			this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -333,6 +322,7 @@ namespace NominasTrabajo
 			this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnEliminar.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
 			this.btnEliminar.CheckedState.Parent = this.btnEliminar;
+			this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnEliminar.HoverState.ImageSize = new System.Drawing.Size(64, 64);
 			this.btnEliminar.HoverState.Parent = this.btnEliminar;
 			this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
@@ -340,18 +330,27 @@ namespace NominasTrabajo
 			this.btnEliminar.ImageOffset = new System.Drawing.Point(0, 0);
 			this.btnEliminar.ImageRotate = 0F;
 			this.btnEliminar.ImageSize = new System.Drawing.Size(60, 60);
-			this.btnEliminar.Location = new System.Drawing.Point(969, 440);
+			this.btnEliminar.Location = new System.Drawing.Point(959, 459);
 			this.btnEliminar.Name = "btnEliminar";
 			this.btnEliminar.PressedState.ImageSize = new System.Drawing.Size(64, 64);
 			this.btnEliminar.PressedState.Parent = this.btnEliminar;
 			this.btnEliminar.ShadowDecoration.Parent = this.btnEliminar;
-			this.btnEliminar.Size = new System.Drawing.Size(70, 75);
+			this.btnEliminar.Size = new System.Drawing.Size(84, 75);
 			this.btnEliminar.TabIndex = 9;
 			this.btnEliminar.Visible = false;
+			this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
 			// 
-			// guna2ResizeForm1
+			// lblNomina
 			// 
-			this.guna2ResizeForm1.TargetForm = this;
+			this.lblNomina.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.lblNomina.AutoSize = true;
+			this.lblNomina.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblNomina.ForeColor = System.Drawing.Color.DarkGray;
+			this.lblNomina.Location = new System.Drawing.Point(507, 9);
+			this.lblNomina.Name = "lblNomina";
+			this.lblNomina.Size = new System.Drawing.Size(133, 45);
+			this.lblNomina.TabIndex = 2;
+			this.lblNomina.Text = "Nómina";
 			// 
 			// FrmPrincipal
 			// 
@@ -402,7 +401,6 @@ namespace NominasTrabajo
 		private System.Windows.Forms.DataGridViewTextBoxColumn TotalDeducciones;
 		private System.Windows.Forms.DataGridViewTextBoxColumn NetoARecibir;
 		private System.Windows.Forms.DataGridViewTextBoxColumn INSSPatronal;
-		private System.Windows.Forms.Label lblNomina;
 		private Guna.UI2.WinForms.Guna2ImageButton btnAgregar;
 		private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
 		private System.Windows.Forms.PictureBox pbExit;
@@ -410,6 +408,6 @@ namespace NominasTrabajo
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private Guna.UI2.WinForms.Guna2ImageButton btnModificar;
 		private Guna.UI2.WinForms.Guna2ImageButton btnEliminar;
-		private Guna.UI2.WinForms.Guna2ResizeForm guna2ResizeForm1;
+		private System.Windows.Forms.Label lblNomina;
 	}
 }

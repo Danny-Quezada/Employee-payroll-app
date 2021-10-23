@@ -1,0 +1,16 @@
+C:\Users\Quezada\source\repos\NominasTrabajo\NominasTrabajo\bin\Release\NominasTrabajo.exe.config
+C:\Users\Quezada\source\repos\NominasTrabajo\NominasTrabajo\bin\Release\NominasTrabajo.exe
+C:\Users\Quezada\source\repos\NominasTrabajo\NominasTrabajo\bin\Release\NominasTrabajo.pdb
+C:\Users\Quezada\source\repos\NominasTrabajo\NominasTrabajo\bin\Release\Guna.UI2.dll
+C:\Users\Quezada\source\repos\NominasTrabajo\NominasTrabajo\bin\Release\RJCodeAdvance.RJControls.dll
+C:\Users\Quezada\source\repos\NominasTrabajo\NominasTrabajo\obj\Release\NominasTrabajo.csproj.AssemblyReference.cache
+C:\Users\Quezada\source\repos\NominasTrabajo\NominasTrabajo\obj\Release\NominasTrabajo.FrmEditarEmpleado.resources
+C:\Users\Quezada\source\repos\NominasTrabajo\NominasTrabajo\obj\Release\NominasTrabajo.FrmEmpleado.resources
+C:\Users\Quezada\source\repos\NominasTrabajo\NominasTrabajo\obj\Release\NominasTrabajo.FrmLogin.resources
+C:\Users\Quezada\source\repos\NominasTrabajo\NominasTrabajo\obj\Release\NominasTrabajo.FrmPrincipal.resources
+C:\Users\Quezada\source\repos\NominasTrabajo\NominasTrabajo\obj\Release\NominasTrabajo.Properties.Resources.resources
+C:\Users\Quezada\source\repos\NominasTrabajo\NominasTrabajo\obj\Release\NominasTrabajo.csproj.GenerateResource.cache
+C:\Users\Quezada\source\repos\NominasTrabajo\NominasTrabajo\obj\Release\NominasTrabajo.csproj.CoreCompileInputs.cache
+C:\Users\Quezada\source\repos\NominasTrabajo\NominasTrabajo\obj\Release\NominasTrabajo.csproj.CopyComplete
+C:\Users\Quezada\source\repos\NominasTrabajo\NominasTrabajo\obj\Release\NominasTrabajo.exe
+C:\Users\Quezada\source\repos\NominasTrabajo\NominasTrabajo\obj\Release\NominasTrabajo.pdb

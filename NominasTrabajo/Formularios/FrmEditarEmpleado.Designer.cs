@@ -32,6 +32,7 @@ namespace NominasTrabajo
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditarEmpleado));
 			this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+			this.label2 = new System.Windows.Forms.Label();
 			this.pictureBox3 = new System.Windows.Forms.PictureBox();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
@@ -42,7 +43,6 @@ namespace NominasTrabajo
 			this.rjTextBox2 = new RJCodeAdvance.RJControls.RJTextBox();
 			this.rjTextBox1 = new RJCodeAdvance.RJControls.RJTextBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
 			this.guna2GradientPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -65,9 +65,20 @@ namespace NominasTrabajo
 			this.guna2GradientPanel1.Size = new System.Drawing.Size(828, 96);
 			this.guna2GradientPanel1.TabIndex = 0;
 			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.ForeColor = System.Drawing.Color.White;
+			this.label2.Location = new System.Drawing.Point(325, 40);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(127, 37);
+			this.label2.TabIndex = 13;
+			this.label2.Text = "Modificar";
+			// 
 			// pictureBox3
 			// 
-			this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(132)))), ((int)(((byte)(4)))));
+			this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
 			this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
 			this.pictureBox3.Location = new System.Drawing.Point(679, 12);
@@ -80,7 +91,7 @@ namespace NominasTrabajo
 			// 
 			// pictureBox1
 			// 
-			this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(132)))), ((int)(((byte)(4)))));
+			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
 			this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
 			this.pictureBox1.Location = new System.Drawing.Point(705, 13);
@@ -233,17 +244,6 @@ namespace NominasTrabajo
 			this.label1.Size = new System.Drawing.Size(131, 20);
 			this.label1.TabIndex = 14;
 			this.label1.Text = "Foto de empleado";
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.ForeColor = System.Drawing.Color.White;
-			this.label2.Location = new System.Drawing.Point(325, 40);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(127, 37);
-			this.label2.TabIndex = 13;
-			this.label2.Text = "Modificar";
 			// 
 			// FrmEditarEmpleado
 			// 
