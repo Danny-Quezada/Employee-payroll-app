@@ -22,10 +22,23 @@ namespace NominasTrabajo
 
 		private void guna2GradientButton1_Click(object sender, EventArgs e)
 		{
-			this.Hide();
-			FrmPrincipal frm = new FrmPrincipal();
-			frm.ShowDialog();
-			this.Close();
+			var user = "admin";
+			var contrasena = "LaDaRoKe";
+			
+			
+			if(rjTextBox1.Texts.Equals(user) && rjTextBox2.Texts.Equals(contrasena))
+            {
+				this.Hide();
+				FrmPrincipal frm = new FrmPrincipal();
+				frm.ShowDialog();
+				this.Close();
+			}
+            else
+            {
+				MessageBox.Show("Credenciales erroneas", "El Usuario o la contaseña no coinciden", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+			
+			
 
 		}
 
@@ -43,5 +56,25 @@ namespace NominasTrabajo
 		{
 			WindowState = FormWindowState.Minimized;
 		}
-	}
+
+		private void rjTextBox2_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			var user = "admin";
+			var contrasena = "LaDaRoKe";
+			if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+				if (rjTextBox1.Texts.Equals(user) && rjTextBox2.Texts.Equals(contrasena))
+				{
+					this.Hide();
+					FrmPrincipal frm = new FrmPrincipal();
+					frm.ShowDialog();
+					this.Close();
+				}
+				else
+				{
+					MessageBox.Show("Credenciales erroneas", "El Usuario o la contaseña no coinciden", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+			}
+        }
+    }
 }
