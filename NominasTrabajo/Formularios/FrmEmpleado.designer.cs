@@ -31,85 +31,88 @@ namespace NominasTrabajo
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmpleado));
-			this.rjTextBox1 = new RJCodeAdvance.RJControls.RJTextBox();
-			this.rjTextBox2 = new RJCodeAdvance.RJControls.RJTextBox();
-			this.rjCircularPictureBox1 = new RJCodeAdvance.RJControls.RJCircularPictureBox();
+			this.txtNombre = new RJCodeAdvance.RJControls.RJTextBox();
+			this.txtSalario = new RJCodeAdvance.RJControls.RJTextBox();
+			this.PBImagen = new RJCodeAdvance.RJControls.RJCircularPictureBox();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.pbWaves = new System.Windows.Forms.PictureBox();
-			this.rjTextBox4 = new RJCodeAdvance.RJControls.RJTextBox();
-			this.rjTextBox5 = new RJCodeAdvance.RJControls.RJTextBox();
-			this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
+			this.txtCodigoInss = new RJCodeAdvance.RJControls.RJTextBox();
+			this.txtHorasTrabajadas = new RJCodeAdvance.RJControls.RJTextBox();
+			this.btnAgregar = new Guna.UI2.WinForms.Guna2GradientButton();
 			this.label1 = new System.Windows.Forms.Label();
 			this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.pictureBox3 = new System.Windows.Forms.PictureBox();
-			((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
+			this.cmbCargos = new Guna.UI2.WinForms.Guna2ComboBox();
+			this.label2 = new System.Windows.Forms.Label();
+			((System.ComponentModel.ISupportInitialize)(this.PBImagen)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbWaves)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// rjTextBox1
+			// txtNombre
 			// 
-			this.rjTextBox1.BackColor = System.Drawing.SystemColors.Window;
-			this.rjTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-			this.rjTextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-			this.rjTextBox1.BorderRadius = 10;
-			this.rjTextBox1.BorderSize = 2;
-			this.rjTextBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.rjTextBox1.ForeColor = System.Drawing.Color.Gray;
-			this.rjTextBox1.Location = new System.Drawing.Point(507, 176);
-			this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4);
-			this.rjTextBox1.Multiline = false;
-			this.rjTextBox1.Name = "rjTextBox1";
-			this.rjTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-			this.rjTextBox1.PasswordChar = false;
-			this.rjTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.rjTextBox1.PlaceholderText = "Nombre";
-			this.rjTextBox1.Size = new System.Drawing.Size(232, 35);
-			this.rjTextBox1.TabIndex = 2;
-			this.rjTextBox1.Texts = "";
-			this.rjTextBox1.UnderlinedStyle = true;
+			this.txtNombre.BackColor = System.Drawing.SystemColors.Window;
+			this.txtNombre.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.txtNombre.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+			this.txtNombre.BorderRadius = 10;
+			this.txtNombre.BorderSize = 2;
+			this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtNombre.ForeColor = System.Drawing.Color.Gray;
+			this.txtNombre.Location = new System.Drawing.Point(507, 176);
+			this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
+			this.txtNombre.Multiline = false;
+			this.txtNombre.Name = "txtNombre";
+			this.txtNombre.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+			this.txtNombre.PasswordChar = false;
+			this.txtNombre.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.txtNombre.PlaceholderText = "Nombre";
+			this.txtNombre.Size = new System.Drawing.Size(232, 35);
+			this.txtNombre.TabIndex = 2;
+			this.txtNombre.Texts = "";
+			this.txtNombre.UnderlinedStyle = true;
+			this.txtNombre._TextChanged += new System.EventHandler(this.txtNombre__TextChanged);
 			// 
-			// rjTextBox2
+			// txtSalario
 			// 
-			this.rjTextBox2.BackColor = System.Drawing.SystemColors.Window;
-			this.rjTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-			this.rjTextBox2.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-			this.rjTextBox2.BorderRadius = 10;
-			this.rjTextBox2.BorderSize = 2;
-			this.rjTextBox2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.rjTextBox2.ForeColor = System.Drawing.Color.Gray;
-			this.rjTextBox2.Location = new System.Drawing.Point(507, 303);
-			this.rjTextBox2.Margin = new System.Windows.Forms.Padding(4);
-			this.rjTextBox2.Multiline = false;
-			this.rjTextBox2.Name = "rjTextBox2";
-			this.rjTextBox2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-			this.rjTextBox2.PasswordChar = false;
-			this.rjTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.rjTextBox2.PlaceholderText = "Saldo";
-			this.rjTextBox2.Size = new System.Drawing.Size(232, 35);
-			this.rjTextBox2.TabIndex = 3;
-			this.rjTextBox2.Texts = "";
-			this.rjTextBox2.UnderlinedStyle = true;
+			this.txtSalario.BackColor = System.Drawing.SystemColors.Window;
+			this.txtSalario.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.txtSalario.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+			this.txtSalario.BorderRadius = 10;
+			this.txtSalario.BorderSize = 2;
+			this.txtSalario.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtSalario.ForeColor = System.Drawing.Color.Gray;
+			this.txtSalario.Location = new System.Drawing.Point(507, 303);
+			this.txtSalario.Margin = new System.Windows.Forms.Padding(4);
+			this.txtSalario.Multiline = false;
+			this.txtSalario.Name = "txtSalario";
+			this.txtSalario.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+			this.txtSalario.PasswordChar = false;
+			this.txtSalario.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.txtSalario.PlaceholderText = "Salario";
+			this.txtSalario.Size = new System.Drawing.Size(232, 35);
+			this.txtSalario.TabIndex = 3;
+			this.txtSalario.Texts = "";
+			this.txtSalario.UnderlinedStyle = true;
 			// 
-			// rjCircularPictureBox1
+			// PBImagen
 			// 
-			this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-			this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-			this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.Yellow;
-			this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-			this.rjCircularPictureBox1.BorderSize = 2;
-			this.rjCircularPictureBox1.GradientAngle = 50F;
-			this.rjCircularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("rjCircularPictureBox1.Image")));
-			this.rjCircularPictureBox1.Location = new System.Drawing.Point(376, 257);
-			this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
-			this.rjCircularPictureBox1.Size = new System.Drawing.Size(100, 100);
-			this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-			this.rjCircularPictureBox1.TabIndex = 4;
-			this.rjCircularPictureBox1.TabStop = false;
-			this.rjCircularPictureBox1.Click += new System.EventHandler(this.rjCircularPictureBox1_Click);
+			this.PBImagen.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+			this.PBImagen.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.PBImagen.BorderColor2 = System.Drawing.Color.Yellow;
+			this.PBImagen.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+			this.PBImagen.BorderSize = 2;
+			this.PBImagen.GradientAngle = 50F;
+			this.PBImagen.Image = ((System.Drawing.Image)(resources.GetObject("PBImagen.Image")));
+			this.PBImagen.Location = new System.Drawing.Point(360, 214);
+			this.PBImagen.Name = "PBImagen";
+			this.PBImagen.Size = new System.Drawing.Size(100, 100);
+			this.PBImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+			this.PBImagen.TabIndex = 4;
+			this.PBImagen.TabStop = false;
+			this.PBImagen.Click += new System.EventHandler(this.PBImagen_Click);
 			// 
 			// pictureBox2
 			// 
@@ -131,83 +134,82 @@ namespace NominasTrabajo
 			this.pbWaves.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pbWaves.TabIndex = 0;
 			this.pbWaves.TabStop = false;
-			this.pbWaves.Click += new System.EventHandler(this.pictureBox1_Click);
+			this.pbWaves.Click += new System.EventHandler(this.pbWaves_Click);
 			// 
-			// rjTextBox4
+			// txtCodigoInss
 			// 
-			this.rjTextBox4.BackColor = System.Drawing.SystemColors.Window;
-			this.rjTextBox4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-			this.rjTextBox4.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-			this.rjTextBox4.BorderRadius = 10;
-			this.rjTextBox4.BorderSize = 2;
-			this.rjTextBox4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.rjTextBox4.ForeColor = System.Drawing.Color.Gray;
-			this.rjTextBox4.Location = new System.Drawing.Point(507, 240);
-			this.rjTextBox4.Margin = new System.Windows.Forms.Padding(4);
-			this.rjTextBox4.Multiline = false;
-			this.rjTextBox4.Name = "rjTextBox4";
-			this.rjTextBox4.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-			this.rjTextBox4.PasswordChar = false;
-			this.rjTextBox4.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.rjTextBox4.PlaceholderText = "Código INSS";
-			this.rjTextBox4.Size = new System.Drawing.Size(232, 35);
-			this.rjTextBox4.TabIndex = 5;
-			this.rjTextBox4.Texts = "";
-			this.rjTextBox4.UnderlinedStyle = true;
+			this.txtCodigoInss.BackColor = System.Drawing.SystemColors.Window;
+			this.txtCodigoInss.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.txtCodigoInss.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+			this.txtCodigoInss.BorderRadius = 10;
+			this.txtCodigoInss.BorderSize = 2;
+			this.txtCodigoInss.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtCodigoInss.ForeColor = System.Drawing.Color.Gray;
+			this.txtCodigoInss.Location = new System.Drawing.Point(507, 240);
+			this.txtCodigoInss.Margin = new System.Windows.Forms.Padding(4);
+			this.txtCodigoInss.Multiline = false;
+			this.txtCodigoInss.Name = "txtCodigoInss";
+			this.txtCodigoInss.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+			this.txtCodigoInss.PasswordChar = false;
+			this.txtCodigoInss.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.txtCodigoInss.PlaceholderText = "Código INSS";
+			this.txtCodigoInss.Size = new System.Drawing.Size(232, 35);
+			this.txtCodigoInss.TabIndex = 5;
+			this.txtCodigoInss.Texts = "";
+			this.txtCodigoInss.UnderlinedStyle = true;
 			// 
-			// rjTextBox5
+			// txtHorasTrabajadas
 			// 
-			this.rjTextBox5.BackColor = System.Drawing.SystemColors.Window;
-			this.rjTextBox5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-			this.rjTextBox5.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-			this.rjTextBox5.BorderRadius = 10;
-			this.rjTextBox5.BorderSize = 2;
-			this.rjTextBox5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.rjTextBox5.ForeColor = System.Drawing.Color.Gray;
-			this.rjTextBox5.Location = new System.Drawing.Point(507, 360);
-			this.rjTextBox5.Margin = new System.Windows.Forms.Padding(4);
-			this.rjTextBox5.Multiline = false;
-			this.rjTextBox5.Name = "rjTextBox5";
-			this.rjTextBox5.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-			this.rjTextBox5.PasswordChar = false;
-			this.rjTextBox5.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.rjTextBox5.PlaceholderText = "Horas trabajadas";
-			this.rjTextBox5.Size = new System.Drawing.Size(232, 35);
-			this.rjTextBox5.TabIndex = 6;
-			this.rjTextBox5.Texts = "";
-			this.rjTextBox5.UnderlinedStyle = true;
-			this.rjTextBox5._TextChanged += new System.EventHandler(this.rjTextBox5__TextChanged);
+			this.txtHorasTrabajadas.BackColor = System.Drawing.SystemColors.Window;
+			this.txtHorasTrabajadas.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.txtHorasTrabajadas.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+			this.txtHorasTrabajadas.BorderRadius = 10;
+			this.txtHorasTrabajadas.BorderSize = 2;
+			this.txtHorasTrabajadas.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtHorasTrabajadas.ForeColor = System.Drawing.Color.Gray;
+			this.txtHorasTrabajadas.Location = new System.Drawing.Point(507, 360);
+			this.txtHorasTrabajadas.Margin = new System.Windows.Forms.Padding(4);
+			this.txtHorasTrabajadas.Multiline = false;
+			this.txtHorasTrabajadas.Name = "txtHorasTrabajadas";
+			this.txtHorasTrabajadas.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+			this.txtHorasTrabajadas.PasswordChar = false;
+			this.txtHorasTrabajadas.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.txtHorasTrabajadas.PlaceholderText = "Horas trabajadas";
+			this.txtHorasTrabajadas.Size = new System.Drawing.Size(232, 35);
+			this.txtHorasTrabajadas.TabIndex = 6;
+			this.txtHorasTrabajadas.Texts = "";
+			this.txtHorasTrabajadas.UnderlinedStyle = true;
 			// 
-			// guna2GradientButton1
+			// btnAgregar
 			// 
-			this.guna2GradientButton1.BorderRadius = 8;
-			this.guna2GradientButton1.CheckedState.Parent = this.guna2GradientButton1;
-			this.guna2GradientButton1.CustomImages.Parent = this.guna2GradientButton1;
-			this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-			this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-			this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-			this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-			this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-			this.guna2GradientButton1.DisabledState.Parent = this.guna2GradientButton1;
-			this.guna2GradientButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-			this.guna2GradientButton1.FillColor2 = System.Drawing.Color.Yellow;
-			this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-			this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
-			this.guna2GradientButton1.HoverState.Parent = this.guna2GradientButton1;
-			this.guna2GradientButton1.Location = new System.Drawing.Point(534, 425);
-			this.guna2GradientButton1.Name = "guna2GradientButton1";
-			this.guna2GradientButton1.ShadowDecoration.Parent = this.guna2GradientButton1;
-			this.guna2GradientButton1.Size = new System.Drawing.Size(180, 45);
-			this.guna2GradientButton1.TabIndex = 7;
-			this.guna2GradientButton1.Text = "AGREGAR";
-			this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
+			this.btnAgregar.BorderRadius = 8;
+			this.btnAgregar.CheckedState.Parent = this.btnAgregar;
+			this.btnAgregar.CustomImages.Parent = this.btnAgregar;
+			this.btnAgregar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.btnAgregar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.btnAgregar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.btnAgregar.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.btnAgregar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.btnAgregar.DisabledState.Parent = this.btnAgregar;
+			this.btnAgregar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.btnAgregar.FillColor2 = System.Drawing.Color.Yellow;
+			this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 9F);
+			this.btnAgregar.ForeColor = System.Drawing.Color.White;
+			this.btnAgregar.HoverState.Parent = this.btnAgregar;
+			this.btnAgregar.Location = new System.Drawing.Point(534, 425);
+			this.btnAgregar.Name = "btnAgregar";
+			this.btnAgregar.ShadowDecoration.Parent = this.btnAgregar;
+			this.btnAgregar.Size = new System.Drawing.Size(180, 45);
+			this.btnAgregar.TabIndex = 7;
+			this.btnAgregar.Text = "AGREGAR";
+			this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.ForeColor = System.Drawing.Color.Gray;
-			this.label1.Location = new System.Drawing.Point(373, 237);
+			this.label1.Location = new System.Drawing.Point(357, 194);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(119, 17);
 			this.label1.TabIndex = 8;
@@ -244,6 +246,38 @@ namespace NominasTrabajo
 			this.pictureBox3.TabStop = false;
 			this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
 			// 
+			// cmbCargos
+			// 
+			this.cmbCargos.BackColor = System.Drawing.Color.Transparent;
+			this.cmbCargos.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.cmbCargos.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.cmbCargos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cmbCargos.FocusedColor = System.Drawing.Color.Yellow;
+			this.cmbCargos.FocusedState.BorderColor = System.Drawing.Color.Yellow;
+			this.cmbCargos.FocusedState.Parent = this.cmbCargos;
+			this.cmbCargos.Font = new System.Drawing.Font("Segoe UI", 10F);
+			this.cmbCargos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+			this.cmbCargos.HoverState.Parent = this.cmbCargos;
+			this.cmbCargos.ItemHeight = 30;
+			this.cmbCargos.ItemsAppearance.Parent = this.cmbCargos;
+			this.cmbCargos.Location = new System.Drawing.Point(336, 359);
+			this.cmbCargos.Name = "cmbCargos";
+			this.cmbCargos.ShadowDecoration.BorderRadius = 7;
+			this.cmbCargos.ShadowDecoration.Parent = this.cmbCargos;
+			this.cmbCargos.Size = new System.Drawing.Size(140, 36);
+			this.cmbCargos.TabIndex = 11;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.ForeColor = System.Drawing.Color.Gray;
+			this.label2.Location = new System.Drawing.Point(380, 339);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(50, 17);
+			this.label2.TabIndex = 12;
+			this.label2.Text = "Cargos";
+			// 
 			// FrmEmpleado
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,15 +286,17 @@ namespace NominasTrabajo
 			this.BackColor = System.Drawing.Color.White;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.ClientSize = new System.Drawing.Size(800, 500);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.cmbCargos);
 			this.Controls.Add(this.pictureBox3);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.guna2GradientButton1);
-			this.Controls.Add(this.rjTextBox5);
-			this.Controls.Add(this.rjTextBox4);
-			this.Controls.Add(this.rjCircularPictureBox1);
-			this.Controls.Add(this.rjTextBox2);
-			this.Controls.Add(this.rjTextBox1);
+			this.Controls.Add(this.btnAgregar);
+			this.Controls.Add(this.txtHorasTrabajadas);
+			this.Controls.Add(this.txtCodigoInss);
+			this.Controls.Add(this.PBImagen);
+			this.Controls.Add(this.txtSalario);
+			this.Controls.Add(this.txtNombre);
 			this.Controls.Add(this.pictureBox2);
 			this.Controls.Add(this.pbWaves);
 			this.DoubleBuffered = true;
@@ -271,7 +307,8 @@ namespace NominasTrabajo
 			this.Name = "FrmEmpleado";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Empleados";
-			((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
+			this.Load += new System.EventHandler(this.FrmEmpleado_Load);
+			((System.ComponentModel.ISupportInitialize)(this.PBImagen)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbWaves)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -285,15 +322,17 @@ namespace NominasTrabajo
 
 		private System.Windows.Forms.PictureBox pbWaves;
 		private System.Windows.Forms.PictureBox pictureBox2;
-		private RJCodeAdvance.RJControls.RJTextBox rjTextBox1;
-		private RJCodeAdvance.RJControls.RJTextBox rjTextBox2;
-		private RJCodeAdvance.RJControls.RJCircularPictureBox rjCircularPictureBox1;
-		private RJCodeAdvance.RJControls.RJTextBox rjTextBox5;
-		private RJCodeAdvance.RJControls.RJTextBox rjTextBox4;
-		private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
+		private RJCodeAdvance.RJControls.RJTextBox txtNombre;
+		private RJCodeAdvance.RJControls.RJTextBox txtSalario;
+		private RJCodeAdvance.RJControls.RJCircularPictureBox PBImagen;
+		private RJCodeAdvance.RJControls.RJTextBox txtHorasTrabajadas;
+		private RJCodeAdvance.RJControls.RJTextBox txtCodigoInss;
+		private Guna.UI2.WinForms.Guna2GradientButton btnAgregar;
 		private System.Windows.Forms.Label label1;
 		private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.PictureBox pictureBox3;
+		private Guna.UI2.WinForms.Guna2ComboBox cmbCargos;
+		private System.Windows.Forms.Label label2;
 	}
 }

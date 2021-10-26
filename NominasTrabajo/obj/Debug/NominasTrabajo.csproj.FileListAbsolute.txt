@@ -30,3 +30,5 @@ C:\Users\larry\Desktop\TareaDeCurso\TareaDeCurso\NominasTrabajo\obj\Debug\Nomina
 C:\Users\larry\Desktop\TareaDeCurso\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.csproj.CopyComplete
 C:\Users\larry\Desktop\TareaDeCurso\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.exe
 C:\Users\larry\Desktop\TareaDeCurso\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.pdb
+C:\Users\Quezada\source\repos\NominasTrabajo\NominasTrabajo\bin\Debug\Domain.dll
+C:\Users\Quezada\source\repos\NominasTrabajo\NominasTrabajo\bin\Debug\Domain.pdb

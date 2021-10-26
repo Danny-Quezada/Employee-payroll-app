@@ -44,7 +44,7 @@ namespace NominasTrabajo
 
 		private void FrmLogin_Load(object sender, EventArgs e)
 		{
-
+			guna2Transition1.ShowSync(this);
 		}
 
 		private void pictureBox2_Click(object sender, EventArgs e)
