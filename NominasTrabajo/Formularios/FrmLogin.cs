@@ -8,13 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AppCore.Interfaces;
 
 namespace NominasTrabajo
 {
 	public partial class FrmLogin : Form
 	{
-		public FrmLogin()
+		private IEmpleadoService empleadoService;
+		private IEmpleadoService despedidos;
+		public FrmLogin(IEmpleadoService empleado, IEmpleadoService despedidos)
 		{
+			this.despedidos = despedidos;
+			this.empleadoService = empleado;
 			InitializeComponent();
 		}
 
@@ -30,6 +35,8 @@ namespace NominasTrabajo
             {
 				this.Hide();
 				FrmPrincipal frm = new FrmPrincipal();
+				frm.empleadoService = empleadoService;
+				frm.despedidos = despedidos;
 				frm.ShowDialog();
 				this.Close();
 			}
@@ -67,6 +74,8 @@ namespace NominasTrabajo
 				{
 					this.Hide();
 					FrmPrincipal frm = new FrmPrincipal();
+					frm.empleadoService = empleadoService;
+					frm.despedidos = despedidos;
 					frm.ShowDialog();
 					this.Close();
 				}

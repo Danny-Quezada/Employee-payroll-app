@@ -41,11 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Empleado\CargosEmpleados\Cargos.cs" />
-    <Compile Include="Empleado\Deducciones.cs" />
-    <Compile Include="Empleado\Empleado.cs" />
-    <Compile Include="Empleado\Remuneraciones.cs" />
+    <Compile Include="Entities\Empleados\EmpleadoDgv.cs" />
+    <Compile Include="Entities\Empleados\TarifaIR.cs" />
+    <Compile Include="Enums\CargosEmpleados\Cargos.cs" />
+    <Compile Include="Entities\Empleados\Deducciones.cs" />
+    <Compile Include="Entities\Empleados\Empleado.cs" />
+    <Compile Include="Entities\Empleados\Remuneraciones.cs" />
+    <Compile Include="Enums\EstadoTrabajador.cs" />
+    <Compile Include="Interfaces\IEmpleadoRepository.cs" />
+    <Compile Include="Interfaces\IModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

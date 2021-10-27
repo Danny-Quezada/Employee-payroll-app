@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AppCore.Interfaces;
 
 namespace NominasTrabajo
 
@@ -15,6 +16,8 @@ namespace NominasTrabajo
 	public partial class FrmPrincipal : Form
 	{
 		private int n= 0;
+		public IEmpleadoService empleadoService { get; set; }
+		public IEmpleadoService despedidos { get; set; }
 		public FrmPrincipal()
 		{
 			InitializeComponent();
@@ -22,8 +25,8 @@ namespace NominasTrabajo
 
 		private void FrmPrincipal_Load(object sender, EventArgs e)
 		{
-			guna2DataGridView1.Rows.Add("1","333-333","Danny Alejandro Quezada Cruz",22222,"Gerente General",22,3333,333,33,222222,323233,5555);
-			guna2DataGridView1.Rows.Add("2", "Josue");
+			//guna2DataGridView1.Rows.Add("1","333-333","Danny Alejandro Quezada Cruz",22222,"Gerente General",22,3333,333,33,222222,323233,5555);
+			//guna2DataGridView1.Rows.Add("2", "Josue");
 		}
 
 		
@@ -90,7 +93,10 @@ namespace NominasTrabajo
 		private void btnAgregar_Click(object sender, EventArgs e)
 		{
 			FrmEmpleado frmEmpleado = new FrmEmpleado();
+			frmEmpleado.empleadoService = empleadoService;
 			frmEmpleado.ShowDialog();
+			guna2DataGridView1.Columns.Clear();
+			guna2DataGridView1.DataSource = empleadoService.GetResumenEmpleados();
 		}
 
 		private void btnModificar_Click(object sender, EventArgs e)
