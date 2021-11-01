@@ -24,3 +24,29 @@ C:\Users\Roberto\Desktop\ProyectoCurso\TareaDeCurso\AppCore\obj\Debug\AppCore.cs
 C:\Users\Roberto\Desktop\ProyectoCurso\TareaDeCurso\AppCore\obj\Debug\AppCore.csproj.CoreCompileInputs.cache
 C:\Users\Roberto\Desktop\ProyectoCurso\TareaDeCurso\AppCore\obj\Debug\AppCore.dll
 C:\Users\Roberto\Desktop\ProyectoCurso\TareaDeCurso\AppCore\obj\Debug\AppCore.pdb
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\bin\Debug\AppCore.dll.config
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\bin\Debug\AppCore.dll
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\bin\Debug\AppCore.pdb
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\bin\Debug\Autofac.dll
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\bin\Debug\Domain.dll
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\bin\Debug\System.Buffers.dll
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\bin\Debug\System.Memory.dll
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\bin\Debug\Domain.pdb
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\bin\Debug\Autofac.pdb
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\bin\Debug\Autofac.xml
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\bin\Debug\System.Buffers.xml
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\bin\Debug\System.Memory.xml
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\obj\Debug\AppCore.csproj.AssemblyReference.cache
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\obj\Debug\AppCore.csproj.CoreCompileInputs.cache
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\obj\Debug\AppCore.dll
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\obj\Debug\AppCore.pdb

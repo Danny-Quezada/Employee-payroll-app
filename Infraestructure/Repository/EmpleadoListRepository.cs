@@ -12,6 +12,7 @@ namespace Infraestructure.EmpleadosRepos
     public class EmpleadoListRepository : IEmpleadoRepository
     {
         private List<Empleado> empleados;
+        private List<Empleado> empleadosDespedidos;
         public EmpleadoListRepository()
         {
             empleados = new List<Empleado>();
@@ -46,6 +47,8 @@ namespace Infraestructure.EmpleadosRepos
             {
                 throw new ArgumentException($"No se pudo despedir al empleado con id: {id}");
             }
+            empleados.Remove(e);
+            empleadosDespedidos.Add(e);
             e.Estado = EstadoTrabajador.Inactivo;
         }
 
@@ -69,14 +72,9 @@ namespace Infraestructure.EmpleadosRepos
 
         public int GetLastId()
         {
-            try
-            {
-                return empleados.Count==0 ? 0 : empleados[empleados.Count - 1].Id;
-            }
-            catch (IndexOutOfRangeException)
-            {
-                return 0;
-            }
+            Empleado Tmp = empleados.FindLast(O => O.Id > 0);
+            Empleado Tmp1 = empleadosDespedidos.FindLast(O => O.Id > 0);
+            return Tmp.Id > Tmp1.Id ? Tmp.Id : Tmp1.Id;
         }
         //TODO: Mejorar este metodo
         public EmpleadoDgv GetResumenEmpleado(int id)
@@ -99,7 +97,6 @@ namespace Infraestructure.EmpleadosRepos
                 INSS_Laboral=0,
                 IR=0,
                 Total_Deducciones=0,
-                Neto_A_Recibir=0,
                 //INSS_Laboral=e.Deducciones.INSSLaboral,
                 //IR=e.Deducciones.IR,
                 //Total_Deducciones=e.Deducciones.TotalDeducciones,
@@ -135,21 +132,21 @@ namespace Infraestructure.EmpleadosRepos
                     INSS_Laboral = 0,
                     IR = 0,
                     Total_Deducciones = 0,
-                    Neto_A_Recibir = 0,
                 };
                 i++;
             }
             return empleadosDgv;
         }
-
-        public int QuitarDespedidos()
+        public void QuitarDespedidos(Empleado e)
         {
-            if (empleados == null)
-            {
-                throw new ArgumentException("No se puede quitar a los despedidos porque no hay empleados");
-            }
-            return empleados.RemoveAll(p=>p.Estado==EstadoTrabajador.Inactivo);
+        if (empleados == null)
+        {
+            throw new ArgumentException("No se puede quitar a los despedidos porque no hay empleados");
         }
+        e.Estado = EstadoTrabajador.Activo;
+        empleados.Add(e);
+        empleadosDespedidos.Remove(e);
+    }
 
         public int Update(Empleado t)
         {

@@ -16,10 +16,14 @@ namespace NominasTrabajo
 	{
 		private IEmpleadoService empleadoService;
 		private IEmpleadoService despedidos;
-		public FrmLogin(IEmpleadoService empleado, IEmpleadoService despedidos)
+		private IProcesses processes;
+		private IEmpresaService empresaService;
+		public FrmLogin(IEmpleadoService empleado, IEmpleadoService despedidos, IProcesses processes, IEmpresaService empresaService)
 		{
 			this.despedidos = despedidos;
 			this.empleadoService = empleado;
+			this.processes = processes;
+			this.empresaService = empresaService;
 			InitializeComponent();
 		}
 

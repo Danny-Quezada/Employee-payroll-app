@@ -62,10 +62,9 @@ namespace AppCore.Services
         {
             empleadoRepository.Despedir(id);
         }
-
-        public int QuitarDespedidos()
+        public void QuitarDespedidos(Empleado empleado)
         {
-            return empleadoRepository.QuitarDespedidos();
+            empleadoRepository.QuitarDespedidos(empleado);
         }
     }
 }

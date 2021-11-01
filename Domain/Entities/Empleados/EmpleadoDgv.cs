@@ -20,6 +20,6 @@ namespace Domain.Entities.Empleados
         public decimal INSS_Laboral { get; set; }
         public decimal IR { get; set; }
         public decimal Total_Deducciones { get; set; }
-        public decimal Neto_A_Recibir { get; set; }
+        public decimal Neto_A_Recibir => Total_Ingresos - Total_Deducciones;
     }
 }
