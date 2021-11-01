@@ -74,6 +74,8 @@ namespace Infraestructure.EmpleadosRepos
         {
             Empleado Tmp = empleados.FindLast(O => O.Id > 0);
             Empleado Tmp1 = empleadosDespedidos.FindLast(O => O.Id > 0);
+            if (Tmp1 == null)
+                return Tmp.Id;
             return Tmp.Id > Tmp1.Id ? Tmp.Id : Tmp1.Id;
         }
         //TODO: Mejorar este metodo
