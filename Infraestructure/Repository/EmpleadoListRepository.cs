@@ -72,12 +72,15 @@ namespace Infraestructure.EmpleadosRepos
 
         public int GetLastId()
         {
+            
             Empleado Tmp = empleados.FindLast(O => O.Id > 0);
             Empleado Tmp1 = empleadosDespedidos.FindLast(O => O.Id > 0);
-            if (Tmp1 == null)
-                return Tmp.Id;
-            return Tmp.Id > Tmp1.Id ? Tmp.Id : Tmp1.Id;
-        }
+            if (Tmp == null && Tmp1 == null)
+            {
+                return 0;
+            }
+            if (Tmp1 == )
+            return Tmp.Id > Tmp1.Id ? Tmp.Id : T
         //TODO: Mejorar este metodo
         public EmpleadoDgv GetResumenEmpleado(int id)
         {
