@@ -24,11 +24,11 @@ namespace Infraestructure.Repository
         {
             if (CantidadTrabajadores < 50)
             {
-                return Salary * InssPatronal[1];
+                return Salary * InssPatronal[0];
             }
             else if (CantidadTrabajadores >= 50)
             {
-                return Salary * InssPatronal[2];
+                return Salary * InssPatronal[1];
             }
             return 0;
         }

@@ -38,7 +38,7 @@ namespace NominasTrabajo
 			if(rjTextBox1.Texts.Equals(user) && rjTextBox2.Texts.Equals(contrasena))
             {
 				this.Hide();
-				FrmPrincipal frm = new FrmPrincipal();
+				FrmPrincipal frm = new FrmPrincipal(processes, empresaService);
 				frm.empleadoService = empleadoService;
 				frm.despedidos = despedidos;
 				frm.ShowDialog();
@@ -77,7 +77,7 @@ namespace NominasTrabajo
 				if (rjTextBox1.Texts.Equals(user) && rjTextBox2.Texts.Equals(contrasena))
 				{
 					this.Hide();
-					FrmPrincipal frm = new FrmPrincipal();
+					FrmPrincipal frm = new FrmPrincipal(processes, empresaService);
 					frm.empleadoService = empleadoService;
 					frm.despedidos = despedidos;
 					frm.ShowDialog();

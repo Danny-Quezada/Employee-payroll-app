@@ -16,16 +16,16 @@ namespace Domain.Entities.Empleados
         public decimal Salario_Mensual { get; set; }
         public int Horas_Extras { get; set; }
         public decimal Ingreso_Horas_Extras { get; set; }
-        public decimal Total_Ingresos { get; set; }
+        public decimal Total_Ingresos => Salario_Mensual + Ingreso_Horas_Extras;
         public decimal INSS_Laboral { get; set; }
         public decimal IR { get; set; }
-        public decimal Total_Deducciones { get; set; }
+        public decimal Total_Deducciones => INSS_Laboral + IR;
         public decimal Neto_A_Recibir => Total_Ingresos - Total_Deducciones;
         public decimal INSS_Patronal { get; set; }
         public decimal INATEC { get; set; }
         public decimal Aguinaldo { get; set; }
         public decimal Indemnizacion { get; set; }
         public decimal Vacaciones { get; set; }
-        public decimal Prestamos { get; set; }
+        public decimal Cuota_Prestamo { get; set; }
     }
 }

@@ -66,5 +66,9 @@ namespace AppCore.Services
         {
             empleadoRepository.QuitarDespedidos(empleado);
         }
+        public int CalculoFactoy(EmpleadoDgv empleadoDgv)
+        {
+            return empleadoRepository.CalculoFactoy(empleadoDgv);
+        }
     }
 }

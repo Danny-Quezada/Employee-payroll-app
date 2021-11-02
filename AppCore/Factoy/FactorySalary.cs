@@ -10,15 +10,15 @@ namespace AppCore.Factoy
 {
     public static class FactorySalary
     {
-        public static ISalary CreateMethod(ISalary e) 
+        public static ISalary CreateMethod(IProcesses processes, int factory) 
         {
-            if (e is SalaryCalculatorWithLoan)
+            if (factory == 0)
             {
                 return new SalaryCalculatorWithLoan();
             }
-            else if (e is SalaryCalculatorWithoutLoan)
+            else if (factory == 1)
             {
-                return new SalaryCalculatorWithoutLoan();
+              //  return new SalaryCalculatorWithoutLoan();
             }
             throw new Exception();
         }

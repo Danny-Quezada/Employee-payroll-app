@@ -77,3 +77,4 @@ C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\AppCore\obj\Debug\App
 C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\AppCore\obj\Debug\AppCore.dll
 C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\AppCore\obj\Debug\AppCore.pdb
 C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\AppCore\obj\Debug\AppCore.csproj.CopyComplete
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\obj\Debug\AppCore.csproj.CopyComplete

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain.Entities.Empleados;
+using Domain.Interfaces;
 
 namespace AppCore.Interfaces
 {
@@ -14,5 +15,6 @@ namespace AppCore.Interfaces
         EmpleadoDgv[] GetResumenEmpleados();
         void Despedir(int id);
         void QuitarDespedidos(Empleado empleado);
+        int CalculoFactoy(EmpleadoDgv empleadoDgv);
     }
 }

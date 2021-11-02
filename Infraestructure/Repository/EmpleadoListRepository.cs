@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AppCore.Interfaces;
+using AppCore.Services;
 using Domain.Entities.Empleados;
 using Domain.Enums;
 using Domain.Interfaces;
@@ -13,11 +15,20 @@ namespace Infraestructure.EmpleadosRepos
     {
         private List<Empleado> empleados;
         private List<Empleado> empleadosDespedidos;
-        public EmpleadoListRepository()
+        private IProcesses processes;
+        private IEmpresaService empresaService;
+        public EmpleadoListRepository(IProcesses processes, IEmpresaService empresaService)
         {
+            this.processes = processes;
+            this.empresaService = empresaService;
             empleados = new List<Empleado>();
             empleadosDespedidos = new List<Empleado>();
         }
+        public int CalculoFactoy(EmpleadoDgv empleadoDgv)
+        {
+            return empleadoDgv.Cuota_Prestamo > 0 ? 0 : 1;
+        }
+
         public void Create(Empleado t)
         {
             if (t is null)
@@ -73,25 +84,33 @@ namespace Infraestructure.EmpleadosRepos
 
         public int GetLastId()
         {
-            Empleado Tmp = empleados.FindLast(O => O.Id > 0);
-            Empleado Tmp1 = empleadosDespedidos.FindLast(O => O.Id > 0);
-            if (Tmp == null && Tmp1 == null)
+            Empleado Tmp;
+            Empleado Tmp1;
+            if (empleados.Count == 0 && empleadosDespedidos.Count == 0)
             {
                 return 0;
             }
-            if (Tmp == null)
+            if (empleadosDespedidos.Count == 0)
             {
-                return Tmp1.Id;
-            }
-            if (Tmp1 == null)
-            {
+                Tmp = empleados.FindLast(O => O.Id > 0);
                 return Tmp.Id;
             }
+            if (empleados.Count == 0)
+            {
+                Tmp1 = empleadosDespedidos.FindLast(O => O.Id > 0);
+                return Tmp1.Id;
+            }
+            Tmp = empleados.FindLast(O => O.Id > 0);
+            Tmp1 = empleadosDespedidos.FindLast(O => O.Id > 0);
             return Tmp.Id > Tmp1.Id ? Tmp.Id : Tmp1.Id;
         }
         //TODO: Mejorar este metodo
         public EmpleadoDgv GetResumenEmpleado(int id)
         {
+            Empleado[] Trabajadores = FindAll();
+            decimal SalarioTrabajadores = 0;
+            foreach (Empleado a in Trabajadores)
+                SalarioTrabajadores += a.Remuneraciones.SalarioBase;
             Empleado e = GetEmpleadoById(id);
             if (e == null)
             {
@@ -106,16 +125,14 @@ namespace Infraestructure.EmpleadosRepos
                 Salario_Mensual = e.Remuneraciones.SalarioBase,
                 Horas_Extras = e.Remuneraciones.HorasExtras,
                 Ingreso_Horas_Extras = e.Remuneraciones.IngresoHorasExtras,
-                Total_Ingresos = e.Remuneraciones.TotalIngresos,
-                INSS_Laboral = 0,
-                IR = 0,
-                Total_Deducciones = 0,
-                INSS_Patronal = 0,
-                Aguinaldo=0,
-                Indemnizacion=0,
-                INATEC=0,
-                Prestamos=0,
-                Vacaciones=0,
+                INSS_Laboral = processes.CalculateInss(e.Remuneraciones.SalarioBase),
+                IR = processes.CalculateIR(e.Remuneraciones.SalarioBase),
+                INSS_Patronal = empresaService.CalculateInssPatronal(e.Remuneraciones.SalarioBase, empleados.Count),
+                Aguinaldo = processes.CalculateAguinaldo(e.Remuneraciones.SalarioBase, e.MesesTrabajadosAguinaldo),
+                Indemnizacion = processes.CalculateIndemnizacion(e.MesesTrabajadosIndemnizacion),
+                INATEC = empresaService.CalculateInatec(SalarioTrabajadores),
+                Cuota_Prestamo = 0,
+                Vacaciones = 0,
                 //INSS_Laboral=e.Deducciones.INSSLaboral,
                 //IR=e.Deducciones.IR,
                 //Total_Deducciones=e.Deducciones.TotalDeducciones,
@@ -134,30 +151,30 @@ namespace Infraestructure.EmpleadosRepos
             int i = 0;
             foreach (Empleado e in empleados)
             {
-                empleadosDgv[i] = new EmpleadoDgv()
-                {
-                    Cargo = e.Cargos,
-                    Id = e.Id,
-                    Nombre_Completo = e.NombreCompleto,
-                    CodigoINSS = e.CodigoINSS,
-                    Salario_Mensual = e.Remuneraciones.SalarioBase,
-                    Horas_Extras = e.Remuneraciones.HorasExtras,
-                    Ingreso_Horas_Extras = e.Remuneraciones.IngresoHorasExtras,
-                    Total_Ingresos = e.Remuneraciones.TotalIngresos,
-                    //INSS_Laboral = e.Deducciones.INSSLaboral,
-                    //IR = e.Deducciones.IR,
-                    //Total_Deducciones = e.Deducciones.TotalDeducciones,
-                    //Neto_A_Recibir = e.Deducciones.SalarioNeto
-                    INSS_Laboral = 0,
-                    IR = 0,
-                    Total_Deducciones = 0,
-                    INSS_Patronal = 0,
-                    Aguinaldo = 0,
-                    Indemnizacion = 0,
-                    INATEC = 0,
-                    Prestamos = 0,
-                    Vacaciones = 0,
-                };
+                empleadosDgv[i] = GetResumenEmpleado(e.Id);
+                //empleadosDgv[i] = new EmpleadoDgv()
+                //{
+                //    Cargo = e.Cargos,
+                //    Id = e.Id,
+                //    Nombre_Completo = e.NombreCompleto,
+                //    CodigoINSS = e.CodigoINSS,
+                //    Salario_Mensual = e.Remuneraciones.SalarioBase,
+                //    Horas_Extras = e.Remuneraciones.HorasExtras,
+                //    Ingreso_Horas_Extras = e.Remuneraciones.IngresoHorasExtras,
+                //    Total_Ingresos = e.Remuneraciones.TotalIngresos,
+                //    //INSS_Laboral = e.Deducciones.INSSLaboral,
+                //    //IR = e.Deducciones.IR,
+                //    //Total_Deducciones = e.Deducciones.TotalDeducciones,
+                //    //Neto_A_Recibir = e.Deducciones.SalarioNeto
+                //    INSS_Laboral = 0,
+                //    IR = 0,
+                //    INSS_Patronal = 0,
+                //    Aguinaldo = 0,
+                //    Indemnizacion = 0,
+                //    INATEC = 0,
+                //    Cuota_Prestamo = 0,
+                //    Vacaciones = 0,
+                //};
                 i++;
             }
             return empleadosDgv;

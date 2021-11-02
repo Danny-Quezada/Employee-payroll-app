@@ -10,7 +10,9 @@ namespace AppCore.Interfaces
     {
         decimal CalculateIR(decimal Salary);
         decimal CalculateInss(decimal Salary);
-        decimal PagoPrestamo(decimal Salary);
+        decimal PagoPrestamo(decimal Salary, decimal Prestamo);
         decimal CalculateHorasExtras(int HorasExtras, decimal Salary);
+        decimal CalculateAguinaldo(decimal Salary, int MesesTrabjados);
+        decimal CalculateIndemnizacion(int MesesTrabajados);
     }
 }

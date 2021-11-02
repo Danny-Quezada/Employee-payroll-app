@@ -112,7 +112,6 @@ C:\Users\Kevin Roa\Desktop\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.
 C:\Users\Kevin Roa\Desktop\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.csproj.CoreCompileInputs.cache
 C:\Users\Kevin Roa\Desktop\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.exe
 C:\Users\Kevin Roa\Desktop\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.pdb
-C:\Users\Kevin Roa\Desktop\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.csproj.CopyComplete
 C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\NominasTrabajo\bin\Debug\NominasTrabajo.exe.config
 C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\NominasTrabajo\bin\Debug\NominasTrabajo.exe
 C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\NominasTrabajo\bin\Debug\NominasTrabajo.pdb

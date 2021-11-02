@@ -17,9 +17,19 @@ namespace AppCore.Services
             this.processesEmpleado = processesEmpleado;
         }
 
+        public decimal CalculateAguinaldo(decimal Salary, int MesesTrabajados)
+        {
+            return processesEmpleado.CalculateAguinaldo(Salary, MesesTrabajados);
+        }
+
         public decimal CalculateHorasExtras(int HorasExtras, decimal Salary)
         {
             return processesEmpleado.CalculateHorasExtras(HorasExtras, Salary);
+        }
+
+        public decimal CalculateIndemnizacion(int MesesTrabajados)
+        {
+            return processesEmpleado.CalculateIndemnizacion(MesesTrabajados);
         }
 
         public decimal CalculateInss(decimal Salary)
@@ -32,9 +42,9 @@ namespace AppCore.Services
             return processesEmpleado.CalculateIR(Salary);
         }
 
-        public decimal PagoPrestamo(decimal Salary)
+        public decimal PagoPrestamo(decimal Salary, decimal Prestamo)
         {
-            return processesEmpleado.PagoPrestamo(Salary);
+            return processesEmpleado.PagoPrestamo(Salary, Prestamo);
         }
     }
 }

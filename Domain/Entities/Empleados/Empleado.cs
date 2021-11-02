@@ -19,6 +19,9 @@ namespace Domain.Entities.Empleados
 		public Remuneraciones Remuneraciones { get; set; }
 		public Cargos Cargos { get; set; }
 		public EstadoTrabajador Estado { get; set; }
+		public decimal Prestamo { get; set; }
+		public int MesesTrabajadosAguinaldo { get; set; }
+		public int MesesTrabajadosIndemnizacion { get; set; }
 
 		public Empleado(string nombreCompleto, Remuneraciones rem, string codINSS, int hrs)
         {

@@ -44,10 +44,21 @@ namespace Infraestructure.Repository
             return ir;
         }
 
-        public decimal PagoPrestamo(decimal Salary)
+        public decimal CalculateAguinaldo(decimal Salary, int MesesTrabajados)
         {
-            //Se deberia de cambiar la logica
+            //Aqui da 0 porque no lleva ningun mes trabajado, esto tambien lo hare con lo de los enums
+            return (Salary / 12) * MesesTrabajados;
+        }
+
+        public decimal CalculateIndemnizacion(int MesesTrabajados)
+        {
+            //Se debe realizar, pero necesito contar los meses, y para eso necesio lo de los enums de los meses
             return 0;
+        }
+
+        public decimal PagoPrestamo(decimal Salary, decimal Prestamo)
+        {
+            return Salary - Prestamo;
         }
     }
 }

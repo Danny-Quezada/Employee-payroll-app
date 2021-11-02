@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="Repository\EmpleadoListRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\EmpleadoRepository.cs" />
     <Compile Include="Repository\ProcessesEmpleadosRepository.cs" />
     <Compile Include="Repository\ProcessesEmpresaRepository.cs" />
   </ItemGroup>
@@ -76,6 +77,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AppCore\AppCore.csproj">
+      <Project>{A5571671-8A0F-4ABA-A1B9-C11D9E700E27}</Project>
+      <Name>AppCore</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{74AFD065-1AA8-4ADE-9D2E-3AFE5B7C61D3}</Project>
       <Name>Domain</Name>

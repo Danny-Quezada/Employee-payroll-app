@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AppCore.Interfaces;
 using Domain.Entities.Empleados;
+using Domain.Interfaces;
+using Infraestructure.EmpleadosRepos;
 
 namespace NominasTrabajo
 
@@ -19,9 +21,15 @@ namespace NominasTrabajo
 		private int n= 0;
 		public IEmpleadoService empleadoService { get; set; }
 		public IEmpleadoService despedidos { get; set; }
-		public FrmPrincipal()
+		IProcesses processes;
+		IEmpresaService empresaService;
+		public FrmPrincipal(IProcesses processes, IEmpresaService empresaService)
 		{
+			this.processes = processes;
+			this.empresaService = empresaService;
+			EmpleadoListRepository empleadoListRepository = new EmpleadoListRepository(processes, empresaService);
 			InitializeComponent();
+
 		}
 
 		private void FrmPrincipal_Load(object sender, EventArgs e)
@@ -102,7 +110,7 @@ namespace NominasTrabajo
             {
                 guna2DataGridView1.Rows.Add(emp.Id, emp.CodigoINSS, emp.Nombre_Completo, emp.Salario_Mensual, emp.Cargo, emp.Horas_Extras,
                     emp.Ingreso_Horas_Extras, emp.Total_Ingresos, emp.INSS_Laboral, emp.IR, emp.Total_Deducciones, emp.Neto_A_Recibir, emp.INSS_Patronal,
-                    emp.Prestamos, emp.Aguinaldo, emp.Vacaciones, emp.Indemnizacion, emp.INATEC);    
+                    emp.Cuota_Prestamo, emp.Aguinaldo, emp.Vacaciones, emp.Indemnizacion, emp.INATEC);    
             }	
 		}
 

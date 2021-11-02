@@ -13,5 +13,6 @@ namespace Domain.Interfaces
         EmpleadoDgv[] GetResumenEmpleados();
         void Despedir(int id);
         void QuitarDespedidos(Empleado empleado);
+        int CalculoFactoy(EmpleadoDgv empleadoDgv);
     }
 }

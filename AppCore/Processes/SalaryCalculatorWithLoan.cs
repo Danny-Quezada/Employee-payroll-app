@@ -9,22 +9,20 @@ namespace AppCore.Processes
 {
     public class SalaryCalculatorWithLoan : ISalary
     {
-        public SalaryCalculatorWithLoan(decimal PaymentMonth)
+        public SalaryCalculatorWithLoan(IProcesses processes)
         {
-            this.PaymentMonth = PaymentMonth;
+            this.Processes = processes;
         }
         public SalaryCalculatorWithLoan()
         {
 
         }
-
-        private decimal PaymentMonth;
         private IProcesses Processes;
         private decimal PaymentLoan(decimal Salary, decimal PaymenMonth)
         {
             return Salary - PaymenMonth;
         }
-        protected override decimal CalculateSalary(decimal Salary)
+        public override decimal CalculateSalary(decimal Salary, decimal PaymentMonth)
         {
             decimal ir = Processes.CalculateIR(Salary), Inss =
                 Processes.CalculateInss(Salary);

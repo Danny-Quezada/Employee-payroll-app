@@ -48,7 +48,6 @@ C:\Users\Kevin Roa\Desktop\TareaDeCurso\Infraestructure\bin\Debug\System.Runtime
 C:\Users\Kevin Roa\Desktop\TareaDeCurso\Infraestructure\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Kevin Roa\Desktop\TareaDeCurso\Infraestructure\obj\Debug\Infraestructure.csproj.AssemblyReference.cache
 C:\Users\Kevin Roa\Desktop\TareaDeCurso\Infraestructure\obj\Debug\Infraestructure.csproj.CoreCompileInputs.cache
-C:\Users\Kevin Roa\Desktop\TareaDeCurso\Infraestructure\obj\Debug\Infraestructure.csproj.CopyComplete
 C:\Users\Kevin Roa\Desktop\TareaDeCurso\Infraestructure\obj\Debug\Infraestructure.dll
 C:\Users\Kevin Roa\Desktop\TareaDeCurso\Infraestructure\obj\Debug\Infraestructure.pdb
 C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\Infraestructure\obj\Debug\Infraestructure.csproj.AssemblyReference.cache
@@ -77,3 +76,6 @@ C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\Infraestructure\bin\D
 C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\Infraestructure\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\Infraestructure\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\Infraestructure\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\Infraestructure\bin\Debug\AppCore.dll
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\Infraestructure\bin\Debug\AppCore.pdb
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\Infraestructure\bin\Debug\AppCore.dll.config
