@@ -21,5 +21,11 @@ namespace Domain.Entities.Empleados
         public decimal IR { get; set; }
         public decimal Total_Deducciones { get; set; }
         public decimal Neto_A_Recibir => Total_Ingresos - Total_Deducciones;
+        public decimal INSS_Patronal { get; set; }
+        public decimal INATEC { get; set; }
+        public decimal Aguinaldo { get; set; }
+        public decimal Indemnizacion { get; set; }
+        public decimal Vacaciones { get; set; }
+        public decimal Prestamos { get; set; }
     }
 }

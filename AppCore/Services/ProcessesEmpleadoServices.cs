@@ -11,6 +11,12 @@ namespace AppCore.Services
     public class ProcessesEmpleadoServices : IProcesses
     {
         private IProcessesEmpleado processesEmpleado;
+
+        public ProcessesEmpleadoServices(IProcessesEmpleado processesEmpleado)
+        {
+            this.processesEmpleado = processesEmpleado;
+        }
+
         public decimal CalculateHorasExtras(int HorasExtras, decimal Salary)
         {
             return processesEmpleado.CalculateHorasExtras(HorasExtras, Salary);

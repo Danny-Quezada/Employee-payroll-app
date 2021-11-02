@@ -1,5 +1,6 @@
 ﻿
 using AppCore.Interfaces;
+using AppCore.Processes;
 using Domain.Entities.Empleados;
 using Domain.Enums.CargosEmpleados;
 using System;
@@ -76,7 +77,7 @@ namespace NominasTrabajo
 		{
             try
             {
-				verificarDatos(txtNombre.Texts, txtSalario.Texts, txtCodigoInss.Texts, txtHorasTrabajadas.Texts);
+                verificarDatos(txtNombre.Texts, txtSalario.Texts, txtCodigoInss.Texts, txtHorasTrabajadas.Texts);
                 Remuneraciones rem = new Remuneraciones()
                 {
                     SalarioBase = decimal.Parse(txtSalario.Texts)
@@ -93,7 +94,7 @@ namespace NominasTrabajo
             {
                 MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-		}
+        }
 		private void verificarDatos(string nombre, string salario, string noINSS, string hrs)
         {
 			if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(noINSS) || string.IsNullOrEmpty(salario) || string.IsNullOrEmpty(hrs) || cmbCargos.SelectedIndex==-1)

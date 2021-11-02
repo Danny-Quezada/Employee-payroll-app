@@ -11,6 +11,12 @@ namespace AppCore.Services
     public class ProcessesEmpresaServices : IEmpresaService
     {
         private IProcessesEmpresa processesEmpresa;
+
+        public ProcessesEmpresaServices(IProcessesEmpresa processesEmpresa)
+        {
+            this.processesEmpresa = processesEmpresa;
+        }
+
         public decimal CalculateInatec(decimal SalarioTrabajadores)
         {
             return processesEmpresa.CalculateInatec(SalarioTrabajadores);

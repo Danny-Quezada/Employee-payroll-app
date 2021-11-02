@@ -16,6 +16,7 @@ namespace Infraestructure.EmpleadosRepos
         public EmpleadoListRepository()
         {
             empleados = new List<Empleado>();
+            empleadosDespedidos = new List<Empleado>();
         }
         public void Create(Empleado t)
         {
@@ -72,15 +73,22 @@ namespace Infraestructure.EmpleadosRepos
 
         public int GetLastId()
         {
-            
             Empleado Tmp = empleados.FindLast(O => O.Id > 0);
             Empleado Tmp1 = empleadosDespedidos.FindLast(O => O.Id > 0);
             if (Tmp == null && Tmp1 == null)
             {
                 return 0;
             }
-            if (Tmp1 == )
-            return Tmp.Id > Tmp1.Id ? Tmp.Id : T
+            if (Tmp == null)
+            {
+                return Tmp1.Id;
+            }
+            if (Tmp1 == null)
+            {
+                return Tmp.Id;
+            }
+            return Tmp.Id > Tmp1.Id ? Tmp.Id : Tmp1.Id;
+        }
         //TODO: Mejorar este metodo
         public EmpleadoDgv GetResumenEmpleado(int id)
         {
@@ -96,12 +104,18 @@ namespace Infraestructure.EmpleadosRepos
                 Nombre_Completo = e.NombreCompleto,
                 CodigoINSS = e.CodigoINSS,
                 Salario_Mensual = e.Remuneraciones.SalarioBase,
-                Horas_Extras=e.Remuneraciones.HorasExtras,
-                Ingreso_Horas_Extras=e.Remuneraciones.IngresoHorasExtras,
-                Total_Ingresos=e.Remuneraciones.TotalIngresos,
-                INSS_Laboral=0,
-                IR=0,
-                Total_Deducciones=0,
+                Horas_Extras = e.Remuneraciones.HorasExtras,
+                Ingreso_Horas_Extras = e.Remuneraciones.IngresoHorasExtras,
+                Total_Ingresos = e.Remuneraciones.TotalIngresos,
+                INSS_Laboral = 0,
+                IR = 0,
+                Total_Deducciones = 0,
+                INSS_Patronal = 0,
+                Aguinaldo=0,
+                Indemnizacion=0,
+                INATEC=0,
+                Prestamos=0,
+                Vacaciones=0,
                 //INSS_Laboral=e.Deducciones.INSSLaboral,
                 //IR=e.Deducciones.IR,
                 //Total_Deducciones=e.Deducciones.TotalDeducciones,
@@ -137,6 +151,12 @@ namespace Infraestructure.EmpleadosRepos
                     INSS_Laboral = 0,
                     IR = 0,
                     Total_Deducciones = 0,
+                    INSS_Patronal = 0,
+                    Aguinaldo = 0,
+                    Indemnizacion = 0,
+                    INATEC = 0,
+                    Prestamos = 0,
+                    Vacaciones = 0,
                 };
                 i++;
             }

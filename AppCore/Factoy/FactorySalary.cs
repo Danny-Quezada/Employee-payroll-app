@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AppCore.Factoy
 {
-    public class FactorySalary
+    public static class FactorySalary
     {
         public static ISalary CreateMethod(ISalary e) 
         {

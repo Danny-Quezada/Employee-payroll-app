@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AppCore.Interfaces;
+using Domain.Entities.Empleados;
 
 namespace NominasTrabajo
 
@@ -95,8 +96,14 @@ namespace NominasTrabajo
 			FrmEmpleado frmEmpleado = new FrmEmpleado();
 			frmEmpleado.empleadoService = empleadoService;
 			frmEmpleado.ShowDialog();
-			guna2DataGridView1.Columns.Clear();
-			guna2DataGridView1.DataSource = empleadoService.GetResumenEmpleados();
+            guna2DataGridView1.Rows.Clear();
+            //guna2DataGridView1.DataSource = empleadoService.GetResumenEmpleados();
+			foreach (EmpleadoDgv emp in empleadoService.GetResumenEmpleados())
+            {
+                guna2DataGridView1.Rows.Add(emp.Id, emp.CodigoINSS, emp.Nombre_Completo, emp.Salario_Mensual, emp.Cargo, emp.Horas_Extras,
+                    emp.Ingreso_Horas_Extras, emp.Total_Ingresos, emp.INSS_Laboral, emp.IR, emp.Total_Deducciones, emp.Neto_A_Recibir, emp.INSS_Patronal,
+                    emp.Prestamos, emp.Aguinaldo, emp.Vacaciones, emp.Indemnizacion, emp.INATEC);    
+            }	
 		}
 
 		private void btnModificar_Click(object sender, EventArgs e)
