@@ -35,15 +35,6 @@ namespace NominasTrabajo
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.btnAgregar = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.pbExit = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnModificar = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btnEliminar = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.lblNomina = new System.Windows.Forms.Label();
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NUMINSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +53,15 @@ namespace NominasTrabajo
             this.Vacaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Indemnizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.INATEC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.btnAgregar = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.pbExit = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnModificar = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnEliminar = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.lblNomina = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -151,138 +151,6 @@ namespace NominasTrabajo
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.guna2DataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentClick);
-            // 
-            // guna2BorderlessForm1
-            // 
-            this.guna2BorderlessForm1.BorderRadius = 21;
-            this.guna2BorderlessForm1.ContainerControl = this;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregar.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnAgregar.CheckedState.Parent = this.btnAgregar;
-            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregar.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnAgregar.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnAgregar.HoverState.Parent = this.btnAgregar;
-            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnAgregar.ImageRotate = 0F;
-            this.btnAgregar.ImageSize = new System.Drawing.Size(70, 70);
-            this.btnAgregar.Location = new System.Drawing.Point(1125, 161);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnAgregar.PressedState.Parent = this.btnAgregar;
-            this.btnAgregar.ShadowDecoration.Parent = this.btnAgregar;
-            this.btnAgregar.Size = new System.Drawing.Size(79, 76);
-            this.btnAgregar.TabIndex = 3;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.BorderRadius = 16;
-            this.guna2Elipse1.TargetControl = this.guna2DataGridView1;
-            // 
-            // pbExit
-            // 
-            this.pbExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbExit.Image = ((System.Drawing.Image)(resources.GetObject("pbExit.Image")));
-            this.pbExit.Location = new System.Drawing.Point(1180, -1);
-            this.pbExit.Name = "pbExit";
-            this.pbExit.Size = new System.Drawing.Size(44, 22);
-            this.pbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbExit.TabIndex = 5;
-            this.pbExit.TabStop = false;
-            this.pbExit.Click += new System.EventHandler(this.pbExit_Click);
-            this.pbExit.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbExit_MouseDown);
-            this.pbExit.MouseLeave += new System.EventHandler(this.pbExit_MouseLeave);
-            this.pbExit.MouseHover += new System.EventHandler(this.pbExit_MouseHover);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1149, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(37, 22);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1111, -1);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 22);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModificar.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnModificar.CheckedState.Parent = this.btnModificar;
-            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificar.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnModificar.HoverState.ImageSize = new System.Drawing.Size(56, 56);
-            this.btnModificar.HoverState.Parent = this.btnModificar;
-            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnModificar.ImageRotate = 0F;
-            this.btnModificar.ImageSize = new System.Drawing.Size(60, 60);
-            this.btnModificar.Location = new System.Drawing.Point(1125, 301);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnModificar.PressedState.Parent = this.btnModificar;
-            this.btnModificar.ShadowDecoration.Parent = this.btnModificar;
-            this.btnModificar.Size = new System.Drawing.Size(84, 81);
-            this.btnModificar.TabIndex = 8;
-            this.btnModificar.Visible = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminar.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnEliminar.CheckedState.Parent = this.btnEliminar;
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnEliminar.HoverState.Parent = this.btnEliminar;
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.ImageFlip = Guna.UI2.WinForms.Enums.FlipOrientation.Horizontal;
-            this.btnEliminar.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnEliminar.ImageRotate = 0F;
-            this.btnEliminar.ImageSize = new System.Drawing.Size(60, 60);
-            this.btnEliminar.Location = new System.Drawing.Point(1120, 459);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnEliminar.PressedState.Parent = this.btnEliminar;
-            this.btnEliminar.ShadowDecoration.Parent = this.btnEliminar;
-            this.btnEliminar.Size = new System.Drawing.Size(84, 75);
-            this.btnEliminar.TabIndex = 9;
-            this.btnEliminar.Visible = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // lblNomina
-            // 
-            this.lblNomina.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblNomina.AutoSize = true;
-            this.lblNomina.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomina.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblNomina.Location = new System.Drawing.Point(587, 9);
-            this.lblNomina.Name = "lblNomina";
-            this.lblNomina.Size = new System.Drawing.Size(133, 45);
-            this.lblNomina.TabIndex = 2;
-            this.lblNomina.Text = "Nómina";
             // 
             // Numero
             // 
@@ -391,6 +259,137 @@ namespace NominasTrabajo
             this.INATEC.HeaderText = "INATEC";
             this.INATEC.Name = "INATEC";
             this.INATEC.ReadOnly = true;
+            // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.BorderRadius = 21;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregar.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnAgregar.CheckedState.Parent = this.btnAgregar;
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnAgregar.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnAgregar.HoverState.Parent = this.btnAgregar;
+            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
+            this.btnAgregar.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnAgregar.ImageRotate = 0F;
+            this.btnAgregar.ImageSize = new System.Drawing.Size(70, 70);
+            this.btnAgregar.Location = new System.Drawing.Point(1125, 161);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnAgregar.PressedState.Parent = this.btnAgregar;
+            this.btnAgregar.ShadowDecoration.Parent = this.btnAgregar;
+            this.btnAgregar.Size = new System.Drawing.Size(79, 76);
+            this.btnAgregar.TabIndex = 3;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 16;
+            this.guna2Elipse1.TargetControl = this.guna2DataGridView1;
+            // 
+            // pbExit
+            // 
+            this.pbExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbExit.Image = ((System.Drawing.Image)(resources.GetObject("pbExit.Image")));
+            this.pbExit.Location = new System.Drawing.Point(1180, -1);
+            this.pbExit.Name = "pbExit";
+            this.pbExit.Size = new System.Drawing.Size(44, 22);
+            this.pbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbExit.TabIndex = 5;
+            this.pbExit.TabStop = false;
+            this.pbExit.Click += new System.EventHandler(this.pbExit_Click);
+            this.pbExit.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbExit_MouseDown);
+            this.pbExit.MouseLeave += new System.EventHandler(this.pbExit_MouseLeave);
+            this.pbExit.MouseHover += new System.EventHandler(this.pbExit_MouseHover);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1149, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(37, 22);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(1111, -1);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 22);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnModificar.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnModificar.CheckedState.Parent = this.btnModificar;
+            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificar.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnModificar.HoverState.ImageSize = new System.Drawing.Size(56, 56);
+            this.btnModificar.HoverState.Parent = this.btnModificar;
+            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
+            this.btnModificar.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnModificar.ImageRotate = 0F;
+            this.btnModificar.ImageSize = new System.Drawing.Size(60, 60);
+            this.btnModificar.Location = new System.Drawing.Point(1125, 301);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnModificar.PressedState.Parent = this.btnModificar;
+            this.btnModificar.ShadowDecoration.Parent = this.btnModificar;
+            this.btnModificar.Size = new System.Drawing.Size(84, 81);
+            this.btnModificar.TabIndex = 8;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnEliminar.CheckedState.Parent = this.btnEliminar;
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnEliminar.HoverState.Parent = this.btnEliminar;
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageFlip = Guna.UI2.WinForms.Enums.FlipOrientation.Horizontal;
+            this.btnEliminar.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnEliminar.ImageRotate = 0F;
+            this.btnEliminar.ImageSize = new System.Drawing.Size(60, 60);
+            this.btnEliminar.Location = new System.Drawing.Point(1120, 459);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnEliminar.PressedState.Parent = this.btnEliminar;
+            this.btnEliminar.ShadowDecoration.Parent = this.btnEliminar;
+            this.btnEliminar.Size = new System.Drawing.Size(84, 75);
+            this.btnEliminar.TabIndex = 9;
+            this.btnEliminar.Visible = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // lblNomina
+            // 
+            this.lblNomina.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblNomina.AutoSize = true;
+            this.lblNomina.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomina.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblNomina.Location = new System.Drawing.Point(587, 9);
+            this.lblNomina.Name = "lblNomina";
+            this.lblNomina.Size = new System.Drawing.Size(133, 45);
+            this.lblNomina.TabIndex = 2;
+            this.lblNomina.Text = "Nómina";
             // 
             // FrmPrincipal
             // 

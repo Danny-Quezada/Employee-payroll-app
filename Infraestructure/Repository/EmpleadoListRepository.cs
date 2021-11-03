@@ -205,7 +205,8 @@ namespace Infraestructure.EmpleadosRepos
             {
                 throw new ArgumentException($"El empleado con Id {t.Id} no se encuentra");
             }
-            empleados[index] = t;
+            empleados.Remove(empleados[index]);
+            empleados.Add(t);
             return index;
         }
     }

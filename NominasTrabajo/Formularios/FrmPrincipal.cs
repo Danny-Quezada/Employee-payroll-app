@@ -105,24 +105,33 @@ namespace NominasTrabajo
 			frmEmpleado.empleadoService = empleadoService;
 			frmEmpleado.ShowDialog();
             guna2DataGridView1.Rows.Clear();
-            //guna2DataGridView1.DataSource = empleadoService.GetResumenEmpleados();
-			foreach (EmpleadoDgv emp in empleadoService.GetResumenEmpleados())
-            {
-                guna2DataGridView1.Rows.Add(emp.Id, emp.CodigoINSS, emp.Nombre_Completo, emp.Salario_Mensual, emp.Cargo, emp.Horas_Extras,
-                    emp.Ingreso_Horas_Extras, emp.Total_Ingresos, emp.INSS_Laboral, emp.IR, emp.Total_Deducciones, emp.Neto_A_Recibir, emp.INSS_Patronal,
-                    emp.Cuota_Prestamo, emp.Aguinaldo, emp.Vacaciones, emp.Indemnizacion, emp.INATEC);    
-            }	
+			//guna2DataGridView1.DataSource = empleadoService.GetResumenEmpleados();
+			llenarDgv();
 		}
 
 		private void btnModificar_Click(object sender, EventArgs e)
 		{
 			FrmEditarEmpleado frmEditar = new FrmEditarEmpleado();
-			frmEditar.Show();
+			frmEditar.empleadoService = empleadoService;
+			frmEditar.ShowDialog();
+			guna2DataGridView1.Rows.Clear();
+			llenarDgv();
+
+
 		}
 
-		private void btnEliminar_Click(object sender, EventArgs e)
-		{
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
 
+        }
+		private void llenarDgv()
+        {
+			foreach (EmpleadoDgv emp in empleadoService.GetResumenEmpleados())
+			{
+				guna2DataGridView1.Rows.Add(emp.Id, emp.CodigoINSS, emp.Nombre_Completo, emp.Salario_Mensual, emp.Cargo, emp.Horas_Extras,
+					emp.Ingreso_Horas_Extras, emp.Total_Ingresos, emp.INSS_Laboral, emp.IR, emp.Total_Deducciones, emp.Neto_A_Recibir, emp.INSS_Patronal,
+					emp.Cuota_Prestamo, emp.Aguinaldo, emp.Vacaciones, emp.Indemnizacion, emp.INATEC);
+			}
 		}
-	}
+    }
 }
