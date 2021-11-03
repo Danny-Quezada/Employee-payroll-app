@@ -376,7 +376,6 @@ namespace NominasTrabajo
             this.btnEliminar.ShadowDecoration.Parent = this.btnEliminar;
             this.btnEliminar.Size = new System.Drawing.Size(84, 75);
             this.btnEliminar.TabIndex = 9;
-            this.btnEliminar.Visible = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // lblNomina

@@ -11,6 +11,7 @@ using AppCore.Interfaces;
 using Domain.Entities.Empleados;
 using Domain.Interfaces;
 using Infraestructure.EmpleadosRepos;
+using NominasTrabajo.Formularios;
 
 namespace NominasTrabajo
 
@@ -122,8 +123,12 @@ namespace NominasTrabajo
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
-        }
+			Despedir Despedir = new Despedir();
+			Despedir.empleadoService = empleadoService;
+			Despedir.ShowDialog();
+			guna2DataGridView1.Rows.Clear();
+			llenarDgv();
+		}
 		private void llenarDgv()
         {
 			foreach (EmpleadoDgv emp in empleadoService.GetResumenEmpleados())
