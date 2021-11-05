@@ -32,7 +32,7 @@ namespace NominasTrabajo
 		private void guna2GradientButton1_Click(object sender, EventArgs e)
 		{
 			var user = "admin";
-			var contrasena = "LaDaRoKe";
+			var contrasena = "ladaroke";
 			
 			
 			if(rjTextBox1.Texts.Equals(user) && rjTextBox2.Texts.Equals(contrasena))
@@ -71,7 +71,7 @@ namespace NominasTrabajo
 		private void rjTextBox2_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			var user = "admin";
-			var contrasena = "LaDaRoKe";
+			var contrasena = "ladaroke";
 			if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
 				if (rjTextBox1.Texts.Equals(user) && rjTextBox2.Texts.Equals(contrasena))

@@ -11,15 +11,15 @@ using AppCore.Interfaces;
 using Domain.Entities.Empleados;
 using Domain.Interfaces;
 using Infraestructure.EmpleadosRepos;
-using NominasTrabajo.Formularios;
+
 
 namespace NominasTrabajo
 
 {
-	
+
 	public partial class FrmPrincipal : Form
 	{
-		private int n= 0;
+		private int n = 0;
 		public IEmpleadoService empleadoService { get; set; }
 		public IEmpleadoService despedidos { get; set; }
 		IProcesses processes;
@@ -39,7 +39,7 @@ namespace NominasTrabajo
 			//guna2DataGridView1.Rows.Add("2", "Josue");
 		}
 
-		
+
 
 		private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
@@ -48,6 +48,7 @@ namespace NominasTrabajo
 				n = e.RowIndex;
 				btnModificar.Visible = true;
 				btnEliminar.Visible = true;
+				
 			}
 			else
 			{
@@ -63,13 +64,13 @@ namespace NominasTrabajo
 
 		private void pbExit_MouseDown(object sender, MouseEventArgs e)
 		{
-			
+
 		}
 
 		private void pbExit_MouseHover(object sender, EventArgs e)
 		{
 			pbExit.BackColor = Color.Red;
-			
+
 		}
 
 		private void pbExit_MouseLeave(object sender, EventArgs e)
@@ -87,12 +88,12 @@ namespace NominasTrabajo
 			{
 
 				WindowState = FormWindowState.Normal;
-				this.Width= 1060;
+				this.Width = 1060;
 				this.Height = 700;
 
 
 			}
-			
+
 		}
 
 		private void pictureBox2_Click(object sender, EventArgs e)
@@ -105,7 +106,7 @@ namespace NominasTrabajo
 			FrmEmpleado frmEmpleado = new FrmEmpleado();
 			frmEmpleado.empleadoService = empleadoService;
 			frmEmpleado.ShowDialog();
-            guna2DataGridView1.Rows.Clear();
+			guna2DataGridView1.Rows.Clear();
 			//guna2DataGridView1.DataSource = empleadoService.GetResumenEmpleados();
 			llenarDgv();
 		}
@@ -121,13 +122,10 @@ namespace NominasTrabajo
 
 		}
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-			Despedir Despedir = new Despedir();
-			Despedir.empleadoService = empleadoService;
-			Despedir.ShowDialog();
-			guna2DataGridView1.Rows.Clear();
-			llenarDgv();
+		private void btnEliminar_Click(object sender, EventArgs e)
+		{
+			var a = (guna2DataGridView1.Rows[n].Cells[0].Value);
+			empleadoService.Despedir((int)a);
 		}
 		private void llenarDgv()
         {
@@ -138,5 +136,7 @@ namespace NominasTrabajo
 					emp.Cuota_Prestamo, emp.Aguinaldo, emp.Vacaciones, emp.Indemnizacion, emp.INATEC);
 			}
 		}
+
+        
     }
 }

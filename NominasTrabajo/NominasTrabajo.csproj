@@ -77,12 +77,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formularios\Despedir.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Despedir.Designer.cs">
-      <DependentUpon>Despedir.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\FrmEditarEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,9 +103,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularios\Despedir.resx">
-      <DependentUpon>Despedir.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmEditarEmpleado.resx">
       <DependentUpon>FrmEditarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
