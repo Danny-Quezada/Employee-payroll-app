@@ -41,9 +41,11 @@ namespace NominasTrabajo
 			validaciones(txtID.Texts, txtNombre.Texts, txtSalario.Texts, txtNoInss.Texts, txtHoras.Texts);
 			Remuneraciones rem = new Remuneraciones()
 			{
-				SalarioBase = decimal.Parse(txtSalario.Texts)
+				SalarioBase = decimal.Parse(txtSalario.Texts),
+				HorasExtras = int.Parse(txtHoras.Texts),
+
 			};
-			Empleado empleado = new Empleado(txtNombre.Texts, rem, txtNoInss.Texts, int.Parse(txtHoras.Texts))
+			Empleado empleado = new Empleado(txtNombre.Texts, rem, txtNoInss.Texts)
 			{
 				Cargos = (Cargos)cmbCargos.SelectedIndex,
 				Id = int.Parse(txtID.Texts)
@@ -64,9 +66,9 @@ namespace NominasTrabajo
 			{
 				throw new ArgumentException("El numero del INSS no puede tener menos o mas de 8 digitos");
 			}
-			if (int.Parse(hrs) < 240)
+			if (int.Parse(hrs) < 0 || int.Parse(hrs) > 36)
 			{
-				throw new ArgumentException("No se puede trabajar menos de 240 horas al mes");
+				throw new ArgumentException("El numero que ha ingresado en las horas extras debe ser mayor a 0 y menor a 36");
 			}
 			if (decimal.Parse(salario) <= 0)
 			{

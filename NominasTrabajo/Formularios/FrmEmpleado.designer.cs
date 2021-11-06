@@ -176,11 +176,12 @@ namespace NominasTrabajo
             this.txtHorasTrabajadas.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtHorasTrabajadas.PasswordChar = false;
             this.txtHorasTrabajadas.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtHorasTrabajadas.PlaceholderText = "Horas trabajadas";
+            this.txtHorasTrabajadas.PlaceholderText = "Horas Extra";
             this.txtHorasTrabajadas.Size = new System.Drawing.Size(232, 35);
             this.txtHorasTrabajadas.TabIndex = 6;
             this.txtHorasTrabajadas.Texts = "";
             this.txtHorasTrabajadas.UnderlinedStyle = true;
+            this.txtHorasTrabajadas._TextChanged += new System.EventHandler(this.txtHorasTrabajadas__TextChanged);
             this.txtHorasTrabajadas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHorasTrabajadas_KeyPress);
             // 
             // btnAgregar

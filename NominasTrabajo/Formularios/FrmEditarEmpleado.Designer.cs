@@ -150,7 +150,7 @@ namespace NominasTrabajo
             this.txtHoras.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtHoras.PasswordChar = false;
             this.txtHoras.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtHoras.PlaceholderText = "Horas trabajadas";
+            this.txtHoras.PlaceholderText = "Horas Extra";
             this.txtHoras.Size = new System.Drawing.Size(232, 35);
             this.txtHoras.TabIndex = 12;
             this.txtHoras.Texts = "";

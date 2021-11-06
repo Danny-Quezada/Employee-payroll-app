@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AppCore.Interfaces;
+using NominasTrabajo.Formularios;
 
 namespace NominasTrabajo
 {
@@ -38,9 +39,7 @@ namespace NominasTrabajo
 			if(rjTextBox1.Texts.Equals(user) && rjTextBox2.Texts.Equals(contrasena))
             {
 				this.Hide();
-				FrmPrincipal frm = new FrmPrincipal(processes, empresaService);
-				frm.empleadoService = empleadoService;
-				frm.despedidos = despedidos;
+				Mes_inicial frm = new Mes_inicial(empleadoService,despedidos,processes,empresaService);
 				frm.ShowDialog();
 				this.Close();
 			}
@@ -77,9 +76,7 @@ namespace NominasTrabajo
 				if (rjTextBox1.Texts.Equals(user) && rjTextBox2.Texts.Equals(contrasena))
 				{
 					this.Hide();
-					FrmPrincipal frm = new FrmPrincipal(processes, empresaService);
-					frm.empleadoService = empleadoService;
-					frm.despedidos = despedidos;
+					Mes_inicial frm = new Mes_inicial(empleadoService, despedidos, processes, empresaService);
 					frm.ShowDialog();
 					this.Close();
 				}

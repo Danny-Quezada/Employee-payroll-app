@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AppCore.Interfaces;
 using Domain.Entities.Empleados;
+using Domain.Enums;
 using Domain.Interfaces;
 using Infraestructure.EmpleadosRepos;
 
@@ -24,10 +25,12 @@ namespace NominasTrabajo
 		public IEmpleadoService despedidos { get; set; }
 		IProcesses processes;
 		IEmpresaService empresaService;
-		public FrmPrincipal(IProcesses processes, IEmpresaService empresaService)
+		private int Mes;
+		public FrmPrincipal(IProcesses processes, IEmpresaService empresaService, int Mes)
 		{
 			this.processes = processes;
 			this.empresaService = empresaService;
+			this.Mes = Mes;
 			EmpleadoListRepository empleadoListRepository = new EmpleadoListRepository(processes, empresaService);
 			InitializeComponent();
 
@@ -35,6 +38,8 @@ namespace NominasTrabajo
 
 		private void FrmPrincipal_Load(object sender, EventArgs e)
 		{
+			Meses mes = (Meses)Mes;
+			lblNomina.Text = $"Nómina del mes de {mes}";
 			//guna2DataGridView1.Rows.Add("1","333-333","Danny Alejandro Quezada Cruz",22222,"Gerente General",22,3333,333,33,222222,323233,5555);
 			//guna2DataGridView1.Rows.Add("2", "Josue");
 		}

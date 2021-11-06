@@ -68,7 +68,6 @@
   <ItemGroup>
     <Compile Include="Repository\EmpleadoListRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\EmpleadoRepository.cs" />
     <Compile Include="Repository\ProcessesEmpleadosRepository.cs" />
     <Compile Include="Repository\ProcessesEmpresaRepository.cs" />
   </ItemGroup>

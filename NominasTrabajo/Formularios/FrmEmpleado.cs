@@ -75,17 +75,19 @@ namespace NominasTrabajo
 
 		private void btnAgregar_Click(object sender, EventArgs e)
 		{
-            try
-            {
-                verificarDatos(txtNombre.Texts, txtSalario.Texts, txtCodigoInss.Texts, txtHorasTrabajadas.Texts);
-                Remuneraciones rem = new Remuneraciones()
-                {
-                    SalarioBase = decimal.Parse(txtSalario.Texts)
-                };
-                Empleado empleado = new Empleado(txtNombre.Texts, rem, txtCodigoInss.Texts, int.Parse(txtHorasTrabajadas.Texts))
+			try
+			{
+				verificarDatos(txtNombre.Texts, txtSalario.Texts, txtCodigoInss.Texts, txtHorasTrabajadas.Texts);
+				Remuneraciones rem = new Remuneraciones()
+				{
+					SalarioBase = decimal.Parse(txtSalario.Texts),
+					HorasExtras = int.Parse(txtHorasTrabajadas.Texts)
+				};
+                Empleado empleado = new Empleado(txtNombre.Texts, rem, txtCodigoInss.Texts)
                 {
                     Cargos = (Cargos)cmbCargos.SelectedIndex,
-                    Id = empleadoService.GetLastId() + 1
+                    Id = empleadoService.GetLastId() + 1,
+					
                 };
                 empleadoService.Create(empleado);
                 Dispose();
@@ -97,7 +99,7 @@ namespace NominasTrabajo
         }
 		private void verificarDatos(string nombre, string salario, string noINSS, string hrs)
         {
-			if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(noINSS) || string.IsNullOrEmpty(salario) || string.IsNullOrEmpty(hrs) || cmbCargos.SelectedIndex==-1)
+			if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(noINSS) || string.IsNullOrEmpty(salario) ||  cmbCargos.SelectedIndex==-1)
             {
 				throw new ArgumentException("Hay campos vacios, rellenelos por favor");
             }
@@ -105,14 +107,15 @@ namespace NominasTrabajo
             {
 				throw new ArgumentException("El numero del INSS no puede tener menos o mas de 8 digitos");
             }
-            if (int.Parse(hrs) < 240)
-            {
-				throw new ArgumentException("No se puede trabajar menos de 240 horas al mes");
-            }
+            
             if (decimal.Parse(salario) <= 0)
             {
 				throw new ArgumentException("Un trabajador no puede ganar eso");
             }
+			if(int.Parse(hrs)<0 || int.Parse(hrs) > 36)
+            {
+				throw new ArgumentException("Un trabajador no puede tener esas horas extra");
+			}
         }
 
         private void txtHorasTrabajadas_KeyPress(object sender, KeyPressEventArgs e)
@@ -142,6 +145,11 @@ namespace NominasTrabajo
 				e.Handled = true;
 			}
 		}
+
+        private void txtHorasTrabajadas__TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

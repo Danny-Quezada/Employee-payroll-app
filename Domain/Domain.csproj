@@ -47,6 +47,7 @@
     <Compile Include="Entities\Empleados\Deducciones.cs" />
     <Compile Include="Entities\Empleados\Empleado.cs" />
     <Compile Include="Entities\Empleados\Remuneraciones.cs" />
+    <Compile Include="Enums\Meses.cs" />
     <Compile Include="Enums\EstadoTrabajador.cs" />
     <Compile Include="Interfaces\IEmpleadoRepository.cs" />
     <Compile Include="Interfaces\IModel.cs" />

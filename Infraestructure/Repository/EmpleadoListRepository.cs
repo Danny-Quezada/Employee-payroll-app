@@ -116,6 +116,7 @@ namespace Infraestructure.EmpleadosRepos
             {
                 throw new ArgumentException($"No se puede dar un resumen del empleado con id: {id}");
             }
+            e.Remuneraciones.TotalIngresos = e.Remuneraciones.SalarioBase + processes.CalculateHorasExtras(e.Remuneraciones.HorasExtras, e.Remuneraciones.SalarioBase);
             EmpleadoDgv empleadoDgv = new EmpleadoDgv()
             {
                 Cargo = e.Cargos,
@@ -124,10 +125,10 @@ namespace Infraestructure.EmpleadosRepos
                 CodigoINSS = e.CodigoINSS,
                 Salario_Mensual = e.Remuneraciones.SalarioBase,
                 Horas_Extras = e.Remuneraciones.HorasExtras,
-                Ingreso_Horas_Extras = e.Remuneraciones.IngresoHorasExtras,
-                INSS_Laboral = processes.CalculateInss(e.Remuneraciones.SalarioBase),
+                Ingreso_Horas_Extras = processes.CalculateHorasExtras(e.Remuneraciones.HorasExtras, e.Remuneraciones.SalarioBase),
+                INSS_Laboral = processes.CalculateInss(e.Remuneraciones.TotalIngresos),
                 IR = processes.CalculateIR(e.Remuneraciones.SalarioBase),
-                INSS_Patronal = empresaService.CalculateInssPatronal(e.Remuneraciones.SalarioBase, empleados.Count),
+                INSS_Patronal = empresaService.CalculateInssPatronal(e.Remuneraciones.TotalIngresos, empleados.Count),
                 Aguinaldo = processes.CalculateAguinaldo(e.Remuneraciones.SalarioBase, e.MesesTrabajadosAguinaldo),
                 Indemnizacion = processes.CalculateIndemnizacion(e.MesesTrabajadosIndemnizacion),
                 INATEC = empresaService.CalculateInatec(SalarioTrabajadores),

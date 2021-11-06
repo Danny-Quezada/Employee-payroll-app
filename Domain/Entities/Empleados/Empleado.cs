@@ -12,7 +12,6 @@ namespace Domain.Entities.Empleados
 	{
 		public byte[] Imagen { get; set; }
 		public string NombreCompleto { get; set; }
-		public int HorasTrabajadas { get; set; }
 		public int Id { get; set; }
 		public string CodigoINSS { get; set; }
 		public Deducciones Deducciones { get; set; }
@@ -23,12 +22,12 @@ namespace Domain.Entities.Empleados
 		public int MesesTrabajadosAguinaldo { get; set; }
 		public int MesesTrabajadosIndemnizacion { get; set; }
 
-		public Empleado(string nombreCompleto, Remuneraciones rem, string codINSS, int hrs)
+		public Empleado(string nombreCompleto, Remuneraciones rem, string codINSS)
         {
 			NombreCompleto = nombreCompleto;
 			Remuneraciones = rem;
 			CodigoINSS = codINSS;
-			HorasTrabajadas = hrs;
+			
 			Estado = EstadoTrabajador.Activo;
         }
 	}
