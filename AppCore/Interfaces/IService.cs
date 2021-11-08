@@ -9,9 +9,7 @@ namespace AppCore.Interfaces
     public interface IService<T>
     {
         void Create(T t);
-        int Update(T t);
-        T[] FindAll();
-        bool Delete(T t);
+        ICollection<T> FindAll();
         int GetLastId();
     }
 }

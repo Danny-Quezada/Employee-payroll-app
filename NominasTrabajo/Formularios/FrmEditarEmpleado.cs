@@ -1,21 +1,17 @@
-﻿using AppCore.Interfaces;
+﻿using System;
+using System.Data;
+using System.Linq;
+using System.Windows.Forms;
+using AppCore.Interfaces;
 using Domain.Entities.Empleados;
 using Domain.Enums.CargosEmpleados;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace NominasTrabajo
 {
-	public partial class FrmEditarEmpleado : Form
+    public partial class FrmEditarEmpleado : Form
 	{
 		public IEmpleadoService empleadoService { get; set; }
+		public Empleado emp { get; set; }
 		public FrmEditarEmpleado()
 		{
 			InitializeComponent();
@@ -23,7 +19,14 @@ namespace NominasTrabajo
 
 		private void FrmEditarEmpleado_Load(object sender, EventArgs e)
 		{
+			txtId.Focus();
+			txtId.Text = emp.Id.ToString();
 			cmbCargos.Items.AddRange(Enum.GetValues(typeof(Cargos)).Cast<object>().ToArray());
+			txtHrsExtras.Text = emp.Remuneraciones.HorasExtras.ToString();
+			txtNoINSS.Text = emp.CodigoINSS.ToString();
+			txtNombre.Text = emp.NombreCompleto;
+			txtSalario.Text = emp.Remuneraciones.SalarioBase.ToString();
+			cmbCargos.SelectedIndex = (int)emp.Cargos;
 		}
 
 		private void pictureBox3_Click(object sender, EventArgs e)
@@ -38,25 +41,29 @@ namespace NominasTrabajo
 
 		private void guna2GradientButton1_Click(object sender, EventArgs e)
 		{
-			validaciones(txtID.Texts, txtNombre.Texts, txtSalario.Texts, txtNoInss.Texts, txtHoras.Texts);
-			Remuneraciones rem = new Remuneraciones()
-			{
-				SalarioBase = decimal.Parse(txtSalario.Texts),
-				HorasExtras = int.Parse(txtHoras.Texts),
+            try
+            {
+                validaciones(txtId.Text, txtNombre.Text, txtSalario.Text, txtNoINSS.Text, txtHrsExtras.Text);
+                Remuneraciones rem = new Remuneraciones()
+                {
+                    SalarioBase = decimal.Parse(txtSalario.Text),
+                    HorasExtras = int.Parse(txtHrsExtras.Text),
 
-			};
-			Empleado empleado = new Empleado(txtNombre.Texts, rem, txtNoInss.Texts)
-			{
-				Cargos = (Cargos)cmbCargos.SelectedIndex,
-				Id = int.Parse(txtID.Texts)
-			};
-			empleadoService.Update(empleado);
-			
-			Dispose();
+                };
+                Empleado empleado = new Empleado(txtNombre.Text, rem, txtNoINSS.Text)
+                {
+                    Cargos = (Cargos)cmbCargos.SelectedIndex,
+                    Id = int.Parse(txtId.Text)
+                };
+                empleadoService.Update(empleado);
+
+                Dispose();
+            }
+            catch (Exception ex)
+            {
+				MessageBox.Show(ex.Message, "ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
 		}
-		
-		
-		
 		public void validaciones(string  id, string nombre, string salario, string noINSS, string hrs) {
 			if (string.IsNullOrEmpty(id) || string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(noINSS) || string.IsNullOrEmpty(salario) || string.IsNullOrEmpty(hrs) || cmbCargos.SelectedIndex == -1)
 			{
@@ -80,15 +87,6 @@ namespace NominasTrabajo
 			}
 		}
 
-        private void rjTextBoxID_KeyPress(object sender, KeyPressEventArgs e)
-        {
-			if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-			{
-				MessageBox.Show("Solo se pueden colocar numeros enteros", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				e.Handled = true;
-			}
-		}
-
         private void rjTextBox4_KeyPress(object sender, KeyPressEventArgs e)
         {
 			if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -97,17 +95,8 @@ namespace NominasTrabajo
 				e.Handled = true;
 			}
 		}
-
+		//TODO: validarDecimales
         private void rjTextBox2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-			if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-			{
-				MessageBox.Show("Solo se pueden colocar numeros enteros", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				e.Handled = true;
-			}
-		}
-
-        private void rjTextBox5_KeyPress(object sender, KeyPressEventArgs e)
         {
 			if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
 			{

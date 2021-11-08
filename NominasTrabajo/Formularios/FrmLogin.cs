@@ -15,31 +15,28 @@ namespace NominasTrabajo
 {
 	public partial class FrmLogin : Form
 	{
+		private string user = "admin";
+		private string contrasena = "ladaroke";
 		private IEmpleadoService empleadoService;
-		private IEmpleadoService despedidos;
+		//TODO: nunca se ocupa processes
 		private IProcesses processes;
 		private IEmpresaService empresaService;
-		public FrmLogin(IEmpleadoService empleado, IEmpleadoService despedidos, IProcesses processes, IEmpresaService empresaService)
+		private INominaService nominaService;
+		public FrmLogin(IEmpleadoService empleado, IProcesses processes, IEmpresaService empresaService, INominaService nominaService)
 		{
-			this.despedidos = despedidos;
 			this.empleadoService = empleado;
 			this.processes = processes;
 			this.empresaService = empresaService;
+			this.nominaService = nominaService;
 			InitializeComponent();
 		}
 
-	
-
 		private void guna2GradientButton1_Click(object sender, EventArgs e)
 		{
-			var user = "admin";
-			var contrasena = "ladaroke";
-			
-			
 			if(rjTextBox1.Texts.Equals(user) && rjTextBox2.Texts.Equals(contrasena))
             {
 				this.Hide();
-				Mes_inicial frm = new Mes_inicial(empleadoService,despedidos,processes,empresaService);
+				Mes_inicial frm = new Mes_inicial(empleadoService,processes,empresaService,nominaService);
 				frm.ShowDialog();
 				this.Close();
 			}
@@ -47,9 +44,6 @@ namespace NominasTrabajo
             {
 				MessageBox.Show("Credenciales erroneas", "El Usuario o la contaseña no coinciden", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-			
-			
-
 		}
 
 		private void FrmLogin_Load(object sender, EventArgs e)
@@ -69,21 +63,9 @@ namespace NominasTrabajo
 
 		private void rjTextBox2_KeyPress(object sender, KeyPressEventArgs e)
 		{
-			var user = "admin";
-			var contrasena = "ladaroke";
 			if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-				if (rjTextBox1.Texts.Equals(user) && rjTextBox2.Texts.Equals(contrasena))
-				{
-					this.Hide();
-					Mes_inicial frm = new Mes_inicial(empleadoService, despedidos, processes, empresaService);
-					frm.ShowDialog();
-					this.Close();
-				}
-				else
-				{
-					MessageBox.Show("Credenciales erroneas", "El Usuario o la contaseña no coinciden", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				}
+				guna2GradientButton1_Click(sender, e);
 			}
         }
     }

@@ -13,8 +13,14 @@ namespace AppCore.Interfaces
         Empleado GetEmpleadoById(int id);
         EmpleadoDgv GetResumenEmpleado(int id);
         EmpleadoDgv[] GetResumenEmpleados();
-        void Despedir(int id);
+        bool Despedir(int id);
         void QuitarDespedidos(Empleado empleado);
         int CalculoFactoy(EmpleadoDgv empleadoDgv);
+        int Update(Empleado t);
+        bool Delete(Empleado t);
+        void QuitarDespedidosDelMes();
+        ICollection<Empleado> FindAll(int tipo);
+        Empleado GetEmpleadoById(ICollection<Empleado> empleados, int id);
+        void AumentarAntiguedad();
     }
 }

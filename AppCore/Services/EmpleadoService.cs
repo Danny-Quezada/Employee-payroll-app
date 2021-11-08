@@ -9,11 +9,11 @@ using Domain.Interfaces;
 
 namespace AppCore.Services
 {
-    public class EmpleadoService : IEmpleadoService
+    public class EmpleadoService : BaseService<Empleado>,IEmpleadoService
     {
         private IEmpleadoRepository empleadoRepository;
 
-        public EmpleadoService(IEmpleadoRepository empleadoRepository)
+        public EmpleadoService(IEmpleadoRepository empleadoRepository) : base (empleadoRepository)
         {
             this.empleadoRepository = empleadoRepository;
         }
@@ -23,29 +23,15 @@ namespace AppCore.Services
             return empleadoRepository.GetEmpleadoById(id);
         }
 
-        public void Create(Empleado t)
-        {
-            empleadoRepository.Create(t);
-        }
-
         public int Update(Empleado t)
         {
             return empleadoRepository.Update(t);
         }
 
-        public Empleado[] FindAll()
-        {
-            return empleadoRepository.FindAll();
-        }
 
         public bool Delete(Empleado t)
         {
             return empleadoRepository.Delete(t);
-        }
-
-        public int GetLastId()
-        {
-            return empleadoRepository.GetLastId();
         }
 
         public EmpleadoDgv GetResumenEmpleado(int id)
@@ -58,9 +44,9 @@ namespace AppCore.Services
             return empleadoRepository.GetResumenEmpleados();
         }
 
-        public void Despedir(int id)
+        public bool Despedir(int id)
         {
-            empleadoRepository.Despedir(id);
+            return empleadoRepository.Despedir(id);
         }
         public void QuitarDespedidos(Empleado empleado)
         {
@@ -69,6 +55,26 @@ namespace AppCore.Services
         public int CalculoFactoy(EmpleadoDgv empleadoDgv)
         {
             return empleadoRepository.CalculoFactoy(empleadoDgv);
+        }
+
+        public void QuitarDespedidosDelMes()
+        {
+            empleadoRepository.QuitarDespedidosDelMes();
+        }
+
+        public ICollection<Empleado> FindAll(int tipo)
+        {
+            return empleadoRepository.FindAll(tipo);
+        }
+
+        public Empleado GetEmpleadoById(ICollection<Empleado> empleados, int id)
+        {
+            return empleadoRepository.GetEmpleadoById(empleados, id);
+        }
+
+        public void AumentarAntiguedad()
+        {
+            empleadoRepository.AumentarAntiguedad();
         }
     }
 }

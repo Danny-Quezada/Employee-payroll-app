@@ -76,7 +76,6 @@ C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\AppCore\obj\Debug\App
 C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\AppCore\obj\Debug\AppCore.csproj.CoreCompileInputs.cache
 C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\AppCore\obj\Debug\AppCore.dll
 C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\AppCore\obj\Debug\AppCore.pdb
-C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\AppCore\obj\Debug\AppCore.csproj.CopyComplete
 C:\Users\Kevin Roa\Desktop\TareaDeCurso\AppCore\obj\Debug\AppCore.csproj.CopyComplete
 C:\Users\larry\Desktop\trracurso\TareaDeCurso\AppCore\bin\Debug\AppCore.dll.config
 C:\Users\larry\Desktop\trracurso\TareaDeCurso\AppCore\bin\Debug\AppCore.dll
@@ -132,3 +131,4 @@ C:\Users\larry\Desktop\Tarea-curso\TareaDeCurso\AppCore\obj\Debug\AppCore.csproj
 C:\Users\larry\Desktop\Tarea-curso\TareaDeCurso\AppCore\obj\Debug\AppCore.csproj.CopyComplete
 C:\Users\larry\Desktop\Tarea-curso\TareaDeCurso\AppCore\obj\Debug\AppCore.dll
 C:\Users\larry\Desktop\Tarea-curso\TareaDeCurso\AppCore\obj\Debug\AppCore.pdb
+C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\AppCore\obj\Debug\AppCore.csproj.CopyComplete

@@ -43,14 +43,17 @@
   <ItemGroup>
     <Compile Include="Entities\Empleados\EmpleadoDgv.cs" />
     <Compile Include="Entities\Empleados\TarifaIR.cs" />
+    <Compile Include="Entities\Nominas\Nomina.cs" />
     <Compile Include="Enums\CargosEmpleados\Cargos.cs" />
     <Compile Include="Entities\Empleados\Deducciones.cs" />
     <Compile Include="Entities\Empleados\Empleado.cs" />
     <Compile Include="Entities\Empleados\Remuneraciones.cs" />
+    <Compile Include="Enums\FiltrosNomina.cs" />
     <Compile Include="Enums\Meses.cs" />
     <Compile Include="Enums\EstadoTrabajador.cs" />
     <Compile Include="Interfaces\IEmpleadoRepository.cs" />
     <Compile Include="Interfaces\IModel.cs" />
+    <Compile Include="Interfaces\INominaRepository.cs" />
     <Compile Include="Interfaces\IProcessesEmpleado.cs" />
     <Compile Include="Interfaces\IProcessesEmpresa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

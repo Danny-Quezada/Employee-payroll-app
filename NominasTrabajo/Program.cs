@@ -31,11 +31,14 @@ namespace NominasTrabajo
 			builder.RegisterType<ProcessesEmpresaRepository>().As<IProcessesEmpresa>();
 			builder.RegisterType<ProcessesEmpresaServices>().As<IEmpresaService>();
 
+			builder.RegisterType<NominaRepository>().As<INominaRepository>();
+			builder.RegisterType<NominaService>().As<INominaService>();
+
 			var container = builder.Build();
 
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new FrmLogin(container.Resolve<IEmpleadoService>(), container.Resolve<IEmpleadoService>(), container.Resolve<IProcesses>(), container.Resolve<IEmpresaService>()));
+			Application.Run(new FrmLogin(container.Resolve<IEmpleadoService>(), container.Resolve<IProcesses>(), container.Resolve<IEmpresaService>(), container.Resolve<INominaService>()));
 		}
 	}
 }

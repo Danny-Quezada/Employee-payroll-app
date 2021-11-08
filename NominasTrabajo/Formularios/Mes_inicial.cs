@@ -15,16 +15,16 @@ namespace NominasTrabajo.Formularios
     public partial class Mes_inicial : Form
     {
         private IEmpleadoService empleadoService;
-        private IEmpleadoService despedidos;
+        //TODO: nunca se ocupa processes
         private IProcesses processes;
         private IEmpresaService empresaService;
-
-        public Mes_inicial(IEmpleadoService empleado, IEmpleadoService despedidos, IProcesses processes, IEmpresaService empresaService)
+        private INominaService nominaService;
+        public Mes_inicial(IEmpleadoService empleado, IProcesses processes, IEmpresaService empresaService, INominaService nominaService)
         {
-            this.despedidos = despedidos;
             this.empleadoService = empleado;
             this.processes = processes;
             this.empresaService = empresaService;
+            this.nominaService = nominaService;
             InitializeComponent();
         }
 
@@ -32,7 +32,6 @@ namespace NominasTrabajo.Formularios
         {
             cmbMeses.Items.AddRange(Enum.GetValues(typeof(Meses)).Cast<object>().ToArray());
         }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (cmbMeses.SelectedIndex == -1) {
@@ -41,11 +40,19 @@ namespace NominasTrabajo.Formularios
             }
             else
             {
-                FrmPrincipal frm = new FrmPrincipal(processes, empresaService,  cmbMeses.SelectedIndex);
+                this.Hide();
+                FrmPrincipal frm = new FrmPrincipal(processes, empresaService,  cmbMeses.SelectedIndex, nominaService);
                 frm.empleadoService = empleadoService;
-				frm.despedidos = despedidos;
                 frm.ShowDialog();
                 this.Close();
+            }
+        }
+        //TODO: Todavia no se activa todavia el evento
+        private void btnAgregar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                btnAgregar_Click(sender,e);
             }
         }
     }

@@ -61,8 +61,9 @@ namespace NominasTrabajo.Formularios
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(296, 156);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(3, 2);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(0, 0);
             this.guna2HtmlLabel1.TabIndex = 13;
+            this.guna2HtmlLabel1.Text = null;
             // 
             // guna2HtmlLabel2
             // 
@@ -97,6 +98,7 @@ namespace NominasTrabajo.Formularios
             this.btnAgregar.TabIndex = 15;
             this.btnAgregar.Text = "Aceptar";
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.btnAgregar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnAgregar_KeyPress);
             // 
             // Mes_inicial
             // 

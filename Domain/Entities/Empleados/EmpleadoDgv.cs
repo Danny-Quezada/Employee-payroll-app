@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Enums;
 using Domain.Enums.CargosEmpleados;
 
 namespace Domain.Entities.Empleados
@@ -22,10 +23,12 @@ namespace Domain.Entities.Empleados
         public decimal Total_Deducciones => INSS_Laboral + IR;
         public decimal Neto_A_Recibir => Total_Ingresos - Total_Deducciones;
         public decimal INSS_Patronal { get; set; }
+        //TODO: no deberia de tener la propiedad INATEC porque no se ocupa en el datagridview
         public decimal INATEC { get; set; }
         public decimal Aguinaldo { get; set; }
         public decimal Indemnizacion { get; set; }
         public decimal Vacaciones { get; set; }
         public decimal Cuota_Prestamo { get; set; }
+        public EstadoTrabajador Estado { get; set; }
     }
 }
