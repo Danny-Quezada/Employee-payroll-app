@@ -142,3 +142,4 @@ C:\Users\larry\Desktop\Tarea-curso\TareaDeCurso\Infraestructure\obj\Debug\Infrae
 C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\Infraestructure\bin\Debug\AppCore.dll
 C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\Infraestructure\bin\Debug\AppCore.pdb
 C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\Infraestructure\bin\Debug\AppCore.dll.config
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\Infraestructure\obj\Debug\Infraestructure.csproj.CopyComplete

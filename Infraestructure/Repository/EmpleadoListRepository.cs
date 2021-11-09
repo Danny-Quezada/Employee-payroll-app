@@ -29,18 +29,53 @@ namespace Infraestructure.EmpleadosRepos
             despedidosDelMes = new List<Empleado>();
         }
 
-        public void AumentarAntiguedad()
+        public void AumentarAntiguedad(Meses meses)
         {
-            //TODO: En este metodo se aumentaran los meses trabajados (se puede crear una propiedad de eso)del empleado,
-            //se le debe agregar logica de acuerdo a lo que se necesite. Luego de eso se lo debe de mandar a llamar
-            //en em frmPrincipal en el evento del boton siguiente, luego de la linea que manda a llamar al metodo
-            //quitar despedidos del mes
+            List<Empleado> empleados = (List<Empleado>)FindAll(1);
+            foreach(Empleado a in empleados)
+            {
+                if (a.MesesTrabajadosVacaciones == 6)
+                {
+                    a.MesesTrabajadosVacaciones = 0;
+                }
+                else
+                {
+                    a.MesesTrabajadosVacaciones += 1;
+                }
+                if (meses == Meses.Enero)
+                {
+                    a.MesesTrabajadosAguinaldo = 1;
+                }
+                else
+                {
+                    a.MesesTrabajadosAguinaldo += 1;
+                }
+
+                if (a.AñosTrabajadosIndemnizacion == 6)
+                {
+                    a.MesesTrabajadosIndemnizacion = 0;
+                }
+                else if (a.MesesTrabajadosIndemnizacion == 12)
+                {
+                    a.MesesTrabajadosIndemnizacion = 0;
+                    a.AñosTrabajadosIndemnizacion += 1;
+                }
+                else
+                {
+                    a.MesesTrabajadosIndemnizacion += 1;
+                }
+
+                if (a.MesesPrestamo == 0)
+                {
+                    a.Prestamo = 0;
+                }
+                else
+                {
+                    a.MesesPrestamo -= 1;
+                }
+            }
         }
 
-        public int CalculoFactoy(EmpleadoDgv empleadoDgv)
-        {
-            return empleadoDgv.Cuota_Prestamo > 0 ? 0 : 1;
-        }
         public bool Delete(Empleado t)
         {
             if (t is null)
@@ -157,15 +192,17 @@ namespace Infraestructure.EmpleadosRepos
                 IR = processes.CalculateIR(e.Remuneraciones.SalarioBase),
                 INSS_Patronal = empresaService.CalculateInssPatronal(e.Remuneraciones.TotalIngresos, datos.Count),
                 Aguinaldo = processes.CalculateAguinaldo(e.Remuneraciones.SalarioBase, e.MesesTrabajadosAguinaldo),
-                Indemnizacion = processes.CalculateIndemnizacion(e.MesesTrabajadosIndemnizacion),
-                
-                //TODO: el calculo del INATEC lo tienen todos los empleados
+        //TODO: el calculo del INATEC lo tienen todos los empleados
                 INATEC = empresaService.CalculateInatec(SalarioTrabajadores),
                 
-                Cuota_Prestamo = 0,
-                Vacaciones = 0,
+                Cuota_Prestamo = e.Prestamo,
+                Vacaciones = processes.CalculateVacations(e.MesesTrabajadosVacaciones, e.Remuneraciones.SalarioBase, e.Estado),
                 Estado = e.Estado
             };
+            if (e.Estado == EstadoTrabajador.Inactivo)
+            {
+                empleadoDgv.Indemnizacion = processes.CalculateIndemnizacion(e.Remuneraciones.SalarioBase, e.MesesTrabajadosIndemnizacion, e.AñosTrabajadosIndemnizacion);
+            }
             return empleadoDgv;
         }
         //TODO: Mejorar este método

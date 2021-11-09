@@ -1,4 +1,5 @@
 ﻿using AppCore.Interfaces;
+using Domain.Enums;
 using Domain.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -27,9 +28,9 @@ namespace AppCore.Services
             return processesEmpleado.CalculateHorasExtras(HorasExtras, Salary);
         }
 
-        public decimal CalculateIndemnizacion(int MesesTrabajados)
+        public decimal CalculateIndemnizacion(decimal salary, int MesesTrabajados, int AñosTrabajados)
         {
-            return processesEmpleado.CalculateIndemnizacion(MesesTrabajados);
+            return processesEmpleado.CalculateIndemnizacion(salary, MesesTrabajados, AñosTrabajados);
         }
 
         public decimal CalculateInss(decimal Salary)
@@ -42,9 +43,9 @@ namespace AppCore.Services
             return processesEmpleado.CalculateIR(Salary);
         }
 
-        public decimal PagoPrestamo(decimal Salary, decimal Prestamo)
+        public decimal CalculateVacations(int MesesTrabajados, decimal salary, EstadoTrabajador estadoTrabajador)
         {
-            return processesEmpleado.PagoPrestamo(Salary, Prestamo);
+            return processesEmpleado.CalculateVacations(MesesTrabajados, salary, estadoTrabajador);
         }
     }
 }

@@ -19,9 +19,11 @@ namespace Domain.Entities.Empleados
 		public Cargos Cargos { get; set; }
 		public EstadoTrabajador Estado { get; set; }
 		public decimal Prestamo { get; set; }
+		public int MesesPrestamo { get; set; }
 		public int MesesTrabajadosAguinaldo { get; set; }
 		public int MesesTrabajadosIndemnizacion { get; set; }
-
+		public int AñosTrabajadosIndemnizacion { get; set; }
+		public int MesesTrabajadosVacaciones { get; set; }
 		public Empleado(string nombreCompleto, Remuneraciones rem, string codINSS)
         {
 			NombreCompleto = nombreCompleto;

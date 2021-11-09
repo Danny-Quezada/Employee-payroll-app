@@ -70,7 +70,7 @@ namespace NominasTrabajo
             this.txtNombre.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtNombre.PlaceholderText = "Nombre";
             this.txtNombre.Size = new System.Drawing.Size(232, 35);
-            this.txtNombre.TabIndex = 2;
+            this.txtNombre.TabIndex = 1;
             this.txtNombre.Texts = "";
             this.txtNombre.UnderlinedStyle = true;
             this.txtNombre._TextChanged += new System.EventHandler(this.txtNombre__TextChanged);
@@ -93,7 +93,7 @@ namespace NominasTrabajo
             this.txtSalario.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtSalario.PlaceholderText = "Salario";
             this.txtSalario.Size = new System.Drawing.Size(232, 35);
-            this.txtSalario.TabIndex = 3;
+            this.txtSalario.TabIndex = 5;
             this.txtSalario.Texts = "";
             this.txtSalario.UnderlinedStyle = true;
             this.txtSalario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSalario_KeyPress);
@@ -155,7 +155,7 @@ namespace NominasTrabajo
             this.txtCodigoInss.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCodigoInss.PlaceholderText = "Código INSS";
             this.txtCodigoInss.Size = new System.Drawing.Size(232, 35);
-            this.txtCodigoInss.TabIndex = 5;
+            this.txtCodigoInss.TabIndex = 3;
             this.txtCodigoInss.Texts = "";
             this.txtCodigoInss.UnderlinedStyle = true;
             this.txtCodigoInss.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoInss_KeyPress);

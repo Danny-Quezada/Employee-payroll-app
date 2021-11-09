@@ -17,10 +17,10 @@ namespace Domain.Entities.Empleados
         public decimal Salario_Mensual { get; set; }
         public int Horas_Extras { get; set; }
         public decimal Ingreso_Horas_Extras { get; set; }
-        public decimal Total_Ingresos => Salario_Mensual + Ingreso_Horas_Extras;
+        public decimal Total_Ingresos => Salario_Mensual + Ingreso_Horas_Extras + Vacaciones;
         public decimal INSS_Laboral { get; set; }
         public decimal IR { get; set; }
-        public decimal Total_Deducciones => INSS_Laboral + IR;
+        public decimal Total_Deducciones => INSS_Laboral + IR + Cuota_Prestamo;
         public decimal Neto_A_Recibir => Total_Ingresos - Total_Deducciones;
         public decimal INSS_Patronal { get; set; }
         //TODO: no deberia de tener la propiedad INATEC porque no se ocupa en el datagridview

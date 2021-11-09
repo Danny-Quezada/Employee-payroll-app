@@ -240,3 +240,7 @@ C:\Users\larry\Desktop\Tarea-curso\TareaDeCurso\NominasTrabajo\obj\Debug\Nominas
 C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.Formularios.Mes_inicial.resources
 C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.Formularios.FrmListaNominas.resources
 C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.csproj.CopyComplete
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.Formularios.FrmListaNominas.resources
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.Formularios.Mes_inicial.resources
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.Formularios.FrmPrestamo.resources
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.csproj.CopyComplete

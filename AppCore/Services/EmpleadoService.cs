@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AppCore.Interfaces;
 using Domain.Entities.Empleados;
+using Domain.Enums;
 using Domain.Interfaces;
 
 namespace AppCore.Services
@@ -52,11 +53,6 @@ namespace AppCore.Services
         {
             empleadoRepository.QuitarDespedidos(empleado);
         }
-        public int CalculoFactoy(EmpleadoDgv empleadoDgv)
-        {
-            return empleadoRepository.CalculoFactoy(empleadoDgv);
-        }
-
         public void QuitarDespedidosDelMes()
         {
             empleadoRepository.QuitarDespedidosDelMes();
@@ -72,9 +68,9 @@ namespace AppCore.Services
             return empleadoRepository.GetEmpleadoById(empleados, id);
         }
 
-        public void AumentarAntiguedad()
+        public void AumentarAntiguedad(Meses meses)
         {
-            empleadoRepository.AumentarAntiguedad();
+            empleadoRepository.AumentarAntiguedad(meses);
         }
     }
 }

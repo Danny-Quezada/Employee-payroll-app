@@ -1,4 +1,5 @@
 ﻿using Domain.Entities.Empleados;
+using Domain.Enums;
 using Domain.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -46,19 +47,51 @@ namespace Infraestructure.Repository
 
         public decimal CalculateAguinaldo(decimal Salary, int MesesTrabajados)
         {
-            //Aqui da 0 porque no lleva ningun mes trabajado, esto tambien lo hare con lo de los enums
             return (Salary / 12) * MesesTrabajados;
         }
 
-        public decimal CalculateIndemnizacion(int MesesTrabajados)
+        public decimal CalculateIndemnizacion(decimal salary, int MesesTrabajados, int AñosTrabajados)
         {
-            //Se debe realizar, pero necesito contar los meses, y para eso necesio lo de los enums de los meses
+            if (AñosTrabajados <= 3)
+            {
+                decimal SalaryWithYear = salary * AñosTrabajados;
+                decimal SalaryProportionalWithMonth = (salary * (MesesTrabajados * 30)) / 360;
+                return SalaryWithYear + SalaryProportionalWithMonth;
+            }
+            else if (AñosTrabajados > 3)
+            {
+                int AñosTemp = AñosTrabajados - 3;
+
+                decimal SalaryWithYear = salary * 3;
+                decimal SalaryPerDay = salary / 30;
+                decimal SalaryWithMoreYear = SalaryPerDay * (20 * AñosTemp);
+                decimal SalaryProportionalWithMonth = SalaryPerDay * (((MesesTrabajados * 30) * 20) / 360);
+                return SalaryWithYear + SalaryWithMoreYear + SalaryProportionalWithMonth;
+            }
             return 0;
         }
 
-        public decimal PagoPrestamo(decimal Salary, decimal Prestamo)
+        public decimal CalculateVacations(int MesesTrabajados, decimal salary, EstadoTrabajador estadoTrabajador)
         {
-            return Salary - Prestamo;
+            if (estadoTrabajador == EstadoTrabajador.Activo)
+            {
+                if (MesesTrabajados == 6)
+                {
+                    decimal SalaryPerDay = salary / 30;
+                    return 15 * SalaryPerDay;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            else if (estadoTrabajador == EstadoTrabajador.Inactivo)
+            {
+                decimal dias = ((decimal)(2.5 * MesesTrabajados));
+                decimal SalaryPerDay = salary / 30;
+                return SalaryPerDay * dias;
+            }
+            return 0;
         }
     }
 }

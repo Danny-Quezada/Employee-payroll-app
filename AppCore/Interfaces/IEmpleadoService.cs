@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain.Entities.Empleados;
+using Domain.Enums;
 using Domain.Interfaces;
 
 namespace AppCore.Interfaces
@@ -15,12 +16,11 @@ namespace AppCore.Interfaces
         EmpleadoDgv[] GetResumenEmpleados();
         bool Despedir(int id);
         void QuitarDespedidos(Empleado empleado);
-        int CalculoFactoy(EmpleadoDgv empleadoDgv);
         int Update(Empleado t);
         bool Delete(Empleado t);
         void QuitarDespedidosDelMes();
         ICollection<Empleado> FindAll(int tipo);
         Empleado GetEmpleadoById(ICollection<Empleado> empleados, int id);
-        void AumentarAntiguedad();
+        void AumentarAntiguedad(Meses meses);
     }
 }

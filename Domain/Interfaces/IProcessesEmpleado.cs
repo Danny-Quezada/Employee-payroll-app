@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,9 +11,9 @@ namespace Domain.Interfaces
     {
         decimal CalculateIR(decimal Salary);
         decimal CalculateInss(decimal Salary);
-        decimal PagoPrestamo(decimal Salary, decimal Prestamo);
         decimal CalculateHorasExtras(int HorasExtras, decimal Salary);
         decimal CalculateAguinaldo(decimal Salary, int MesesTrabajados);
-        decimal CalculateIndemnizacion(int MesesTrabajados);
+        decimal CalculateIndemnizacion(decimal salary, int MesesTrabajados, int AñosTrabajados);
+        decimal CalculateVacations(int MesesTrabajados, decimal salary, EstadoTrabajador estadoTrabajador);
     }
 }

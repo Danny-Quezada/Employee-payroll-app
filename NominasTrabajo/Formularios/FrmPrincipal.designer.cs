@@ -46,6 +46,7 @@ namespace NominasTrabajo
             this.pbExit = new System.Windows.Forms.PictureBox();
             this.btnAgregar = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnNext = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnPrestamo = new Guna.UI2.WinForms.Guna2ImageButton();
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NUMINSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -188,7 +189,7 @@ namespace NominasTrabajo
             this.btnVerNominas.Image = ((System.Drawing.Image)(resources.GetObject("btnVerNominas.Image")));
             this.btnVerNominas.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnVerNominas.ImageRotate = 0F;
-            this.btnVerNominas.Location = new System.Drawing.Point(1101, 291);
+            this.btnVerNominas.Location = new System.Drawing.Point(1111, 550);
             this.btnVerNominas.Name = "btnVerNominas";
             this.btnVerNominas.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnVerNominas.PressedState.Parent = this.btnVerNominas;
@@ -211,7 +212,7 @@ namespace NominasTrabajo
             this.btnEliminar.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnEliminar.ImageRotate = 0F;
             this.btnEliminar.ImageSize = new System.Drawing.Size(60, 60);
-            this.btnEliminar.Location = new System.Drawing.Point(1125, 532);
+            this.btnEliminar.Location = new System.Drawing.Point(1135, 362);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnEliminar.PressedState.Parent = this.btnEliminar;
@@ -234,7 +235,7 @@ namespace NominasTrabajo
             this.btnModificar.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnModificar.ImageRotate = 0F;
             this.btnModificar.ImageSize = new System.Drawing.Size(60, 60);
-            this.btnModificar.Location = new System.Drawing.Point(1125, 423);
+            this.btnModificar.Location = new System.Drawing.Point(1140, 255);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnModificar.PressedState.Parent = this.btnModificar;
@@ -299,7 +300,7 @@ namespace NominasTrabajo
             this.btnAgregar.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnAgregar.ImageRotate = 0F;
             this.btnAgregar.ImageSize = new System.Drawing.Size(70, 70);
-            this.btnAgregar.Location = new System.Drawing.Point(1130, 209);
+            this.btnAgregar.Location = new System.Drawing.Point(1140, 143);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnAgregar.PressedState.Parent = this.btnAgregar;
@@ -320,7 +321,7 @@ namespace NominasTrabajo
             this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
             this.btnNext.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnNext.ImageRotate = 0F;
-            this.btnNext.Location = new System.Drawing.Point(1145, 116);
+            this.btnNext.Location = new System.Drawing.Point(1145, 53);
             this.btnNext.Name = "btnNext";
             this.btnNext.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnNext.PressedState.Parent = this.btnNext;
@@ -329,110 +330,150 @@ namespace NominasTrabajo
             this.btnNext.TabIndex = 11;
             this.btnNext.Click += new System.EventHandler(this.btnSiguienteNomina_Click);
             // 
+            // btnPrestamo
+            // 
+            this.btnPrestamo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrestamo.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnPrestamo.CheckedState.Parent = this.btnPrestamo;
+            this.btnPrestamo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrestamo.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnPrestamo.HoverState.Parent = this.btnPrestamo;
+            this.btnPrestamo.Image = ((System.Drawing.Image)(resources.GetObject("btnPrestamo.Image")));
+            this.btnPrestamo.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnPrestamo.ImageRotate = 0F;
+            this.btnPrestamo.ImageSize = new System.Drawing.Size(60, 60);
+            this.btnPrestamo.Location = new System.Drawing.Point(1140, 469);
+            this.btnPrestamo.Name = "btnPrestamo";
+            this.btnPrestamo.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnPrestamo.PressedState.Parent = this.btnPrestamo;
+            this.btnPrestamo.ShadowDecoration.Parent = this.btnPrestamo;
+            this.btnPrestamo.Size = new System.Drawing.Size(84, 75);
+            this.btnPrestamo.TabIndex = 12;
+            this.btnPrestamo.Visible = false;
+            this.btnPrestamo.Click += new System.EventHandler(this.btnPrestamo_Click);
+            // 
             // Numero
             // 
+            this.Numero.FillWeight = 70.94655F;
             this.Numero.HeaderText = "Número";
             this.Numero.Name = "Numero";
             this.Numero.ReadOnly = true;
             // 
             // NUMINSS
             // 
+            this.NUMINSS.FillWeight = 70.94655F;
             this.NUMINSS.HeaderText = "Número INSS";
             this.NUMINSS.Name = "NUMINSS";
             this.NUMINSS.ReadOnly = true;
             // 
             // Nombre
             // 
+            this.Nombre.FillWeight = 70.94655F;
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
             // 
             // Cargo
             // 
+            this.Cargo.FillWeight = 70.94655F;
             this.Cargo.HeaderText = "Cargo";
             this.Cargo.Name = "Cargo";
             this.Cargo.ReadOnly = true;
             // 
             // Sueldo
             // 
+            this.Sueldo.FillWeight = 70.94655F;
             this.Sueldo.HeaderText = "Sueldo";
             this.Sueldo.Name = "Sueldo";
             this.Sueldo.ReadOnly = true;
             // 
             // HorasExtras
             // 
+            this.HorasExtras.FillWeight = 70.94655F;
             this.HorasExtras.HeaderText = "Horas extras";
             this.HorasExtras.Name = "HorasExtras";
             this.HorasExtras.ReadOnly = true;
             // 
             // IngresoHorasExtras
             // 
+            this.IngresoHorasExtras.FillWeight = 70.94655F;
             this.IngresoHorasExtras.HeaderText = "Ingreso horas extras";
             this.IngresoHorasExtras.Name = "IngresoHorasExtras";
             this.IngresoHorasExtras.ReadOnly = true;
             // 
             // TotalSalario
             // 
+            this.TotalSalario.FillWeight = 70.94655F;
             this.TotalSalario.HeaderText = "Total Salario";
             this.TotalSalario.Name = "TotalSalario";
             this.TotalSalario.ReadOnly = true;
             // 
             // INSSlaboral
             // 
+            this.INSSlaboral.FillWeight = 70.94655F;
             this.INSSlaboral.HeaderText = "INSS laboral";
             this.INSSlaboral.Name = "INSSlaboral";
             this.INSSlaboral.ReadOnly = true;
             // 
             // IR
             // 
+            this.IR.FillWeight = 70.94655F;
             this.IR.HeaderText = "IR";
             this.IR.Name = "IR";
             this.IR.ReadOnly = true;
             // 
             // TotalDeducciones
             // 
+            this.TotalDeducciones.FillWeight = 70.94655F;
             this.TotalDeducciones.HeaderText = "Deducciones";
             this.TotalDeducciones.Name = "TotalDeducciones";
             this.TotalDeducciones.ReadOnly = true;
             // 
             // NetoARecibir
             // 
+            this.NetoARecibir.FillWeight = 70.94655F;
             this.NetoARecibir.HeaderText = "Neto a recibir";
             this.NetoARecibir.Name = "NetoARecibir";
             this.NetoARecibir.ReadOnly = true;
             // 
             // INSSPatronal
             // 
+            this.INSSPatronal.FillWeight = 70.94655F;
             this.INSSPatronal.HeaderText = "INSS patronal";
             this.INSSPatronal.Name = "INSSPatronal";
             this.INSSPatronal.ReadOnly = true;
             // 
             // Prestamo
             // 
+            this.Prestamo.FillWeight = 70.94655F;
             this.Prestamo.HeaderText = "Prestamos";
             this.Prestamo.Name = "Prestamo";
             this.Prestamo.ReadOnly = true;
             // 
             // Aguinaldo
             // 
+            this.Aguinaldo.FillWeight = 70F;
             this.Aguinaldo.HeaderText = "Aguinaldo";
             this.Aguinaldo.Name = "Aguinaldo";
             this.Aguinaldo.ReadOnly = true;
             // 
             // Vacaciones
             // 
+            this.Vacaciones.FillWeight = 70.94655F;
             this.Vacaciones.HeaderText = "Vacaciones";
             this.Vacaciones.Name = "Vacaciones";
             this.Vacaciones.ReadOnly = true;
             // 
             // Indemnizacion
             // 
+            this.Indemnizacion.FillWeight = 70.94655F;
             this.Indemnizacion.HeaderText = "Indemnizacion";
             this.Indemnizacion.Name = "Indemnizacion";
             this.Indemnizacion.ReadOnly = true;
             // 
             // INATEC
             // 
+            this.INATEC.FillWeight = 70.94655F;
             this.INATEC.HeaderText = "INATEC";
             this.INATEC.Name = "INATEC";
             this.INATEC.ReadOnly = true;
@@ -444,6 +485,7 @@ namespace NominasTrabajo
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1221, 700);
+            this.Controls.Add(this.btnPrestamo);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnVerNominas);
             this.Controls.Add(this.btnEliminar);
@@ -485,6 +527,7 @@ namespace NominasTrabajo
 		private System.Windows.Forms.Label lblNomina;
         private Guna.UI2.WinForms.Guna2ImageButton btnVerNominas;
         private Guna.UI2.WinForms.Guna2ImageButton btnNext;
+        private Guna.UI2.WinForms.Guna2ImageButton btnPrestamo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
         private System.Windows.Forms.DataGridViewTextBoxColumn NUMINSS;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;

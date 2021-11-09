@@ -78,19 +78,29 @@ namespace NominasTrabajo
 			try
 			{
 				verificarDatos(txtNombre.Texts, txtSalario.Texts, txtCodigoInss.Texts, txtHorasTrabajadas.Texts);
-				Remuneraciones rem = new Remuneraciones()
-				{
-					SalarioBase = decimal.Parse(txtSalario.Texts),
-					HorasExtras = int.Parse(txtHorasTrabajadas.Texts)
-				};
-                Empleado empleado = new Empleado(txtNombre.Texts, rem, txtCodigoInss.Texts)
+				bool bandera = ValidacionINSS();
+				if (bandera)
                 {
-                    Cargos = (Cargos)cmbCargos.SelectedIndex,
-                    Id = empleadoService.GetLastId() + 1,
-					
-                };
-                empleadoService.Create(empleado);
-                Dispose();
+					Remuneraciones rem = new Remuneraciones()
+					{
+						SalarioBase = decimal.Parse(txtSalario.Texts),
+						HorasExtras = int.Parse(txtHorasTrabajadas.Texts)
+					};
+					Empleado empleado = new Empleado(txtNombre.Texts, rem, txtCodigoInss.Texts)
+					{
+						Cargos = (Cargos)cmbCargos.SelectedIndex,
+						Id = empleadoService.GetLastId() + 1,
+						MesesTrabajadosAguinaldo = 1,
+						MesesTrabajadosIndemnizacion = 1,
+						MesesTrabajadosVacaciones = 1
+					};
+					empleadoService.Create(empleado);
+					Dispose();
+				}
+				else
+                {
+					MessageBox.Show("Dos empleados no pueden tener el mismo código INSS", "Error en el código INSS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {
@@ -149,6 +159,18 @@ namespace NominasTrabajo
         private void txtHorasTrabajadas__TextChanged(object sender, EventArgs e)
         {
 
+        }
+		private bool ValidacionINSS()
+        {
+			List<Empleado> empleados = (List<Empleado>)empleadoService.FindAll(3);
+			foreach(Empleado a in empleados)
+            {
+				if (a.CodigoINSS == txtCodigoInss.Texts)
+                {
+					return false;
+                }
+            }
+			return true;
         }
     }
 
