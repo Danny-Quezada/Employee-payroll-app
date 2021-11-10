@@ -65,6 +65,8 @@ namespace NominasTrabajo
 			this.btnAgregar = new Guna.UI2.WinForms.Guna2ImageButton();
 			this.btnNext = new Guna.UI2.WinForms.Guna2ImageButton();
 			this.btnPrestamo = new Guna.UI2.WinForms.Guna2ImageButton();
+			this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
+			this.guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
 			((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -479,6 +481,41 @@ namespace NominasTrabajo
 			this.btnPrestamo.Visible = false;
 			this.btnPrestamo.Click += new System.EventHandler(this.btnPrestamo_Click);
 			// 
+			// guna2ImageButton1
+			// 
+			this.guna2ImageButton1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+			this.guna2ImageButton1.CheckedState.Parent = this.guna2ImageButton1;
+			this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(59, 59);
+			this.guna2ImageButton1.HoverState.Parent = this.guna2ImageButton1;
+			this.guna2ImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton1.Image")));
+			this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
+			this.guna2ImageButton1.ImageRotate = 0F;
+			this.guna2ImageButton1.Location = new System.Drawing.Point(33, -1);
+			this.guna2ImageButton1.Name = "guna2ImageButton1";
+			this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+			this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
+			this.guna2ImageButton1.ShadowDecoration.Parent = this.guna2ImageButton1;
+			this.guna2ImageButton1.Size = new System.Drawing.Size(82, 70);
+			this.guna2ImageButton1.TabIndex = 13;
+			this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
+			// 
+			// guna2ImageButton2
+			// 
+			this.guna2ImageButton2.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+			this.guna2ImageButton2.CheckedState.Parent = this.guna2ImageButton2;
+			this.guna2ImageButton2.HoverState.ImageSize = new System.Drawing.Size(59, 59);
+			this.guna2ImageButton2.HoverState.Parent = this.guna2ImageButton2;
+			this.guna2ImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton2.Image")));
+			this.guna2ImageButton2.ImageOffset = new System.Drawing.Point(0, 0);
+			this.guna2ImageButton2.ImageRotate = 0F;
+			this.guna2ImageButton2.Location = new System.Drawing.Point(106, -1);
+			this.guna2ImageButton2.Name = "guna2ImageButton2";
+			this.guna2ImageButton2.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+			this.guna2ImageButton2.PressedState.Parent = this.guna2ImageButton2;
+			this.guna2ImageButton2.ShadowDecoration.Parent = this.guna2ImageButton2;
+			this.guna2ImageButton2.Size = new System.Drawing.Size(82, 70);
+			this.guna2ImageButton2.TabIndex = 14;
+			// 
 			// FrmPrincipal
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -486,6 +523,8 @@ namespace NominasTrabajo
 			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(1221, 700);
+			this.Controls.Add(this.guna2ImageButton2);
+			this.Controls.Add(this.guna2ImageButton1);
 			this.Controls.Add(this.btnPrestamo);
 			this.Controls.Add(this.btnNext);
 			this.Controls.Add(this.btnVerNominas);
@@ -547,5 +586,7 @@ namespace NominasTrabajo
         private System.Windows.Forms.DataGridViewTextBoxColumn Vacaciones;
         private System.Windows.Forms.DataGridViewTextBoxColumn Indemnizacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn INATEC;
-    }
+		private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton2;
+		private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
+	}
 }

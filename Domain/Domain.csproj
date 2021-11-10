@@ -48,6 +48,7 @@
     <Compile Include="Entities\Empleados\Deducciones.cs" />
     <Compile Include="Entities\Empleados\Empleado.cs" />
     <Compile Include="Entities\Empleados\Remuneraciones.cs" />
+    <Compile Include="Enums\FiltrosMostrar\FiltrosData.cs" />
     <Compile Include="Enums\FiltrosNomina.cs" />
     <Compile Include="Enums\Meses.cs" />
     <Compile Include="Enums\EstadoTrabajador.cs" />

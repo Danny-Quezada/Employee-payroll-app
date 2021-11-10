@@ -135,5 +135,10 @@ namespace NominasTrabajo.Formularios
             frmPrincipal.ShowDialog();
             this.Close();
         }
-    }
+
+		private void txtFinder_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Enums.Filtros
+namespace Domain.Enums.FiltrosDAta
 {
-	public enum FiltroDespedidos
+	public enum FiltrosData
 	{
-		Nombre,
-		Id,
-		Saldo,
-		INSS
+		Nombre, 
+		ID,
+		Salario
 	}
 }

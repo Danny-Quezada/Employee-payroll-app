@@ -1,6 +1,6 @@
 ﻿using AppCore.Interfaces;
 using Domain.Entities.Empleados;
-using Domain.Enums.Filtros;
+using Domain.Enums.FiltrosDAta;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,10 +32,6 @@ namespace NominasTrabajo.Formularios
 			this.Close();
 		}
 
-		private void rjTextBox1__TextChanged(object sender, EventArgs e)
-		{
-
-		}
 
 		private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
@@ -54,7 +50,7 @@ namespace NominasTrabajo.Formularios
 		
 		private void FrmRecontratar_Load(object sender, EventArgs e)
 		{
-			guna2ComboBox1.Items.AddRange(Enum.GetValues(typeof(FiltroDespedidos)).Cast<object>().ToArray());
+			guna2ComboBox1.Items.AddRange(Enum.GetValues(typeof(FiltrosData)).Cast<object>().ToArray());
 			RellenarDgv();
 		}
 		public void RellenarDgv()
@@ -64,6 +60,11 @@ namespace NominasTrabajo.Formularios
 			for (int i = 0; i < despedidos.Count; i++)
 			{
 				guna2DataGridView1.Rows.Add(despedidos[i].Id, despedidos[i].CodigoINSS, despedidos[i].NombreCompleto, despedidos[i].Cargos, despedidos[i].Remuneraciones.SalarioBase);
+			}
+			if (guna2DataGridView1.Rows.Count <= 0)
+			{
+				btnModificar.Visible = false;
+				btnRecontratar.Visible = false;
 			}
 		}
 		private void btnRecontratar_Click(object sender, EventArgs e)
@@ -82,7 +83,7 @@ namespace NominasTrabajo.Formularios
 				Despedidos.Update(Recontratatado, 3);
 				Despedidos.QuitarDespedidos(Recontratatado, 2);
 			}
-
+			
 		}
 
 		private void btnModificar_Click(object sender, EventArgs e)
@@ -97,10 +98,71 @@ namespace NominasTrabajo.Formularios
 			editarEmpleado.ShowDialog();
 			RellenarDgv();
 		}
-
 		private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
+			if (guna2ComboBox1.SelectedIndex == 0)
+			{
+				txtBuscar.PlaceholderText = "Nombre";
+				
+			}
+			else if (guna2ComboBox1.SelectedIndex == 1)
+			{
+				txtBuscar.PlaceholderText = "ID";
+			}
+			else if (guna2ComboBox1.SelectedIndex== 2)
+			{
+				txtBuscar.PlaceholderText = "Salario";
+			}
+		}
 
+		private void txtBuscar__TextChanged(object sender, EventArgs e)
+		{
+			
+		}
+
+		private void txtBuscar_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (guna2ComboBox1.SelectedIndex == 0)
+			{
+				guna2DataGridView1.Rows.Clear();
+				var despedidos = (List<Empleado>)Despedidos.FindAll(2);
+				var despedidoSelecciona = (List<Empleado>)despedidos.FindAll(x => x.NombreCompleto==txtBuscar.Texts);
+				for (int i = 0; i < despedidos.Count; i++)
+				{
+					guna2DataGridView1.Rows.Add(despedidoSelecciona[i].Id, despedidoSelecciona[i].CodigoINSS, despedidoSelecciona[i].NombreCompleto, despedidos[i].Cargos, despedidos[i].Remuneraciones.SalarioBase);
+				}
+				if (guna2DataGridView1.Rows.Count <= 0)
+				{
+					btnModificar.Visible = false;
+					btnRecontratar.Visible = false;
+				}
+				guna2DataGridView1.Rows.Add();
+			}
+			else if (guna2ComboBox1.SelectedIndex == 1 || guna2ComboBox1.SelectedIndex == 2)
+			{
+
+			}
+		
+		}
+
+		private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (guna2ComboBox1.SelectedIndex == 0)
+			{
+				if (char.IsDigit(e.KeyChar))
+				{
+					e.Handled=true;
+				}
+
+			}
+			else if (guna2ComboBox1.SelectedIndex == 1 || guna2ComboBox1.SelectedIndex == 2)
+			{
+				if (char.IsLetter(e.KeyChar))
+				{
+					e.Handled = true;
+				}
+			}
+			
 		}
 	}
 }

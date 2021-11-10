@@ -295,7 +295,52 @@ namespace NominasTrabajo
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+
+		private void guna2ImageButton1_Click(object sender, EventArgs e)
+		{
+            Excel(guna2DataGridView1);
+		}
+		private void Excel(DataGridView Lista)
+		{
+			if (guna2DataGridView1.Rows.Count > 0)
+			{
+                Microsoft.Office.Interop.Excel.Application Excel = new Microsoft.Office.Interop.Excel.Application(); // Creo el objeto Excel 
+                Excel.Application.Workbooks.Add(true);  // Creo la hoja de excel
+                int indiceColumna = 0;
+
+                foreach(DataGridViewColumn col in Lista.Columns)
+				{
+                    indiceColumna++;
+                    Excel.Cells[1, indiceColumna] = col.HeaderText;
+				}
+                int indiceFila = 0;
+                foreach(DataGridViewRow fila in Lista.Rows)
+				{
+                    indiceFila++;
+                    indiceColumna = 0;
+                    foreach(DataGridViewColumn col in Lista.Columns)
+					{
+                        indiceColumna++;
+						Excel.Cells[indiceFila + 1, indiceColumna] = fila.Cells[col.Name].Value;
+                        
+					}
+				}
+
+                Excel.Columns.AutoFit();
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+				saveFileDialog.Filter = "Archivo excel (*xlsx)|*.xlsx";
+				if (saveFileDialog.ShowDialog() == DialogResult.OK)
+				{
+                    Console.WriteLine(saveFileDialog.FileName);
+                    Excel.ActiveWorkbook.SaveCopyAs(saveFileDialog.FileName);
+                    Excel.ActiveWorkbook.Saved = true;
+                    Excel.Quit();
+				}
+
+			
             }
-        }
-    }
+		}
+	}
 }

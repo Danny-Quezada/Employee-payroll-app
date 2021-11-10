@@ -231,6 +231,7 @@ namespace NominasTrabajo.Formularios
 			this.txtFinder.Size = new System.Drawing.Size(200, 36);
 			this.txtFinder.TabIndex = 5;
 			this.txtFinder.Visible = false;
+			this.txtFinder.TextChanged += new System.EventHandler(this.txtFinder_TextChanged);
 			this.txtFinder.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFinder_KeyPress);
 			// 
 			// btnFiltrar
