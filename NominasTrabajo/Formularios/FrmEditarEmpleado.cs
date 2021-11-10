@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using AppCore.Interfaces;
@@ -12,6 +14,7 @@ namespace NominasTrabajo
 	{
 		public IEmpleadoService empleadoService { get; set; }
 		public Empleado emp { get; set; }
+		public int a { get; set; }
 		public FrmEditarEmpleado()
 		{
 			InitializeComponent();
@@ -26,9 +29,22 @@ namespace NominasTrabajo
 			txtNoINSS.Text = emp.CodigoINSS.ToString();
 			txtNombre.Text = emp.NombreCompleto;
 			txtSalario.Text = emp.Remuneraciones.SalarioBase.ToString();
+			rjCircularPictureBox1.Image = byteArrayToImage(emp.Imagen);
+			rjCircularPictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
 			cmbCargos.SelectedIndex = (int)emp.Cargos;
 		}
-
+		public Image byteArrayToImage(byte[] byteArrayIn)
+		{
+			MemoryStream ms = new MemoryStream(byteArrayIn);
+			Image returnImage = Image.FromStream(ms);
+			return returnImage;
+		}
+		public byte[] ImagenAArray(Image img)
+		{
+			MemoryStream ms = new MemoryStream();
+			img.Save(ms, img.RawFormat);
+			return ms.ToArray();
+		}
 		private void pictureBox3_Click(object sender, EventArgs e)
 		{
 			WindowState = FormWindowState.Minimized;
@@ -53,9 +69,10 @@ namespace NominasTrabajo
                 Empleado empleado = new Empleado(txtNombre.Text, rem, txtNoINSS.Text)
                 {
                     Cargos = (Cargos)cmbCargos.SelectedIndex,
-                    Id = int.Parse(txtId.Text)
+                    Id = int.Parse(txtId.Text),
+					Imagen=ImagenAArray(rjCircularPictureBox1.Image)
                 };
-                empleadoService.Update(empleado);
+                empleadoService.Update(empleado,a);
 
                 Dispose();
             }
@@ -104,5 +121,19 @@ namespace NominasTrabajo
 				e.Handled = true;
 			}
 		}
-    }
+
+		private void rjCircularPictureBox1_Click(object sender, EventArgs e)
+		{
+			OpenFileDialog result = new OpenFileDialog();
+			result.Title = "Open Image";
+			result.Filter = "Archivo JPG (*.jpg)|*.jpg| Archivo PNG (*.png)|*.png| Archivo BMP (*.bmp)|*bmp";
+			if (result.ShowDialog() == DialogResult.OK)
+			{
+				rjCircularPictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+				rjCircularPictureBox1.Image = Image.FromFile(result.FileName);
+			}
+	
+			result.Dispose();
+		}
+	}
 }

@@ -15,8 +15,8 @@ namespace AppCore.Interfaces
         EmpleadoDgv GetResumenEmpleado(int id);
         EmpleadoDgv[] GetResumenEmpleados();
         bool Despedir(int id);
-        void QuitarDespedidos(Empleado empleado);
-        int Update(Empleado t);
+        void QuitarDespedidos(Empleado empleado,int i);
+        int Update(Empleado t,int i);
         bool Delete(Empleado t);
         void QuitarDespedidosDelMes();
         ICollection<Empleado> FindAll(int tipo);

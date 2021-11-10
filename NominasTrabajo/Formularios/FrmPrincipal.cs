@@ -42,6 +42,7 @@ namespace NominasTrabajo
         }
         public FrmPrincipal(Nomina nomina, IEmpresaService empresaService)
         {
+
             InitializeComponent();
             this.nomina = nomina;
             this.empresaService = empresaService;
@@ -49,8 +50,9 @@ namespace NominasTrabajo
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
-        {
-            if (nomina == null)
+		{
+			
+			if (nomina == null)
             {
                 Meses mes = (Meses)Mes;
                 lblNomina.Text = $"Nómina del mes de {mes} del año {year}";
@@ -125,10 +127,14 @@ namespace NominasTrabajo
         {
             FrmEmpleado frmEmpleado = new FrmEmpleado();
             frmEmpleado.empleadoService = empleadoService;
+
             frmEmpleado.ShowDialog();
-            guna2DataGridView1.Rows.Clear();
-            //guna2DataGridView1.DataSource = empleadoService.GetResumenEmpleados();
-            llenarDgv(empleadoService.GetResumenEmpleados());
+            
+                guna2DataGridView1.Rows.Clear();
+                //guna2DataGridView1.DataSource = empleadoService.GetResumenEmpleados();
+                llenarDgv(empleadoService.GetResumenEmpleados());
+            
+          
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -143,6 +149,7 @@ namespace NominasTrabajo
                 }
                 FrmEditarEmpleado frmEditar = new FrmEditarEmpleado();
                 frmEditar.emp = empleado;
+                frmEditar.a = 1;
                 frmEditar.empleadoService = empleadoService;
                 frmEditar.ShowDialog();
                 guna2DataGridView1.Rows.Clear();

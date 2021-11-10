@@ -3,6 +3,7 @@ using AppCore.Interfaces;
 using AppCore.Processes;
 using Domain.Entities.Empleados;
 using Domain.Enums.CargosEmpleados;
+using NominasTrabajo.Formularios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,6 +39,15 @@ namespace NominasTrabajo
 
 		private void FrmEmpleado_Load(object sender, EventArgs e)
 		{
+			var despedidos = empleadoService.FindAll(2);
+			if (despedidos.Count > 0)
+			{
+				btnRecontratar.Visible = true;
+			}
+			else
+			{
+				btnRecontratar.Visible = false;
+			}
 			cmbCargos.Items.AddRange(Enum.GetValues(typeof(Cargos)).Cast<object>().ToArray());
 			
 		}
@@ -47,7 +57,12 @@ namespace NominasTrabajo
 			Image returnImage = Image.FromStream(ms);
 			return returnImage;
 		}
-
+		public byte[] ImagenAArray(Image img)
+		{
+			MemoryStream ms = new MemoryStream();
+			img.Save(ms, img.RawFormat);
+			return ms.ToArray();
+		}
 
 
 		private void PBImagen_Click(object sender, EventArgs e)
@@ -92,7 +107,9 @@ namespace NominasTrabajo
 						Id = empleadoService.GetLastId() + 1,
 						MesesTrabajadosAguinaldo = 1,
 						MesesTrabajadosIndemnizacion = 1,
-						MesesTrabajadosVacaciones = 1
+						MesesTrabajadosVacaciones = 1,
+						Imagen = ImagenAArray(PBImagen.Image)
+						
 					};
 					empleadoService.Create(empleado);
 					Dispose();
@@ -172,6 +189,16 @@ namespace NominasTrabajo
             }
 			return true;
         }
-    }
+
+		private void btnRecontratar_Click(object sender, EventArgs e)
+		{
+			FrmRecontratar Recontratar = new FrmRecontratar();
+			Recontratar.Despedidos = empleadoService;
+			this.Hide();
+			Recontratar.ShowDialog();
+		
+			
+		}
+	}
 
 }

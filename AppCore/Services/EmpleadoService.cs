@@ -24,9 +24,9 @@ namespace AppCore.Services
             return empleadoRepository.GetEmpleadoById(id);
         }
 
-        public int Update(Empleado t)
+        public int Update(Empleado t, int i)
         {
-            return empleadoRepository.Update(t);
+            return empleadoRepository.Update(t,i);
         }
 
 
@@ -49,9 +49,9 @@ namespace AppCore.Services
         {
             return empleadoRepository.Despedir(id);
         }
-        public void QuitarDespedidos(Empleado empleado)
+        public void QuitarDespedidos(Empleado empleado,int i)
         {
-            empleadoRepository.QuitarDespedidos(empleado);
+            empleadoRepository.QuitarDespedidos(empleado, i);
         }
         public void QuitarDespedidosDelMes()
         {

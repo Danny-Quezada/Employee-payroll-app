@@ -113,6 +113,12 @@
     <Compile Include="Formularios\FrmPrincipal.designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmRecontratar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmRecontratar.Designer.cs">
+      <DependentUpon>FrmRecontratar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Mes_inicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmRecontratar.resx">
+      <DependentUpon>FrmRecontratar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Mes_inicial.resx">
       <DependentUpon>Mes_inicial.cs</DependentUpon>

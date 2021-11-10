@@ -55,5 +55,15 @@ namespace NominasTrabajo.Formularios
                 btnAgregar_Click(sender,e);
             }
         }
-    }
+
+		private void pictureBox1_Click(object sender, EventArgs e)
+		{
+            this.WindowState = FormWindowState.Minimized;
+		}
+
+		private void pictureBox2_Click(object sender, EventArgs e)
+		{
+            this.Close();
+		}
+	}
 }

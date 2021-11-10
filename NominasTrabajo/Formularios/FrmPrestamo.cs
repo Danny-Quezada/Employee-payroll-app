@@ -85,7 +85,7 @@ namespace NominasTrabajo.Formularios
                     {
                         emp.Prestamo = decimal.Parse(txtPrestamo.Texts) / ((cmbTiempo.SelectedIndex + 1) * 12);
                         emp.MesesPrestamo = (cmbTiempo.SelectedIndex + 1) * 12;
-                        empleadoService.Update(emp);
+                        empleadoService.Update(emp,1);
                         this.Hide();
                     }
                     else

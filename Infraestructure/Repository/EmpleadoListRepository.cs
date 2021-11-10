@@ -109,13 +109,15 @@ namespace Infraestructure.EmpleadosRepos
                 case 1:
                     return FindAll();
                 case 2:
-                    return despedidosDelMes;
+                    return empleadosDespedidos; 
                 case 3:
                     List<Empleado> temp = new List<Empleado>(datos);
                     temp.AddRange(despedidosDelMes);
                     //Con la siguiente linea ya se ponen ordenados
                     ICollection<Empleado> temp2=temp.OrderBy(x => x.Id).ToList();
                     return temp2;
+                case 4:
+                    return despedidosDelMes;
                 default:
                     return null;
             }
@@ -221,39 +223,82 @@ namespace Infraestructure.EmpleadosRepos
             }
             return empleadosDgv;
         }
-        public void QuitarDespedidos(Empleado e)
+        public void QuitarDespedidos(Empleado e, int i)
         {
-            if (datos.Count==0)
-            {
-                throw new ArgumentException("No se puede quitar a los despedidos porque no hay empleados");
+			//if (datos.Count==0)
+			//{
+			//    throw new ArgumentException("No se puede quitar a los despedidos porque no hay empleados");
+			//}
+			if (i == 1)
+			{
+                e.Estado = EstadoTrabajador.Activo;
+                datos.Add(e);
+                empleadosDespedidos.Remove(e);
             }
-            e.Estado = EstadoTrabajador.Activo;
-            datos.Add(e);
-            empleadosDespedidos.Remove(e);
+           else if (i == 2)
+			{
+                e.Estado = EstadoTrabajador.Activo;
+                despedidosDelMes.Remove(e);
+			}
         }
 
         public void QuitarDespedidosDelMes()
         {
-            despedidosDelMes.Clear();
+		
+                despedidosDelMes.Clear();
+        
         }
 
-        public int Update(Empleado t)
+        public int Update(Empleado t,int i)
         {
             if (t is null)
             {
                 throw new ArgumentNullException(nameof(t));
             }
-            if (datos.Count==0)
+            if (i == 1)
             {
-                throw new ArgumentException("No hay empleados");
+                if (datos.Count == 0)
+                {
+                    throw new ArgumentException("No hay empleados");
+                }
+                int index = datos.FindIndex(p => p.Id == t.Id);
+                if (index < 0)
+                {
+                    throw new ArgumentException($"El empleado con Id {t.Id} no se encuentra");
+                }
+                datos[index] = t;
+                return index;
             }
-            int index= datos.FindIndex(p=>p.Id==t.Id);
-            if (index < 0)
-            {
-                throw new ArgumentException($"El empleado con Id {t.Id} no se encuentra");
+            else if (i == 2)
+			{
+				if (empleadosDespedidos.Count == 0)
+				{
+                    throw new ArgumentException("No hay despedidos");
+				}
+                int index = empleadosDespedidos.FindIndex(p => p.Id == t.Id);
+				if (index < 0)
+				{
+                    throw new ArgumentException($"El empleado con Id {t.Id} no se encuentra");
+                }
+                empleadosDespedidos[index] = t;
+                return index;
+			}
+            else if (i == 3)
+			{
+				if (despedidosDelMes.Count == 0)
+				{
+                    throw new ArgumentException("No hay despedidos");
+				}
+                int index = despedidosDelMes.FindIndex(p => p.Id == t.Id);
+                if (index < 0)
+                {
+                    throw new ArgumentException($"El empleado con Id {t.Id} no se encuentra");
+                }
+                despedidosDelMes[index] = t;
+                return index;
             }
-            datos[index] = t;
-            return index;
+
+            return 0;
         }
     }
 }
