@@ -42,10 +42,6 @@ namespace NominasTrabajo.Formularios
 			this.txtSalario = new Guna.UI2.WinForms.Guna2TextBox();
 			this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
 			this.lblDatos = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
-			this.label6 = new System.Windows.Forms.Label();
 			this.txtPrestamo = new RJCodeAdvance.RJControls.RJTextBox();
 			this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
 			this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
@@ -61,8 +57,8 @@ namespace NominasTrabajo.Formularios
 			this.guna2GradientPanel1.Controls.Add(this.pictureBox2);
 			this.guna2GradientPanel1.Controls.Add(this.pictureBox1);
 			this.guna2GradientPanel1.Controls.Add(this.lblPrestamo);
-			this.guna2GradientPanel1.FillColor = System.Drawing.Color.Lime;
-			this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.Green;
+			this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(233)))), ((int)(((byte)(131)))));
+			this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(209)))), ((int)(((byte)(20)))));
 			this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
 			this.guna2GradientPanel1.Name = "guna2GradientPanel1";
 			this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
@@ -73,9 +69,9 @@ namespace NominasTrabajo.Formularios
 			// 
 			this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-			this.pictureBox2.Location = new System.Drawing.Point(543, 3);
+			this.pictureBox2.Location = new System.Drawing.Point(546, 2);
 			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(23, 28);
+			this.pictureBox2.Size = new System.Drawing.Size(20, 23);
 			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox2.TabIndex = 2;
 			this.pictureBox2.TabStop = false;
@@ -87,7 +83,7 @@ namespace NominasTrabajo.Formularios
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
 			this.pictureBox1.Location = new System.Drawing.Point(572, 3);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(26, 28);
+			this.pictureBox1.Size = new System.Drawing.Size(22, 22);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox1.TabIndex = 1;
 			this.pictureBox1.TabStop = false;
@@ -96,19 +92,19 @@ namespace NominasTrabajo.Formularios
 			// lblPrestamo
 			// 
 			this.lblPrestamo.AutoSize = true;
-			this.lblPrestamo.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblPrestamo.Font = new System.Drawing.Font("Segoe UI Semilight", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblPrestamo.ForeColor = System.Drawing.Color.White;
-			this.lblPrestamo.Location = new System.Drawing.Point(231, 18);
+			this.lblPrestamo.Location = new System.Drawing.Point(212, 20);
 			this.lblPrestamo.Name = "lblPrestamo";
-			this.lblPrestamo.Size = new System.Drawing.Size(128, 37);
+			this.lblPrestamo.Size = new System.Drawing.Size(176, 37);
 			this.lblPrestamo.TabIndex = 0;
-			this.lblPrestamo.Text = "Prestamo";
+			this.lblPrestamo.Text = "P r e s t a m o";
 			// 
 			// cmbTiempo
 			// 
 			this.cmbTiempo.BackColor = System.Drawing.Color.Transparent;
-			this.cmbTiempo.BorderColor = System.Drawing.Color.GreenYellow;
-			this.cmbTiempo.BorderRadius = 5;
+			this.cmbTiempo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(233)))), ((int)(((byte)(131)))));
+			this.cmbTiempo.BorderRadius = 10;
 			this.cmbTiempo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbTiempo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbTiempo.DropDownWidth = 140;
@@ -120,7 +116,7 @@ namespace NominasTrabajo.Formularios
 			this.cmbTiempo.HoverState.Parent = this.cmbTiempo;
 			this.cmbTiempo.ItemHeight = 30;
 			this.cmbTiempo.ItemsAppearance.Parent = this.cmbTiempo;
-			this.cmbTiempo.Location = new System.Drawing.Point(430, 252);
+			this.cmbTiempo.Location = new System.Drawing.Point(374, 255);
 			this.cmbTiempo.Name = "cmbTiempo";
 			this.cmbTiempo.ShadowDecoration.Parent = this.cmbTiempo;
 			this.cmbTiempo.Size = new System.Drawing.Size(148, 36);
@@ -129,7 +125,7 @@ namespace NominasTrabajo.Formularios
 			// 
 			// txtId
 			// 
-			this.txtId.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+			this.txtId.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(233)))), ((int)(((byte)(131)))));
 			this.txtId.BorderRadius = 18;
 			this.txtId.Cursor = System.Windows.Forms.Cursors.IBeam;
 			this.txtId.DefaultText = "ID";
@@ -143,7 +139,7 @@ namespace NominasTrabajo.Formularios
 			this.txtId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtId.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.txtId.HoverState.Parent = this.txtId;
-			this.txtId.Location = new System.Drawing.Point(158, 166);
+			this.txtId.Location = new System.Drawing.Point(72, 166);
 			this.txtId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.txtId.Name = "txtId";
 			this.txtId.PasswordChar = '\0';
@@ -157,7 +153,7 @@ namespace NominasTrabajo.Formularios
 			// 
 			// txtNombre
 			// 
-			this.txtNombre.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+			this.txtNombre.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(233)))), ((int)(((byte)(131)))));
 			this.txtNombre.BorderRadius = 18;
 			this.txtNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
 			this.txtNombre.DefaultText = "Nombre";
@@ -171,7 +167,7 @@ namespace NominasTrabajo.Formularios
 			this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.txtNombre.HoverState.Parent = this.txtNombre;
-			this.txtNombre.Location = new System.Drawing.Point(158, 209);
+			this.txtNombre.Location = new System.Drawing.Point(72, 225);
 			this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.txtNombre.Name = "txtNombre";
 			this.txtNombre.PasswordChar = '\0';
@@ -185,7 +181,7 @@ namespace NominasTrabajo.Formularios
 			// 
 			// txtNoINSS
 			// 
-			this.txtNoINSS.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+			this.txtNoINSS.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(233)))), ((int)(((byte)(131)))));
 			this.txtNoINSS.BorderRadius = 18;
 			this.txtNoINSS.Cursor = System.Windows.Forms.Cursors.IBeam;
 			this.txtNoINSS.DefaultText = "Número de INSS";
@@ -199,7 +195,7 @@ namespace NominasTrabajo.Formularios
 			this.txtNoINSS.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtNoINSS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.txtNoINSS.HoverState.Parent = this.txtNoINSS;
-			this.txtNoINSS.Location = new System.Drawing.Point(158, 252);
+			this.txtNoINSS.Location = new System.Drawing.Point(72, 282);
 			this.txtNoINSS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.txtNoINSS.Name = "txtNoINSS";
 			this.txtNoINSS.PasswordChar = '\0';
@@ -213,7 +209,7 @@ namespace NominasTrabajo.Formularios
 			// 
 			// txtSalario
 			// 
-			this.txtSalario.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+			this.txtSalario.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(233)))), ((int)(((byte)(131)))));
 			this.txtSalario.BorderRadius = 18;
 			this.txtSalario.Cursor = System.Windows.Forms.Cursors.IBeam;
 			this.txtSalario.DefaultText = "Salario mensual";
@@ -227,7 +223,7 @@ namespace NominasTrabajo.Formularios
 			this.txtSalario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtSalario.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.txtSalario.HoverState.Parent = this.txtSalario;
-			this.txtSalario.Location = new System.Drawing.Point(158, 295);
+			this.txtSalario.Location = new System.Drawing.Point(72, 341);
 			this.txtSalario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.txtSalario.Name = "txtSalario";
 			this.txtSalario.PasswordChar = '\0';
@@ -241,7 +237,7 @@ namespace NominasTrabajo.Formularios
 			// 
 			// guna2GradientButton1
 			// 
-			this.guna2GradientButton1.BorderRadius = 8;
+			this.guna2GradientButton1.BorderRadius = 18;
 			this.guna2GradientButton1.CheckedState.Parent = this.guna2GradientButton1;
 			this.guna2GradientButton1.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.guna2GradientButton1.CustomImages.Parent = this.guna2GradientButton1;
@@ -251,84 +247,40 @@ namespace NominasTrabajo.Formularios
 			this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
 			this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
 			this.guna2GradientButton1.DisabledState.Parent = this.guna2GradientButton1;
-			this.guna2GradientButton1.FillColor = System.Drawing.Color.Lime;
-			this.guna2GradientButton1.FillColor2 = System.Drawing.Color.Green;
-			this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+			this.guna2GradientButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(233)))), ((int)(((byte)(131)))));
+			this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(209)))), ((int)(((byte)(20)))));
+			this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
 			this.guna2GradientButton1.HoverState.Parent = this.guna2GradientButton1;
-			this.guna2GradientButton1.Location = new System.Drawing.Point(408, 338);
+			this.guna2GradientButton1.Location = new System.Drawing.Point(386, 331);
 			this.guna2GradientButton1.Name = "guna2GradientButton1";
 			this.guna2GradientButton1.ShadowDecoration.Parent = this.guna2GradientButton1;
-			this.guna2GradientButton1.Size = new System.Drawing.Size(180, 45);
+			this.guna2GradientButton1.Size = new System.Drawing.Size(124, 45);
 			this.guna2GradientButton1.TabIndex = 23;
-			this.guna2GradientButton1.Text = "Aceptar";
+			this.guna2GradientButton1.Text = "A c e p t a r";
 			this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
 			// 
 			// lblDatos
 			// 
 			this.lblDatos.AutoSize = true;
 			this.lblDatos.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblDatos.ForeColor = System.Drawing.Color.DarkGray;
+			this.lblDatos.ForeColor = System.Drawing.Color.Silver;
 			this.lblDatos.Location = new System.Drawing.Point(65, 102);
 			this.lblDatos.Name = "lblDatos";
 			this.lblDatos.Size = new System.Drawing.Size(249, 37);
 			this.lblDatos.TabIndex = 24;
 			this.lblDatos.Text = "Datos del empleado";
 			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.ForeColor = System.Drawing.SystemColors.GrayText;
-			this.label1.Location = new System.Drawing.Point(85, 180);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(25, 21);
-			this.label1.TabIndex = 25;
-			this.label1.Text = "ID";
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.ForeColor = System.Drawing.SystemColors.GrayText;
-			this.label2.Location = new System.Drawing.Point(68, 223);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(68, 21);
-			this.label2.TabIndex = 29;
-			this.label2.Text = "Nombre";
-			// 
-			// label5
-			// 
-			this.label5.AutoSize = true;
-			this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.ForeColor = System.Drawing.SystemColors.GrayText;
-			this.label5.Location = new System.Drawing.Point(45, 266);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(106, 21);
-			this.label5.TabIndex = 30;
-			this.label5.Text = "Número INSS";
-			// 
-			// label6
-			// 
-			this.label6.AutoSize = true;
-			this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label6.ForeColor = System.Drawing.SystemColors.GrayText;
-			this.label6.Location = new System.Drawing.Point(68, 309);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(58, 21);
-			this.label6.TabIndex = 31;
-			this.label6.Text = "Salario";
-			// 
 			// txtPrestamo
 			// 
 			this.txtPrestamo.BackColor = System.Drawing.SystemColors.Window;
-			this.txtPrestamo.BorderColor = System.Drawing.Color.Lime;
+			this.txtPrestamo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(233)))), ((int)(((byte)(131)))));
 			this.txtPrestamo.BorderFocusColor = System.Drawing.Color.Green;
 			this.txtPrestamo.BorderRadius = 10;
 			this.txtPrestamo.BorderSize = 2;
 			this.txtPrestamo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtPrestamo.ForeColor = System.Drawing.Color.DimGray;
-			this.txtPrestamo.Location = new System.Drawing.Point(422, 194);
+			this.txtPrestamo.Location = new System.Drawing.Point(374, 189);
 			this.txtPrestamo.Margin = new System.Windows.Forms.Padding(4);
 			this.txtPrestamo.Multiline = false;
 			this.txtPrestamo.Name = "txtPrestamo";
@@ -349,7 +301,7 @@ namespace NominasTrabajo.Formularios
 			// 
 			// guna2BorderlessForm1
 			// 
-			this.guna2BorderlessForm1.BorderRadius = 10;
+			this.guna2BorderlessForm1.BorderRadius = 20;
 			this.guna2BorderlessForm1.ContainerControl = this;
 			this.guna2BorderlessForm1.DockForm = false;
 			// 
@@ -360,10 +312,6 @@ namespace NominasTrabajo.Formularios
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(600, 450);
 			this.Controls.Add(this.txtPrestamo);
-			this.Controls.Add(this.label6);
-			this.Controls.Add(this.label5);
-			this.Controls.Add(this.label2);
-			this.Controls.Add(this.label1);
 			this.Controls.Add(this.lblDatos);
 			this.Controls.Add(this.guna2GradientButton1);
 			this.Controls.Add(this.txtSalario);
@@ -401,10 +349,6 @@ namespace NominasTrabajo.Formularios
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
         private System.Windows.Forms.Label lblDatos;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private RJCodeAdvance.RJControls.RJTextBox txtPrestamo;
 		private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
 		private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;

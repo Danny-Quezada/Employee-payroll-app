@@ -38,6 +38,7 @@ namespace NominasTrabajo.Formularios
 			this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
+			this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.SuspendLayout();
@@ -83,6 +84,7 @@ namespace NominasTrabajo.Formularios
 			this.guna2HtmlLabel2.Size = new System.Drawing.Size(433, 47);
 			this.guna2HtmlLabel2.TabIndex = 14;
 			this.guna2HtmlLabel2.Text = "Mes con que inicia la planilla";
+			this.guna2HtmlLabel2.Click += new System.EventHandler(this.guna2HtmlLabel2_Click);
 			// 
 			// btnAgregar
 			// 
@@ -106,7 +108,7 @@ namespace NominasTrabajo.Formularios
 			this.btnAgregar.ShadowDecoration.Parent = this.btnAgregar;
 			this.btnAgregar.Size = new System.Drawing.Size(139, 46);
 			this.btnAgregar.TabIndex = 15;
-			this.btnAgregar.Text = "Aceptar";
+			this.btnAgregar.Text = "A c e p t a r";
 			this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
 			this.btnAgregar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnAgregar_KeyPress);
 			// 
@@ -120,9 +122,9 @@ namespace NominasTrabajo.Formularios
 			// 
 			this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(446, 2);
+			this.pictureBox1.Location = new System.Drawing.Point(453, 2);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(28, 26);
+			this.pictureBox1.Size = new System.Drawing.Size(21, 21);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox1.TabIndex = 16;
 			this.pictureBox1.TabStop = false;
@@ -134,11 +136,16 @@ namespace NominasTrabajo.Formularios
 			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
 			this.pictureBox2.Location = new System.Drawing.Point(480, 2);
 			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(28, 26);
+			this.pictureBox2.Size = new System.Drawing.Size(21, 21);
 			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
 			this.pictureBox2.TabIndex = 17;
 			this.pictureBox2.TabStop = false;
 			this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+			// 
+			// guna2Elipse1
+			// 
+			this.guna2Elipse1.BorderRadius = 20;
+			this.guna2Elipse1.TargetControl = this;
 			// 
 			// Mes_inicial
 			// 
@@ -175,5 +182,6 @@ namespace NominasTrabajo.Formularios
 		private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
 		private System.Windows.Forms.PictureBox pictureBox2;
 		private System.Windows.Forms.PictureBox pictureBox1;
+		private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
 	}
 }

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +15,10 @@ using Domain.Entities.Nominas;
 using Domain.Enums;
 using Domain.Interfaces;
 using Infraestructure.EmpleadosRepos;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using NominasTrabajo.Formularios;
+
 
 namespace NominasTrabajo
 
@@ -200,7 +205,7 @@ namespace NominasTrabajo
                         emp.Aguinaldo = 0;
                         guna2DataGridView1.Rows.Add(emp.Id, emp.CodigoINSS, emp.Nombre_Completo, emp.Cargo, emp.Salario_Mensual, emp.Horas_Extras,
                         emp.Ingreso_Horas_Extras, emp.Total_Ingresos, emp.INSS_Laboral, emp.IR, emp.Total_Deducciones, emp.Neto_A_Recibir, emp.INSS_Patronal,
-                        emp.Cuota_Prestamo, emp.Aguinaldo, emp.Vacaciones, emp.Indemnizacion);
+                        emp.Cuota_Prestamo, emp.Aguinaldo, emp.Vacaciones, emp.Indemnizacion,"");
                     }
                     else
                     {
@@ -228,7 +233,7 @@ namespace NominasTrabajo
                     i++;
                 }
 
-                guna2DataGridView1.Rows.Add(string.Empty, string.Empty, string.Empty, "Total:", sumaSalario, string.Empty, sumaIngresHrs,
+                guna2DataGridView1.Rows.Add("", "", "", "Total:", sumaSalario, "", sumaIngresHrs,
                     sumaIngresos, sumaINSSLab, sumaIR, sumaDeducc, sumaNeta, sumaINSSPatronal, sumaPrestamo, sumaAguinaldo, sumaVacacion, sumaIndem, empresaService.CalculateInatec(sumaIngresos));
             }
         }
@@ -345,6 +350,7 @@ namespace NominasTrabajo
                 Excel.Columns.AutoFit();
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
 				saveFileDialog.Filter = "Archivo excel (*xlsx)|*.xlsx";
+                saveFileDialog.FileName = $"{lblNomina.Text}";
 				if (saveFileDialog.ShowDialog() == DialogResult.OK)
 				{
                     Console.WriteLine(saveFileDialog.FileName);
@@ -363,5 +369,49 @@ namespace NominasTrabajo
                 MessageBox.Show($"El empleado {e.NombreCompleto} le quedo debiendo a la empresa: {e.PagoPendiente}", "Pago pendiente del empleado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-	}
+
+        private void guna2ImageButton2_Click(object sender, EventArgs e)
+        {
+            exportar(guna2DataGridView1, $"{lblNomina.Text}");
+        }
+        private void exportar(DataGridView dgw,string FileName)
+		{
+            BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
+            PdfPTable pdftable = new PdfPTable(dgw.Columns.Count);
+            pdftable.DefaultCell.Padding = 3;
+            pdftable.WidthPercentage = 100;
+            pdftable.HorizontalAlignment = Element.ALIGN_LEFT;
+            pdftable.DefaultCell.BorderWidth = 1;
+            iTextSharp.text.Font text= new iTextSharp.text.Font(bf, 10, iTextSharp.text.Font.NORMAL);
+            foreach(DataGridViewColumn col in dgw.Columns)
+			{
+                PdfPCell cel = new PdfPCell(new Phrase(col.HeaderText, text));
+                cel.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
+                pdftable.AddCell(cel);
+			}
+            foreach(DataGridViewRow row in dgw.Rows)
+			{
+                foreach(DataGridViewCell cell in row.Cells)
+				{
+					
+                    pdftable.AddCell(new Phrase(cell.Value.ToString(), text));
+                    
+				}
+			}
+            SaveFileDialog save = new SaveFileDialog();
+            save.FileName = FileName;
+            save.DefaultExt = ".pdf";
+			if (save.ShowDialog() == DialogResult.OK)
+			{
+                FileStream stream = new FileStream(save.FileName,FileMode.Create);
+                Document doc = new Document(PageSize.A3,10f,10f,10f,0);
+                PdfWriter.GetInstance(doc, stream);
+                doc.Open();
+                doc.Add(pdftable);
+                doc.Close();
+                stream.Close();
+			}
+		}
+		
+    }
 }

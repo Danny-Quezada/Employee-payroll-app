@@ -125,7 +125,7 @@ namespace NominasTrabajo
 			this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
 			this.guna2DataGridView1.EnableHeadersVisualStyles = false;
 			this.guna2DataGridView1.GridColor = System.Drawing.Color.White;
-			this.guna2DataGridView1.Location = new System.Drawing.Point(17, 70);
+			this.guna2DataGridView1.Location = new System.Drawing.Point(12, 70);
 			this.guna2DataGridView1.Name = "guna2DataGridView1";
 			this.guna2DataGridView1.ReadOnly = true;
 			this.guna2DataGridView1.RowHeadersVisible = false;
@@ -290,7 +290,7 @@ namespace NominasTrabajo
 			// 
 			// guna2Elipse1
 			// 
-			this.guna2Elipse1.BorderRadius = 16;
+			this.guna2Elipse1.BorderRadius = 18;
 			this.guna2Elipse1.TargetControl = this.guna2DataGridView1;
 			// 
 			// lblNomina
@@ -378,9 +378,9 @@ namespace NominasTrabajo
 			this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-			this.pictureBox2.Location = new System.Drawing.Point(1111, -1);
+			this.pictureBox2.Location = new System.Drawing.Point(1111, 3);
 			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(32, 22);
+			this.pictureBox2.Size = new System.Drawing.Size(30, 20);
 			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox2.TabIndex = 7;
 			this.pictureBox2.TabStop = false;
@@ -391,9 +391,9 @@ namespace NominasTrabajo
 			this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(1149, -1);
+			this.pictureBox1.Location = new System.Drawing.Point(1147, 3);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(37, 22);
+			this.pictureBox1.Size = new System.Drawing.Size(34, 20);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox1.TabIndex = 6;
 			this.pictureBox1.TabStop = false;
@@ -404,9 +404,9 @@ namespace NominasTrabajo
 			this.pbExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.pbExit.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pbExit.Image = ((System.Drawing.Image)(resources.GetObject("pbExit.Image")));
-			this.pbExit.Location = new System.Drawing.Point(1180, -1);
+			this.pbExit.Location = new System.Drawing.Point(1185, -1);
 			this.pbExit.Name = "pbExit";
-			this.pbExit.Size = new System.Drawing.Size(44, 22);
+			this.pbExit.Size = new System.Drawing.Size(39, 24);
 			this.pbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pbExit.TabIndex = 5;
 			this.pbExit.TabStop = false;
@@ -515,6 +515,7 @@ namespace NominasTrabajo
 			this.guna2ImageButton2.ShadowDecoration.Parent = this.guna2ImageButton2;
 			this.guna2ImageButton2.Size = new System.Drawing.Size(82, 70);
 			this.guna2ImageButton2.TabIndex = 14;
+			this.guna2ImageButton2.Click += new System.EventHandler(this.guna2ImageButton2_Click);
 			// 
 			// FrmPrincipal
 			// 

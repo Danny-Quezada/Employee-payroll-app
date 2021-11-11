@@ -30,9 +30,9 @@ namespace NominasTrabajo.Formularios
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRecontratar));
 			this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -48,6 +48,7 @@ namespace NominasTrabajo.Formularios
 			this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
 			this.btnRecontratar = new Guna.UI2.WinForms.Guna2ImageButton();
 			this.btnModificar = new Guna.UI2.WinForms.Guna2ImageButton();
+			this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
@@ -87,8 +88,8 @@ namespace NominasTrabajo.Formularios
 			// 
 			this.guna2DataGridView1.AllowUserToAddRows = false;
 			this.guna2DataGridView1.AllowUserToDeleteRows = false;
-			dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-			this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+			dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+			this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
 			this.guna2DataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -97,14 +98,14 @@ namespace NominasTrabajo.Formularios
 			this.guna2DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.guna2DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
 			this.guna2DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
-			dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-			dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
+			dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+			dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
 			this.guna2DataGridView1.ColumnHeadersHeight = 59;
 			this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Numero,
@@ -112,17 +113,17 @@ namespace NominasTrabajo.Formularios
             this.Nombre,
             this.Cargo,
             this.Sueldo});
-			dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-			dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(244)))));
-			dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle9;
+			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+			dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(244)))));
+			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
 			this.guna2DataGridView1.EnableHeadersVisualStyles = false;
 			this.guna2DataGridView1.GridColor = System.Drawing.Color.White;
-			this.guna2DataGridView1.Location = new System.Drawing.Point(12, 64);
+			this.guna2DataGridView1.Location = new System.Drawing.Point(12, 74);
 			this.guna2DataGridView1.Name = "guna2DataGridView1";
 			this.guna2DataGridView1.ReadOnly = true;
 			this.guna2DataGridView1.RowHeadersVisible = false;
@@ -153,6 +154,7 @@ namespace NominasTrabajo.Formularios
 			this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
 			this.guna2DataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentClick);
+			this.guna2DataGridView1.DoubleClick += new System.EventHandler(this.guna2DataGridView1_DoubleClick);
 			// 
 			// Numero
 			// 
@@ -197,8 +199,8 @@ namespace NominasTrabajo.Formularios
 			// txtBuscar
 			// 
 			this.txtBuscar.BackColor = System.Drawing.SystemColors.Window;
-			this.txtBuscar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
-			this.txtBuscar.BorderFocusColor = System.Drawing.Color.HotPink;
+			this.txtBuscar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(152)))), ((int)(((byte)(248)))));
+			this.txtBuscar.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(213)))), ((int)(((byte)(252)))));
 			this.txtBuscar.BorderRadius = 0;
 			this.txtBuscar.BorderSize = 2;
 			this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -215,6 +217,7 @@ namespace NominasTrabajo.Formularios
 			this.txtBuscar.TabIndex = 3;
 			this.txtBuscar.Texts = "";
 			this.txtBuscar.UnderlinedStyle = true;
+			this.txtBuscar.Visible = false;
 			this.txtBuscar._TextChanged += new System.EventHandler(this.txtBuscar__TextChanged);
 			this.txtBuscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyDown);
 			this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
@@ -233,7 +236,7 @@ namespace NominasTrabajo.Formularios
 			this.guna2ComboBox1.HoverState.Parent = this.guna2ComboBox1;
 			this.guna2ComboBox1.ItemHeight = 30;
 			this.guna2ComboBox1.ItemsAppearance.Parent = this.guna2ComboBox1;
-			this.guna2ComboBox1.Location = new System.Drawing.Point(335, 22);
+			this.guna2ComboBox1.Location = new System.Drawing.Point(323, 21);
 			this.guna2ComboBox1.Name = "guna2ComboBox1";
 			this.guna2ComboBox1.ShadowDecoration.Parent = this.guna2ComboBox1;
 			this.guna2ComboBox1.Size = new System.Drawing.Size(140, 36);
@@ -280,12 +283,38 @@ namespace NominasTrabajo.Formularios
 			this.btnModificar.Visible = false;
 			this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
 			// 
+			// guna2GradientButton1
+			// 
+			this.guna2GradientButton1.BorderRadius = 17;
+			this.guna2GradientButton1.CheckedState.Parent = this.guna2GradientButton1;
+			this.guna2GradientButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.guna2GradientButton1.CustomImages.Parent = this.guna2GradientButton1;
+			this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.guna2GradientButton1.DisabledState.Parent = this.guna2GradientButton1;
+			this.guna2GradientButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(152)))), ((int)(((byte)(248)))));
+			this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(213)))), ((int)(((byte)(252)))));
+			this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
+			this.guna2GradientButton1.HoverState.Parent = this.guna2GradientButton1;
+			this.guna2GradientButton1.Location = new System.Drawing.Point(499, 21);
+			this.guna2GradientButton1.Name = "guna2GradientButton1";
+			this.guna2GradientButton1.ShadowDecoration.Parent = this.guna2GradientButton1;
+			this.guna2GradientButton1.Size = new System.Drawing.Size(110, 36);
+			this.guna2GradientButton1.TabIndex = 7;
+			this.guna2GradientButton1.Text = "F i l t r a r";
+			this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
+			// 
 			// FrmRecontratar
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.guna2GradientButton1);
 			this.Controls.Add(this.btnModificar);
 			this.Controls.Add(this.btnRecontratar);
 			this.Controls.Add(this.guna2ComboBox1);
@@ -295,6 +324,10 @@ namespace NominasTrabajo.Formularios
 			this.Controls.Add(this.pictureBox1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
+			this.MaximumSize = new System.Drawing.Size(800, 450);
+			this.MinimizeBox = false;
+			this.MinimumSize = new System.Drawing.Size(800, 450);
 			this.Name = "FrmRecontratar";
 			this.Text = "FrmRecontratar";
 			this.Load += new System.EventHandler(this.FrmRecontratar_Load);
@@ -321,5 +354,6 @@ namespace NominasTrabajo.Formularios
 		private Guna.UI2.WinForms.Guna2ImageButton btnModificar;
 		private Guna.UI2.WinForms.Guna2ImageButton btnRecontratar;
 		private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+		private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
 	}
 }

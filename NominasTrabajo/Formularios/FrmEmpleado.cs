@@ -39,6 +39,7 @@ namespace NominasTrabajo
 
 		private void FrmEmpleado_Load(object sender, EventArgs e)
 		{
+		
 			var despedidos = empleadoService.FindAll(2);
 			if (despedidos.Count > 0)
 			{

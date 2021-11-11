@@ -30,6 +30,7 @@ namespace NominasTrabajo
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			Guna.UI2.AnimatorNS.Animation animation3 = new Guna.UI2.AnimatorNS.Animation();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmpleado));
 			this.txtNombre = new RJCodeAdvance.RJControls.RJTextBox();
 			this.txtSalario = new RJCodeAdvance.RJControls.RJTextBox();
@@ -46,6 +47,7 @@ namespace NominasTrabajo
 			this.cmbCargos = new Guna.UI2.WinForms.Guna2ComboBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.btnRecontratar = new Guna.UI2.WinForms.Guna2ImageButton();
+			this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
 			((System.ComponentModel.ISupportInitialize)(this.PBImagen)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbWaves)).BeginInit();
@@ -60,9 +62,10 @@ namespace NominasTrabajo
 			this.txtNombre.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
 			this.txtNombre.BorderRadius = 10;
 			this.txtNombre.BorderSize = 2;
+			this.guna2Transition1.SetDecoration(this.txtNombre, Guna.UI2.AnimatorNS.DecorationType.None);
 			this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtNombre.ForeColor = System.Drawing.Color.Gray;
-			this.txtNombre.Location = new System.Drawing.Point(507, 176);
+			this.txtNombre.Location = new System.Drawing.Point(482, 176);
 			this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
 			this.txtNombre.Multiline = false;
 			this.txtNombre.Name = "txtNombre";
@@ -83,9 +86,10 @@ namespace NominasTrabajo
 			this.txtSalario.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
 			this.txtSalario.BorderRadius = 10;
 			this.txtSalario.BorderSize = 2;
+			this.guna2Transition1.SetDecoration(this.txtSalario, Guna.UI2.AnimatorNS.DecorationType.None);
 			this.txtSalario.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtSalario.ForeColor = System.Drawing.Color.Gray;
-			this.txtSalario.Location = new System.Drawing.Point(507, 303);
+			this.txtSalario.Location = new System.Drawing.Point(482, 302);
 			this.txtSalario.Margin = new System.Windows.Forms.Padding(4);
 			this.txtSalario.Multiline = false;
 			this.txtSalario.Name = "txtSalario";
@@ -107,9 +111,10 @@ namespace NominasTrabajo
 			this.PBImagen.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
 			this.PBImagen.BorderSize = 2;
 			this.PBImagen.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.guna2Transition1.SetDecoration(this.PBImagen, Guna.UI2.AnimatorNS.DecorationType.None);
 			this.PBImagen.GradientAngle = 50F;
 			this.PBImagen.Image = ((System.Drawing.Image)(resources.GetObject("PBImagen.Image")));
-			this.PBImagen.Location = new System.Drawing.Point(360, 214);
+			this.PBImagen.Location = new System.Drawing.Point(326, 214);
 			this.PBImagen.Name = "PBImagen";
 			this.PBImagen.Size = new System.Drawing.Size(100, 100);
 			this.PBImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -120,8 +125,9 @@ namespace NominasTrabajo
 			// pictureBox2
 			// 
 			this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+			this.guna2Transition1.SetDecoration(this.pictureBox2, Guna.UI2.AnimatorNS.DecorationType.None);
 			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-			this.pictureBox2.Location = new System.Drawing.Point(-30, 151);
+			this.pictureBox2.Location = new System.Drawing.Point(-69, 151);
 			this.pictureBox2.Name = "pictureBox2";
 			this.pictureBox2.Size = new System.Drawing.Size(443, 337);
 			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -130,6 +136,7 @@ namespace NominasTrabajo
 			// 
 			// pbWaves
 			// 
+			this.guna2Transition1.SetDecoration(this.pbWaves, Guna.UI2.AnimatorNS.DecorationType.None);
 			this.pbWaves.Image = ((System.Drawing.Image)(resources.GetObject("pbWaves.Image")));
 			this.pbWaves.Location = new System.Drawing.Point(0, 0);
 			this.pbWaves.Name = "pbWaves";
@@ -146,9 +153,10 @@ namespace NominasTrabajo
 			this.txtCodigoInss.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
 			this.txtCodigoInss.BorderRadius = 10;
 			this.txtCodigoInss.BorderSize = 2;
+			this.guna2Transition1.SetDecoration(this.txtCodigoInss, Guna.UI2.AnimatorNS.DecorationType.None);
 			this.txtCodigoInss.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtCodigoInss.ForeColor = System.Drawing.Color.Gray;
-			this.txtCodigoInss.Location = new System.Drawing.Point(507, 240);
+			this.txtCodigoInss.Location = new System.Drawing.Point(482, 241);
 			this.txtCodigoInss.Margin = new System.Windows.Forms.Padding(4);
 			this.txtCodigoInss.Multiline = false;
 			this.txtCodigoInss.Name = "txtCodigoInss";
@@ -169,9 +177,10 @@ namespace NominasTrabajo
 			this.txtHorasTrabajadas.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
 			this.txtHorasTrabajadas.BorderRadius = 10;
 			this.txtHorasTrabajadas.BorderSize = 2;
+			this.guna2Transition1.SetDecoration(this.txtHorasTrabajadas, Guna.UI2.AnimatorNS.DecorationType.None);
 			this.txtHorasTrabajadas.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtHorasTrabajadas.ForeColor = System.Drawing.Color.Gray;
-			this.txtHorasTrabajadas.Location = new System.Drawing.Point(507, 360);
+			this.txtHorasTrabajadas.Location = new System.Drawing.Point(482, 360);
 			this.txtHorasTrabajadas.Margin = new System.Windows.Forms.Padding(4);
 			this.txtHorasTrabajadas.Multiline = false;
 			this.txtHorasTrabajadas.Name = "txtHorasTrabajadas";
@@ -192,6 +201,7 @@ namespace NominasTrabajo
 			this.btnAgregar.CheckedState.Parent = this.btnAgregar;
 			this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnAgregar.CustomImages.Parent = this.btnAgregar;
+			this.guna2Transition1.SetDecoration(this.btnAgregar, Guna.UI2.AnimatorNS.DecorationType.None);
 			this.btnAgregar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
 			this.btnAgregar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
 			this.btnAgregar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -200,23 +210,24 @@ namespace NominasTrabajo
 			this.btnAgregar.DisabledState.Parent = this.btnAgregar;
 			this.btnAgregar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
 			this.btnAgregar.FillColor2 = System.Drawing.Color.Yellow;
-			this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 9F);
+			this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnAgregar.ForeColor = System.Drawing.Color.White;
 			this.btnAgregar.HoverState.Parent = this.btnAgregar;
-			this.btnAgregar.Location = new System.Drawing.Point(534, 425);
+			this.btnAgregar.Location = new System.Drawing.Point(514, 431);
 			this.btnAgregar.Name = "btnAgregar";
 			this.btnAgregar.ShadowDecoration.Parent = this.btnAgregar;
-			this.btnAgregar.Size = new System.Drawing.Size(180, 45);
+			this.btnAgregar.Size = new System.Drawing.Size(156, 42);
 			this.btnAgregar.TabIndex = 7;
-			this.btnAgregar.Text = "AGREGAR";
+			this.btnAgregar.Text = "A G R E G A R";
 			this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
+			this.guna2Transition1.SetDecoration(this.label1, Guna.UI2.AnimatorNS.DecorationType.None);
 			this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.ForeColor = System.Drawing.Color.Gray;
-			this.label1.Location = new System.Drawing.Point(357, 194);
+			this.label1.ForeColor = System.Drawing.Color.Silver;
+			this.label1.Location = new System.Drawing.Point(327, 194);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(119, 17);
 			this.label1.TabIndex = 8;
@@ -231,10 +242,11 @@ namespace NominasTrabajo
 			// 
 			this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(117)))), ((int)(((byte)(54)))));
 			this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.guna2Transition1.SetDecoration(this.pictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(765, 0);
+			this.pictureBox1.Location = new System.Drawing.Point(766, 12);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(35, 28);
+			this.pictureBox1.Size = new System.Drawing.Size(22, 22);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox1.TabIndex = 9;
 			this.pictureBox1.TabStop = false;
@@ -244,10 +256,11 @@ namespace NominasTrabajo
 			// 
 			this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(117)))), ((int)(((byte)(54)))));
 			this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.guna2Transition1.SetDecoration(this.pictureBox3, Guna.UI2.AnimatorNS.DecorationType.None);
 			this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-			this.pictureBox3.Location = new System.Drawing.Point(736, 0);
+			this.pictureBox3.Location = new System.Drawing.Point(738, 12);
 			this.pictureBox3.Name = "pictureBox3";
-			this.pictureBox3.Size = new System.Drawing.Size(23, 28);
+			this.pictureBox3.Size = new System.Drawing.Size(22, 22);
 			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox3.TabIndex = 10;
 			this.pictureBox3.TabStop = false;
@@ -257,6 +270,8 @@ namespace NominasTrabajo
 			// 
 			this.cmbCargos.BackColor = System.Drawing.Color.Transparent;
 			this.cmbCargos.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.cmbCargos.BorderRadius = 12;
+			this.guna2Transition1.SetDecoration(this.cmbCargos, Guna.UI2.AnimatorNS.DecorationType.None);
 			this.cmbCargos.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbCargos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbCargos.FocusedColor = System.Drawing.Color.Yellow;
@@ -267,7 +282,7 @@ namespace NominasTrabajo
 			this.cmbCargos.HoverState.Parent = this.cmbCargos;
 			this.cmbCargos.ItemHeight = 30;
 			this.cmbCargos.ItemsAppearance.Parent = this.cmbCargos;
-			this.cmbCargos.Location = new System.Drawing.Point(336, 359);
+			this.cmbCargos.Location = new System.Drawing.Point(306, 360);
 			this.cmbCargos.Name = "cmbCargos";
 			this.cmbCargos.ShadowDecoration.BorderRadius = 7;
 			this.cmbCargos.ShadowDecoration.Parent = this.cmbCargos;
@@ -277,11 +292,12 @@ namespace NominasTrabajo
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.ForeColor = System.Drawing.Color.Gray;
-			this.label2.Location = new System.Drawing.Point(380, 339);
+			this.guna2Transition1.SetDecoration(this.label2, Guna.UI2.AnimatorNS.DecorationType.None);
+			this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.ForeColor = System.Drawing.Color.Silver;
+			this.label2.Location = new System.Drawing.Point(350, 337);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(50, 17);
+			this.label2.Size = new System.Drawing.Size(55, 20);
 			this.label2.TabIndex = 12;
 			this.label2.Text = "Cargos";
 			// 
@@ -291,20 +307,41 @@ namespace NominasTrabajo
 			this.btnRecontratar.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
 			this.btnRecontratar.CheckedState.Parent = this.btnRecontratar;
 			this.btnRecontratar.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.guna2Transition1.SetDecoration(this.btnRecontratar, Guna.UI2.AnimatorNS.DecorationType.None);
 			this.btnRecontratar.HoverState.ImageSize = new System.Drawing.Size(60, 60);
 			this.btnRecontratar.HoverState.Parent = this.btnRecontratar;
 			this.btnRecontratar.Image = ((System.Drawing.Image)(resources.GetObject("btnRecontratar.Image")));
 			this.btnRecontratar.ImageOffset = new System.Drawing.Point(0, 0);
 			this.btnRecontratar.ImageRotate = 0F;
-			this.btnRecontratar.Location = new System.Drawing.Point(374, 402);
+			this.btnRecontratar.Location = new System.Drawing.Point(330, 406);
 			this.btnRecontratar.Name = "btnRecontratar";
 			this.btnRecontratar.PressedState.ImageSize = new System.Drawing.Size(64, 64);
 			this.btnRecontratar.PressedState.Parent = this.btnRecontratar;
 			this.btnRecontratar.ShadowDecoration.Parent = this.btnRecontratar;
-			this.btnRecontratar.Size = new System.Drawing.Size(71, 68);
+			this.btnRecontratar.Size = new System.Drawing.Size(82, 82);
 			this.btnRecontratar.TabIndex = 13;
 			this.btnRecontratar.Visible = false;
 			this.btnRecontratar.Click += new System.EventHandler(this.btnRecontratar_Click);
+			// 
+			// guna2Transition1
+			// 
+			this.guna2Transition1.Cursor = null;
+			animation3.AnimateOnlyDifferences = true;
+			animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
+			animation3.LeafCoeff = 0F;
+			animation3.MaxTime = 1F;
+			animation3.MinTime = 0F;
+			animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
+			animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
+			animation3.MosaicSize = 0;
+			animation3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+			animation3.RotateCoeff = 0F;
+			animation3.RotateLimit = 0F;
+			animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
+			animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
+			animation3.TimeCoeff = 0F;
+			animation3.TransparencyCoeff = 0F;
+			this.guna2Transition1.DefaultAnimation = animation3;
 			// 
 			// FrmEmpleado
 			// 
@@ -328,6 +365,7 @@ namespace NominasTrabajo
 			this.Controls.Add(this.txtNombre);
 			this.Controls.Add(this.pictureBox2);
 			this.Controls.Add(this.pbWaves);
+			this.guna2Transition1.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
 			this.DoubleBuffered = true;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -364,5 +402,6 @@ namespace NominasTrabajo
 		private Guna.UI2.WinForms.Guna2ComboBox cmbCargos;
 		private System.Windows.Forms.Label label2;
 		private Guna.UI2.WinForms.Guna2ImageButton btnRecontratar;
+		private Guna.UI2.WinForms.Guna2Transition guna2Transition1;
 	}
 }

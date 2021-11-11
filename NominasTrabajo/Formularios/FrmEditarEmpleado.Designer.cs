@@ -71,22 +71,22 @@ namespace NominasTrabajo
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.Font = new System.Drawing.Font("Segoe UI Emoji", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label2.ForeColor = System.Drawing.Color.White;
-			this.label2.Location = new System.Drawing.Point(325, 40);
+			this.label2.Location = new System.Drawing.Point(290, 42);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(127, 37);
+			this.label2.Size = new System.Drawing.Size(201, 36);
 			this.label2.TabIndex = 13;
-			this.label2.Text = "Modificar";
+			this.label2.Text = "M o d i f i c a r";
 			// 
 			// pictureBox3
 			// 
 			this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
 			this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-			this.pictureBox3.Location = new System.Drawing.Point(679, 12);
+			this.pictureBox3.Location = new System.Drawing.Point(653, 23);
 			this.pictureBox3.Name = "pictureBox3";
-			this.pictureBox3.Size = new System.Drawing.Size(23, 28);
+			this.pictureBox3.Size = new System.Drawing.Size(22, 22);
 			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox3.TabIndex = 12;
 			this.pictureBox3.TabStop = false;
@@ -97,9 +97,9 @@ namespace NominasTrabajo
 			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
 			this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(705, 13);
+			this.pictureBox1.Location = new System.Drawing.Point(681, 23);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(35, 28);
+			this.pictureBox1.Size = new System.Drawing.Size(22, 22);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox1.TabIndex = 11;
 			this.pictureBox1.TabStop = false;
@@ -127,12 +127,12 @@ namespace NominasTrabajo
 			this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
 			this.guna2GradientButton1.HoverState.Parent = this.guna2GradientButton1;
-			this.guna2GradientButton1.Location = new System.Drawing.Point(156, 402);
+			this.guna2GradientButton1.Location = new System.Drawing.Point(123, 401);
 			this.guna2GradientButton1.Name = "guna2GradientButton1";
 			this.guna2GradientButton1.ShadowDecoration.Parent = this.guna2GradientButton1;
-			this.guna2GradientButton1.Size = new System.Drawing.Size(180, 45);
+			this.guna2GradientButton1.Size = new System.Drawing.Size(170, 42);
 			this.guna2GradientButton1.TabIndex = 13;
-			this.guna2GradientButton1.Text = "MODIFICAR";
+			this.guna2GradientButton1.Text = "M O D I F I C A R";
 			this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
 			// 
 			// rjCircularPictureBox1
@@ -145,7 +145,7 @@ namespace NominasTrabajo
 			this.rjCircularPictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.rjCircularPictureBox1.GradientAngle = 50F;
 			this.rjCircularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("rjCircularPictureBox1.Image")));
-			this.rjCircularPictureBox1.Location = new System.Drawing.Point(434, 202);
+			this.rjCircularPictureBox1.Location = new System.Drawing.Point(446, 188);
 			this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
 			this.rjCircularPictureBox1.Size = new System.Drawing.Size(100, 100);
 			this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -158,7 +158,7 @@ namespace NominasTrabajo
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.ForeColor = System.Drawing.Color.Silver;
-			this.label1.Location = new System.Drawing.Point(430, 167);
+			this.label1.Location = new System.Drawing.Point(430, 150);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(131, 20);
 			this.label1.TabIndex = 14;
@@ -168,7 +168,7 @@ namespace NominasTrabajo
 			// 
 			this.cmbCargos.BackColor = System.Drawing.Color.Transparent;
 			this.cmbCargos.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-			this.cmbCargos.BorderRadius = 10;
+			this.cmbCargos.BorderRadius = 14;
 			this.cmbCargos.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.cmbCargos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbCargos.FocusedColor = System.Drawing.Color.Yellow;
@@ -179,7 +179,7 @@ namespace NominasTrabajo
 			this.cmbCargos.HoverState.Parent = this.cmbCargos;
 			this.cmbCargos.ItemHeight = 30;
 			this.cmbCargos.ItemsAppearance.Parent = this.cmbCargos;
-			this.cmbCargos.Location = new System.Drawing.Point(421, 340);
+			this.cmbCargos.Location = new System.Drawing.Point(421, 356);
 			this.cmbCargos.Name = "cmbCargos";
 			this.cmbCargos.ShadowDecoration.BorderRadius = 7;
 			this.cmbCargos.ShadowDecoration.Parent = this.cmbCargos;
@@ -189,11 +189,11 @@ namespace NominasTrabajo
 			// guna2HtmlLabel1
 			// 
 			this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-			this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Gray;
-			this.guna2HtmlLabel1.Location = new System.Drawing.Point(466, 319);
+			this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Silver;
+			this.guna2HtmlLabel1.Location = new System.Drawing.Point(468, 328);
 			this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-			this.guna2HtmlLabel1.Size = new System.Drawing.Size(40, 17);
+			this.guna2HtmlLabel1.Size = new System.Drawing.Size(49, 22);
 			this.guna2HtmlLabel1.TabIndex = 17;
 			this.guna2HtmlLabel1.Text = "Cargos";
 			// 
@@ -213,7 +213,7 @@ namespace NominasTrabajo
 			this.txtId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtId.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.txtId.HoverState.Parent = this.txtId;
-			this.txtId.Location = new System.Drawing.Point(131, 111);
+			this.txtId.Location = new System.Drawing.Point(106, 113);
 			this.txtId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.txtId.Name = "txtId";
 			this.txtId.PasswordChar = '\0';
@@ -222,7 +222,7 @@ namespace NominasTrabajo
 			this.txtId.SelectedText = "";
 			this.txtId.SelectionStart = 2;
 			this.txtId.ShadowDecoration.Parent = this.txtId;
-			this.txtId.Size = new System.Drawing.Size(230, 35);
+			this.txtId.Size = new System.Drawing.Size(217, 35);
 			this.txtId.TabIndex = 18;
 			// 
 			// txtNombre
@@ -241,7 +241,7 @@ namespace NominasTrabajo
 			this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.txtNombre.HoverState.Parent = this.txtNombre;
-			this.txtNombre.Location = new System.Drawing.Point(129, 167);
+			this.txtNombre.Location = new System.Drawing.Point(106, 167);
 			this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.txtNombre.Name = "txtNombre";
 			this.txtNombre.PasswordChar = '\0';
@@ -249,7 +249,7 @@ namespace NominasTrabajo
 			this.txtNombre.SelectedText = "";
 			this.txtNombre.SelectionStart = 6;
 			this.txtNombre.ShadowDecoration.Parent = this.txtNombre;
-			this.txtNombre.Size = new System.Drawing.Size(230, 35);
+			this.txtNombre.Size = new System.Drawing.Size(217, 35);
 			this.txtNombre.TabIndex = 19;
 			// 
 			// txtNoINSS
@@ -268,7 +268,7 @@ namespace NominasTrabajo
 			this.txtNoINSS.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtNoINSS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.txtNoINSS.HoverState.Parent = this.txtNoINSS;
-			this.txtNoINSS.Location = new System.Drawing.Point(131, 223);
+			this.txtNoINSS.Location = new System.Drawing.Point(106, 226);
 			this.txtNoINSS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.txtNoINSS.Name = "txtNoINSS";
 			this.txtNoINSS.PasswordChar = '\0';
@@ -276,7 +276,7 @@ namespace NominasTrabajo
 			this.txtNoINSS.SelectedText = "";
 			this.txtNoINSS.SelectionStart = 14;
 			this.txtNoINSS.ShadowDecoration.Parent = this.txtNoINSS;
-			this.txtNoINSS.Size = new System.Drawing.Size(230, 35);
+			this.txtNoINSS.Size = new System.Drawing.Size(217, 35);
 			this.txtNoINSS.TabIndex = 20;
 			this.txtNoINSS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rjTextBox4_KeyPress);
 			// 
@@ -296,7 +296,7 @@ namespace NominasTrabajo
 			this.txtSalario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtSalario.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.txtSalario.HoverState.Parent = this.txtSalario;
-			this.txtSalario.Location = new System.Drawing.Point(131, 279);
+			this.txtSalario.Location = new System.Drawing.Point(106, 282);
 			this.txtSalario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.txtSalario.Name = "txtSalario";
 			this.txtSalario.PasswordChar = '\0';
@@ -304,7 +304,7 @@ namespace NominasTrabajo
 			this.txtSalario.SelectedText = "";
 			this.txtSalario.SelectionStart = 15;
 			this.txtSalario.ShadowDecoration.Parent = this.txtSalario;
-			this.txtSalario.Size = new System.Drawing.Size(230, 35);
+			this.txtSalario.Size = new System.Drawing.Size(217, 35);
 			this.txtSalario.TabIndex = 21;
 			this.txtSalario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rjTextBox2_KeyPress);
 			// 
@@ -324,7 +324,7 @@ namespace NominasTrabajo
 			this.txtHrsExtras.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtHrsExtras.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.txtHrsExtras.HoverState.Parent = this.txtHrsExtras;
-			this.txtHrsExtras.Location = new System.Drawing.Point(129, 340);
+			this.txtHrsExtras.Location = new System.Drawing.Point(106, 341);
 			this.txtHrsExtras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.txtHrsExtras.Name = "txtHrsExtras";
 			this.txtHrsExtras.PasswordChar = '\0';
@@ -332,7 +332,7 @@ namespace NominasTrabajo
 			this.txtHrsExtras.SelectedText = "";
 			this.txtHrsExtras.SelectionStart = 12;
 			this.txtHrsExtras.ShadowDecoration.Parent = this.txtHrsExtras;
-			this.txtHrsExtras.Size = new System.Drawing.Size(230, 35);
+			this.txtHrsExtras.Size = new System.Drawing.Size(217, 35);
 			this.txtHrsExtras.TabIndex = 22;
 			this.txtHrsExtras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rjTextBox4_KeyPress);
 			// 
@@ -341,7 +341,7 @@ namespace NominasTrabajo
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
-			this.ClientSize = new System.Drawing.Size(700, 500);
+			this.ClientSize = new System.Drawing.Size(680, 470);
 			this.Controls.Add(this.txtHrsExtras);
 			this.Controls.Add(this.txtSalario);
 			this.Controls.Add(this.txtNoINSS);
@@ -354,8 +354,8 @@ namespace NominasTrabajo
 			this.Controls.Add(this.rjCircularPictureBox1);
 			this.Controls.Add(this.guna2GradientPanel1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-			this.MaximumSize = new System.Drawing.Size(700, 500);
-			this.MinimumSize = new System.Drawing.Size(700, 500);
+			this.MaximumSize = new System.Drawing.Size(680, 470);
+			this.MinimumSize = new System.Drawing.Size(680, 470);
 			this.Name = "FrmEditarEmpleado";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Editar Empleado";
