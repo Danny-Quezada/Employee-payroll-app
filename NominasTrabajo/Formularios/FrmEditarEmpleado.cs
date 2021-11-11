@@ -59,31 +59,43 @@ namespace NominasTrabajo
 		{
             try
             {
-                validaciones(txtId.Text, txtNombre.Text, txtSalario.Text, txtNoINSS.Text, txtHrsExtras.Text);
-                Remuneraciones rem = new Remuneraciones()
-                {
-                    SalarioBase = decimal.Parse(txtSalario.Text),
-                    HorasExtras = int.Parse(txtHrsExtras.Text),
+				validaciones(txtId.Text, txtNombre.Text, txtSalario.Text, txtNoINSS.Text, txtHrsExtras.Text);
+				Remuneraciones rem = new Remuneraciones()
+				{
+					SalarioBase = decimal.Parse(txtSalario.Text),
+					HorasExtras = int.Parse(txtHrsExtras.Text),
 
-                };
+				};
 				Deducciones deducciones = new Deducciones();
-                Empleado empleado = new Empleado(txtNombre.Text, rem, txtNoINSS.Text, deducciones)
-                {
-                    Cargos = (Cargos)cmbCargos.SelectedIndex,
-                    Id = int.Parse(txtId.Text),
-					Imagen=ImagenAArray(rjCircularPictureBox1.Image)
-                };
-				empleado.MesesTrabajadosAguinaldo = emp.MesesTrabajadosAguinaldo;
-				empleado.MesesPrestamo = emp.MesesPrestamo;
-				empleado.MesesTrabajadosIndemnizacion = emp.MesesTrabajadosIndemnizacion;
-				empleado.AñosTrabajadosIndemnizacion = emp.AñosTrabajadosIndemnizacion;
-				empleado.Prestamo = emp.Prestamo;
-				empleado.MesesTrabajadosVacaciones = emp.MesesTrabajadosVacaciones;
+				Aguinaldo aguinaldo = new Aguinaldo()
+				{
+					MesesTrabajadosAguinaldo = emp.Aguinaldo.MesesTrabajadosAguinaldo
+				};
+				Prestamo prestamo = new Prestamo()
+				{
+					MesesPrestamo = emp.Prestamo.MesesPrestamo,
+					Cuota_Prestamo = emp.Prestamo.Cuota_Prestamo
+				};
+				Indemnizacion indemnizacion = new Indemnizacion()
+				{
+					MesesTrabajadosIndemnizacion = emp.Indemnizacion.MesesTrabajadosIndemnizacion,
+					AñosTrabajadosIndemnizacion = emp.Indemnizacion.AñosTrabajadosIndemnizacion
+				};
+				Vacaciones vacaciones = new Vacaciones()
+				{
+					MesesTrabajadosVacaciones = emp.Vacaciones.MesesTrabajadosVacaciones
+				};
+				Empleado empleado = new Empleado(txtNombre.Text, rem, txtNoINSS.Text, deducciones, aguinaldo, indemnizacion, prestamo, vacaciones)
+				{
+					Cargos = (Cargos)cmbCargos.SelectedIndex,
+					Id = int.Parse(txtId.Text),
+					Imagen = ImagenAArray(rjCircularPictureBox1.Image)
+				};
 				empleado.PagoPendiente = emp.PagoPendiente;
-                empleadoService.Update(empleado,a);
+				empleadoService.Update(empleado, a);
 
-                Dispose();
-            }
+				Dispose();
+			}
             catch (Exception ex)
             {
 				MessageBox.Show(ex.Message, "ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);

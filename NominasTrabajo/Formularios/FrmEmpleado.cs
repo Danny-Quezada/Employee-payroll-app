@@ -1,6 +1,5 @@
 ﻿
 using AppCore.Interfaces;
-using AppCore.Processes;
 using Domain.Entities.Empleados;
 using Domain.Enums.CargosEmpleados;
 using NominasTrabajo.Formularios;
@@ -96,22 +95,32 @@ namespace NominasTrabajo
 				verificarDatos(txtNombre.Texts, txtSalario.Texts, txtCodigoInss.Texts, txtHorasTrabajadas.Texts);
 				bool bandera = ValidacionINSS();
 				if (bandera)
-                {
+				{
 					Remuneraciones rem = new Remuneraciones()
 					{
 						SalarioBase = decimal.Parse(txtSalario.Texts),
 						HorasExtras = int.Parse(txtHorasTrabajadas.Texts)
 					};
 					Deducciones deducciones = new Deducciones();
-					Empleado empleado = new Empleado(txtNombre.Texts, rem, txtCodigoInss.Texts, deducciones)
+					Prestamo prestamo = new Prestamo();
+					Aguinaldo aguinaldo = new Aguinaldo()
+					{
+						MesesTrabajadosAguinaldo = 1
+					};
+					Indemnizacion indemnizacion = new Indemnizacion()
+					{
+						MesesTrabajadosIndemnizacion = 1
+					};
+					Vacaciones vacaciones = new Vacaciones()
+					{
+						MesesTrabajadosVacaciones = 1
+					};
+					Empleado empleado = new Empleado(txtNombre.Texts, rem, txtCodigoInss.Texts, deducciones, aguinaldo, indemnizacion, prestamo, vacaciones)
 					{
 						Cargos = (Cargos)cmbCargos.SelectedIndex,
 						Id = empleadoService.GetLastId() + 1,
-						MesesTrabajadosAguinaldo = 1,
-						MesesTrabajadosIndemnizacion = 1,
-						MesesTrabajadosVacaciones = 1,
 						Imagen = ImagenAArray(PBImagen.Image)
-						
+
 					};
 					empleadoService.Create(empleado);
 					Dispose();
@@ -181,16 +190,17 @@ namespace NominasTrabajo
         }
 		private bool ValidacionINSS()
         {
-			List<Empleado> empleados = (List<Empleado>)empleadoService.FindAll(3);
-			foreach(Empleado a in empleados)
-            {
+			List<Empleado> empleados = (List<Empleado>)empleadoService.FindAll(1);
+			empleados.AddRange(empleadoService.FindAll(2));
+			foreach (Empleado a in empleados)
+			{
 				if (a.CodigoINSS == txtCodigoInss.Texts)
-                {
+				{
 					return false;
-                }
-            }
+				}
+			}
 			return true;
-        }
+		}
 
 		private void btnRecontratar_Click(object sender, EventArgs e)
 		{

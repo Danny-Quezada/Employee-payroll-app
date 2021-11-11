@@ -32,46 +32,42 @@ namespace Infraestructure.EmpleadosRepos
         public void AumentarAntiguedad(Meses meses)
         {
             List<Empleado> empleados = (List<Empleado>)FindAll(1);
-            foreach(Empleado a in empleados)
+            foreach (Empleado a in empleados)
             {
-                if (a.MesesTrabajadosVacaciones == 6)
+                if (a.Vacaciones.MesesTrabajadosVacaciones == 6)
                 {
-                    a.MesesTrabajadosVacaciones = 1;
+                    a.Vacaciones.MesesTrabajadosVacaciones = 1;
                 }
                 else
                 {
-                    a.MesesTrabajadosVacaciones += 1;
+                    a.Vacaciones.MesesTrabajadosVacaciones += 1;
                 }
                 if (meses == Meses.Enero)
                 {
-                    a.MesesTrabajadosAguinaldo = 1;
+                    a.Aguinaldo.MesesTrabajadosAguinaldo = 1;
                 }
                 else
                 {
-                    a.MesesTrabajadosAguinaldo += 1;
+                    a.Aguinaldo.MesesTrabajadosAguinaldo += 1;
                 }
 
-                if (a.AñosTrabajadosIndemnizacion == 6)
+                if (a.Indemnizacion.MesesTrabajadosIndemnizacion == 12)
                 {
-                    a.MesesTrabajadosIndemnizacion = 0;
-                }
-                else if (a.MesesTrabajadosIndemnizacion == 12)
-                {
-                    a.MesesTrabajadosIndemnizacion = 1;
-                    a.AñosTrabajadosIndemnizacion += 1;
+                    a.Indemnizacion.MesesTrabajadosIndemnizacion = 1;
+                    a.Indemnizacion.AñosTrabajadosIndemnizacion += 1;
                 }
                 else
                 {
-                    a.MesesTrabajadosIndemnizacion += 1;
+                    a.Indemnizacion.MesesTrabajadosIndemnizacion += 1;
                 }
 
-                if (a.MesesPrestamo == 0)
+                if (a.Prestamo.MesesPrestamo == 0)
                 {
-                    a.Prestamo = 0;
+                    a.Prestamo.Cuota_Prestamo = 0;
                 }
                 else
                 {
-                    a.MesesPrestamo -= 1;
+                    a.Prestamo.MesesPrestamo -= 1;
                 }
             }
         }
@@ -164,7 +160,7 @@ namespace Infraestructure.EmpleadosRepos
             return Tmp.Id > Tmp1.Id ? Tmp.Id : Tmp1.Id;
         }
         //TODO: Mejorar este metodo
-        public EmpleadoDgv GetResumenEmpleado(int id)
+        public EmpleadoDgv GetResumenEmpleado(int id, int mes)
         {
             Empleado[] Trabajadores = FindAll(3).ToArray();
 
@@ -175,7 +171,7 @@ namespace Infraestructure.EmpleadosRepos
                 SalarioTrabajadores += a.Remuneraciones.SalarioBase;
 
 
-            Empleado e = GetEmpleadoById(Trabajadores,id);
+            Empleado e = GetEmpleadoById(Trabajadores, id);
             if (e == null)
             {
                 throw new ArgumentException($"No se puede dar un resumen del empleado con id: {id}");
@@ -183,11 +179,21 @@ namespace Infraestructure.EmpleadosRepos
             e.Remuneraciones.TotalIngresos = e.Remuneraciones.SalarioBase + processes.CalculateHorasExtras(e.Remuneraciones.HorasExtras, e.Remuneraciones.SalarioBase);
             e.Deducciones.INSSLaboral = processes.CalculateInss(e.Remuneraciones.TotalIngresos);
             e.Deducciones.IR = processes.CalculateIR(e.Remuneraciones.SalarioBase);
-            if (e.Estado == EstadoTrabajador.Inactivo && e.Prestamo > 0)
+            e.Remuneraciones.IngresoHorasExtras = processes.CalculateHorasExtras(e.Remuneraciones.HorasExtras, e.Remuneraciones.SalarioBase);
+            if (e.Estado == EstadoTrabajador.Inactivo && e.Prestamo.Cuota_Prestamo > 0)
             {
-                e.Prestamo = e.Prestamo * e.MesesPrestamo;
-                e.MesesPrestamo = 0;
+                e.Prestamo.Cuota_Prestamo = e.Prestamo.Cuota_Prestamo * e.Prestamo.MesesPrestamo;
+                e.Prestamo.MesesPrestamo = 0;
             }
+            if ((Meses)mes == Meses.Diciembre)
+            {
+                e.Aguinaldo.AguinaldoPago = processes.CalculateAguinaldo(e.Remuneraciones.SalarioBase, e.Aguinaldo.MesesTrabajadosAguinaldo);
+            }
+            if (e.Estado == EstadoTrabajador.Inactivo)
+            {
+                e.Indemnizacion.IndemnizacionPago = processes.CalculateIndemnizacion(e.Remuneraciones.SalarioBase, e.Indemnizacion.MesesTrabajadosIndemnizacion, e.Indemnizacion.AñosTrabajadosIndemnizacion);
+            }
+            e.Vacaciones.VacacionesPago = processes.CalculateVacations(e.Vacaciones.MesesTrabajadosVacaciones, e.Remuneraciones.SalarioBase, e.Estado);
             EmpleadoDgv empleadoDgv = new EmpleadoDgv()
             {
                 Cargo = e.Cargos,
@@ -196,16 +202,17 @@ namespace Infraestructure.EmpleadosRepos
                 CodigoINSS = e.CodigoINSS,
                 Salario_Mensual = e.Remuneraciones.SalarioBase,
                 Horas_Extras = e.Remuneraciones.HorasExtras,
-                Ingreso_Horas_Extras = processes.CalculateHorasExtras(e.Remuneraciones.HorasExtras, e.Remuneraciones.SalarioBase),
+                Ingreso_Horas_Extras = e.Remuneraciones.IngresoHorasExtras,
                 INSS_Laboral = e.Deducciones.INSSLaboral,
                 IR = e.Deducciones.IR,
                 INSS_Patronal = empresaService.CalculateInssPatronal(e.Remuneraciones.TotalIngresos, datos.Count),
-                Aguinaldo = processes.CalculateAguinaldo(e.Remuneraciones.SalarioBase, e.MesesTrabajadosAguinaldo),
                 //TODO: el calculo del INATEC lo tienen todos los empleados
                 INATEC = empresaService.CalculateInatec(SalarioTrabajadores),
-                Cuota_Prestamo = e.Prestamo,
-                Vacaciones = processes.CalculateVacations(e.MesesTrabajadosVacaciones, e.Remuneraciones.SalarioBase, e.Estado),
-                Estado = e.Estado
+                Cuota_Prestamo = e.Prestamo.Cuota_Prestamo,
+                Vacaciones = e.Vacaciones.VacacionesPago,
+                Estado = e.Estado,
+                Aguinaldo = e.Aguinaldo.AguinaldoPago,
+                Indemnizacion = e.Indemnizacion.IndemnizacionPago
             };
             empleadoDgv.Neto_A_Recibir = empleadoDgv.Total_Ingresos - empleadoDgv.Total_Deducciones + empleadoDgv.Vacaciones + empleadoDgv.Indemnizacion + empleadoDgv.Aguinaldo - e.PagoPendiente;
             if (empleadoDgv.Neto_A_Recibir < 0)
@@ -213,14 +220,10 @@ namespace Infraestructure.EmpleadosRepos
                 e.PagoPendiente = Math.Abs(empleadoDgv.Neto_A_Recibir);
                 empleadoDgv.Neto_A_Recibir = 0;
             }
-            if (e.Estado == EstadoTrabajador.Inactivo)
-            {
-                empleadoDgv.Indemnizacion = processes.CalculateIndemnizacion(e.Remuneraciones.SalarioBase, e.MesesTrabajadosIndemnizacion, e.AñosTrabajadosIndemnizacion);
-            }
             return empleadoDgv;
         }
         //TODO: Mejorar este método
-        public EmpleadoDgv[] GetResumenEmpleados()
+        public EmpleadoDgv[] GetResumenEmpleados(int mes)
         {
             if (FindAll(3).Count==0)
             {
@@ -230,7 +233,7 @@ namespace Infraestructure.EmpleadosRepos
             int i = 0;
             foreach (Empleado e in FindAll(3))
             {
-                empleadosDgv[i] = GetResumenEmpleado(e.Id);
+                empleadosDgv[i] = GetResumenEmpleado(e.Id, mes);
                 i++;
             }
             return empleadosDgv;

@@ -35,14 +35,14 @@ namespace AppCore.Services
             return empleadoRepository.Delete(t);
         }
 
-        public EmpleadoDgv GetResumenEmpleado(int id)
+        public EmpleadoDgv GetResumenEmpleado(int id, int mes)
         {
-            return empleadoRepository.GetResumenEmpleado(id);
+            return empleadoRepository.GetResumenEmpleado(id, mes);
         }
 
-        public EmpleadoDgv[] GetResumenEmpleados()
+        public EmpleadoDgv[] GetResumenEmpleados(int mes)
         {
-            return empleadoRepository.GetResumenEmpleados();
+            return empleadoRepository.GetResumenEmpleados(mes);
         }
 
         public bool Despedir(int id)

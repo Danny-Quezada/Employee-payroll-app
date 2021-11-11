@@ -83,8 +83,8 @@ namespace NominasTrabajo.Formularios
                     bool bandera = ValidacionPrestamo(decimal.Parse(txtPrestamo.Texts), emp.Remuneraciones.SalarioBase, cmbTiempo.SelectedIndex);
                     if (bandera)
                     {
-                        emp.Prestamo = decimal.Parse(txtPrestamo.Texts) / ((cmbTiempo.SelectedIndex + 1) * 12);
-                        emp.MesesPrestamo = (cmbTiempo.SelectedIndex + 1) * 12;
+                        emp.Prestamo.Cuota_Prestamo = decimal.Parse(txtPrestamo.Texts) / ((cmbTiempo.SelectedIndex + 1) * 12);
+                        emp.Prestamo.MesesPrestamo = (cmbTiempo.SelectedIndex + 1) * 12;
                         MessageBox.Show($"El pago mensual que dara por el prestamo será de: {emp.Prestamo}", "Aviso importante", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         empleadoService.Update(emp,1);
                         this.Hide();

@@ -68,6 +68,10 @@ namespace NominasTrabajo
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (empleadoService.FindAll(1).Count == 0)
+            {
+                return;
+            }
             int id = Convert.ToInt32(guna2DataGridView1.Rows[n].Cells[0].Value);
             Empleado empleado = empleadoService.GetEmpleadoById(id);
             if (e.RowIndex >= 0 && nomina == null)
@@ -75,7 +79,11 @@ namespace NominasTrabajo
                 n = e.RowIndex;
                 btnModificar.Visible = true;
                 btnEliminar.Visible = true;
-                if (empleado.MesesTrabajadosIndemnizacion > 6)
+                if (empleado.Estado == EstadoTrabajador.Inactivo)
+                {
+                    return;
+                }
+                if (empleado.Indemnizacion.MesesTrabajadosIndemnizacion > 6)
                 {
                     btnPrestamo.Visible = true;
                 }
@@ -141,7 +149,7 @@ namespace NominasTrabajo
             
                 guna2DataGridView1.Rows.Clear();
                 //guna2DataGridView1.DataSource = empleadoService.GetResumenEmpleados();
-                llenarDgv(empleadoService.GetResumenEmpleados());
+                llenarDgv(empleadoService.GetResumenEmpleados(Mes));
             
           
         }
@@ -162,7 +170,7 @@ namespace NominasTrabajo
                 frmEditar.empleadoService = empleadoService;
                 frmEditar.ShowDialog();
                 guna2DataGridView1.Rows.Clear();
-                llenarDgv(empleadoService.GetResumenEmpleados());
+                llenarDgv(empleadoService.GetResumenEmpleados(Mes));
             }
             catch (Exception ex)
             {
@@ -176,14 +184,14 @@ namespace NominasTrabajo
             {
                 var a = (guna2DataGridView1.Rows[n].Cells[0].Value);
                 Empleado empleado = empleadoService.GetEmpleadoById((int)a);
-                EmpleadoDgv empleadoDgv = empleadoService.GetResumenEmpleado((int)a);
+                EmpleadoDgv empleadoDgv = empleadoService.GetResumenEmpleado((int)a, Mes);
                 if (empleadoService.Despedir((int)a))
                 {
                     MessageBox.Show("El empleado ha sido despedido correctamente", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 guna2DataGridView1.Rows[n].DefaultCellStyle.ForeColor = Color.Red;
                 guna2DataGridView1.Rows.Clear();
-                llenarDgv(empleadoService.GetResumenEmpleados());
+                llenarDgv(empleadoService.GetResumenEmpleados(Mes));
                 MensajeDeDeuda(empleado);
             }    
             catch (Exception ex)
@@ -241,13 +249,13 @@ namespace NominasTrabajo
         private void btnSiguienteNomina_Click(object sender, EventArgs e)
         {
             //Esto es para evitar que avance a la siguiente nomina sin haber agregado aunque sea un empleado
-            if (empleadoService.GetResumenEmpleados() != null)
+            if (empleadoService.GetResumenEmpleados(Mes) != null)
             {
                 btnVerNominas.Visible = true;
                 Nomina nomina = new Nomina()
                 {
                     Id = nominaService.GetLastId() + 1,
-                    Empleados = empleadoService.GetResumenEmpleados(),
+                    Empleados = empleadoService.GetResumenEmpleados(Mes),
                     Mes = (Meses)Mes,
                     Año = year
                 };
@@ -262,7 +270,7 @@ namespace NominasTrabajo
                 }
                 ColocarMesAño(Mes, year);
                 guna2DataGridView1.Rows.Clear();
-                llenarDgv(empleadoService.GetResumenEmpleados());
+                llenarDgv(empleadoService.GetResumenEmpleados(Mes));
             }
             else
             {
@@ -299,12 +307,12 @@ namespace NominasTrabajo
                 {
                     throw new ArgumentException("El empleado no se encuentra en la lista de empleados activos");
                 }
-                if (empleado.Prestamo == 0)
+                if (empleado.Prestamo.Cuota_Prestamo == 0)
                 {
                     FrmPrestamo frmPrestamo = new FrmPrestamo(empleadoService, empleado);
                     frmPrestamo.ShowDialog();
                     guna2DataGridView1.Rows.Clear();
-                    llenarDgv(empleadoService.GetResumenEmpleados());
+                    llenarDgv(empleadoService.GetResumenEmpleados(Mes));
                 }
                 else
                 {

@@ -41,8 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Empleados\Aguinaldo.cs" />
     <Compile Include="Entities\Empleados\EmpleadoDgv.cs" />
+    <Compile Include="Entities\Empleados\Indemnizacion.cs" />
+    <Compile Include="Entities\Empleados\Prestamo.cs" />
     <Compile Include="Entities\Empleados\TarifaIR.cs" />
+    <Compile Include="Entities\Empleados\Vacaciones.cs" />
     <Compile Include="Entities\Nominas\Nomina.cs" />
     <Compile Include="Enums\CargosEmpleados\Cargos.cs" />
     <Compile Include="Entities\Empleados\Deducciones.cs" />

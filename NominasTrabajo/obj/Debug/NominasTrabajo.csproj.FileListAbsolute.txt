@@ -382,3 +382,6 @@ C:\Users\Quezada\Desktop\ProyectoFinalizado\TareaDeCurso\NominasTrabajo\obj\Debu
 C:\Users\Quezada\Desktop\ProyectoFinalizado\TareaDeCurso\NominasTrabajo\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Quezada\Desktop\ProyectoFinalizado\TareaDeCurso\NominasTrabajo\bin\Debug\itextsharp.dll
 C:\Users\Quezada\Desktop\ProyectoFinalizado\TareaDeCurso\NominasTrabajo\bin\Debug\itextsharp.xml
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\NominasTrabajo\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\NominasTrabajo\bin\Debug\itextsharp.dll
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\NominasTrabajo\bin\Debug\itextsharp.xml

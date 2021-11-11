@@ -18,20 +18,22 @@ namespace Domain.Entities.Empleados
 		public Remuneraciones Remuneraciones { get; set; }
 		public Cargos Cargos { get; set; }
 		public EstadoTrabajador Estado { get; set; }
-		public decimal Prestamo { get; set; }
-		public int MesesPrestamo { get; set; }
-		public int MesesTrabajadosAguinaldo { get; set; }
-		public int MesesTrabajadosIndemnizacion { get; set; }
-		public int AñosTrabajadosIndemnizacion { get; set; }
-		public int MesesTrabajadosVacaciones { get; set; }
+		public Prestamo Prestamo { get; set; }
+		public Aguinaldo Aguinaldo { get; set; }
+		public Indemnizacion Indemnizacion { get; set; }
+		public Vacaciones Vacaciones { get; set; }
 		public decimal PagoPendiente { get; set; }
-		public Empleado(string nombreCompleto, Remuneraciones rem, string codINSS, Deducciones deducciones)
-        {
+		public Empleado(string nombreCompleto, Remuneraciones rem, string codINSS, Deducciones deducciones, Aguinaldo aguinaldo, Indemnizacion indemnizacion, Prestamo prestamo, Vacaciones vacaciones)
+		{
 			NombreCompleto = nombreCompleto;
 			Remuneraciones = rem;
 			CodigoINSS = codINSS;
 			Deducciones = deducciones;
 			Estado = EstadoTrabajador.Activo;
-        }
+			Aguinaldo = aguinaldo;
+			Indemnizacion = indemnizacion;
+			Prestamo = prestamo;
+			Vacaciones = vacaciones;
+		}
 	}
 }

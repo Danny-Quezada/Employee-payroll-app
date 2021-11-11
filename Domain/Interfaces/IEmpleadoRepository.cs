@@ -11,8 +11,8 @@ namespace Domain.Interfaces
     public interface IEmpleadoRepository : IModel<Empleado>
     {
         Empleado GetEmpleadoById(int id);
-        EmpleadoDgv GetResumenEmpleado(int id);
-        EmpleadoDgv[] GetResumenEmpleados();
+        EmpleadoDgv GetResumenEmpleado(int id, int mes);
+        EmpleadoDgv[] GetResumenEmpleados(int mes);
         bool Despedir(int id);
         void QuitarDespedidos(Empleado empleado, int i);
         int Update(Empleado t, int i);

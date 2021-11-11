@@ -72,7 +72,6 @@
     <Compile Include="Interfaces\IProcesses.cs" />
     <Compile Include="Interfaces\ISalary.cs" />
     <Compile Include="Interfaces\IService.cs" />
-    <Compile Include="Processes\SalaryCalculatorWithLoan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BaseService.cs" />
     <Compile Include="Services\EmpleadoService.cs" />
