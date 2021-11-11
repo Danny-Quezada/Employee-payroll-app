@@ -36,7 +36,7 @@ namespace Infraestructure.EmpleadosRepos
             {
                 if (a.MesesTrabajadosVacaciones == 6)
                 {
-                    a.MesesTrabajadosVacaciones = 0;
+                    a.MesesTrabajadosVacaciones = 1;
                 }
                 else
                 {
@@ -57,7 +57,7 @@ namespace Infraestructure.EmpleadosRepos
                 }
                 else if (a.MesesTrabajadosIndemnizacion == 12)
                 {
-                    a.MesesTrabajadosIndemnizacion = 0;
+                    a.MesesTrabajadosIndemnizacion = 1;
                     a.AñosTrabajadosIndemnizacion += 1;
                 }
                 else
@@ -181,6 +181,13 @@ namespace Infraestructure.EmpleadosRepos
                 throw new ArgumentException($"No se puede dar un resumen del empleado con id: {id}");
             }
             e.Remuneraciones.TotalIngresos = e.Remuneraciones.SalarioBase + processes.CalculateHorasExtras(e.Remuneraciones.HorasExtras, e.Remuneraciones.SalarioBase);
+            e.Deducciones.INSSLaboral = processes.CalculateInss(e.Remuneraciones.TotalIngresos);
+            e.Deducciones.IR = processes.CalculateIR(e.Remuneraciones.SalarioBase);
+            if (e.Estado == EstadoTrabajador.Inactivo && e.Prestamo > 0)
+            {
+                e.Prestamo = e.Prestamo * e.MesesPrestamo;
+                e.MesesPrestamo = 0;
+            }
             EmpleadoDgv empleadoDgv = new EmpleadoDgv()
             {
                 Cargo = e.Cargos,
@@ -190,17 +197,22 @@ namespace Infraestructure.EmpleadosRepos
                 Salario_Mensual = e.Remuneraciones.SalarioBase,
                 Horas_Extras = e.Remuneraciones.HorasExtras,
                 Ingreso_Horas_Extras = processes.CalculateHorasExtras(e.Remuneraciones.HorasExtras, e.Remuneraciones.SalarioBase),
-                INSS_Laboral = processes.CalculateInss(e.Remuneraciones.TotalIngresos),
-                IR = processes.CalculateIR(e.Remuneraciones.SalarioBase),
+                INSS_Laboral = e.Deducciones.INSSLaboral,
+                IR = e.Deducciones.IR,
                 INSS_Patronal = empresaService.CalculateInssPatronal(e.Remuneraciones.TotalIngresos, datos.Count),
                 Aguinaldo = processes.CalculateAguinaldo(e.Remuneraciones.SalarioBase, e.MesesTrabajadosAguinaldo),
-        //TODO: el calculo del INATEC lo tienen todos los empleados
+                //TODO: el calculo del INATEC lo tienen todos los empleados
                 INATEC = empresaService.CalculateInatec(SalarioTrabajadores),
-                
                 Cuota_Prestamo = e.Prestamo,
                 Vacaciones = processes.CalculateVacations(e.MesesTrabajadosVacaciones, e.Remuneraciones.SalarioBase, e.Estado),
                 Estado = e.Estado
             };
+            empleadoDgv.Neto_A_Recibir = empleadoDgv.Total_Ingresos - empleadoDgv.Total_Deducciones + empleadoDgv.Vacaciones + empleadoDgv.Indemnizacion + empleadoDgv.Aguinaldo - e.PagoPendiente;
+            if (empleadoDgv.Neto_A_Recibir < 0)
+            {
+                e.PagoPendiente = Math.Abs(empleadoDgv.Neto_A_Recibir);
+                empleadoDgv.Neto_A_Recibir = 0;
+            }
             if (e.Estado == EstadoTrabajador.Inactivo)
             {
                 empleadoDgv.Indemnizacion = processes.CalculateIndemnizacion(e.Remuneraciones.SalarioBase, e.MesesTrabajadosIndemnizacion, e.AñosTrabajadosIndemnizacion);

@@ -142,7 +142,6 @@ C:\Users\larry\Desktop\Tarea-curso\TareaDeCurso\Infraestructure\obj\Debug\Infrae
 C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\Infraestructure\bin\Debug\AppCore.dll
 C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\Infraestructure\bin\Debug\AppCore.pdb
 C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\Infraestructure\bin\Debug\AppCore.dll.config
-C:\Users\Kevin Roa\Desktop\TareaDeCurso\Infraestructure\obj\Debug\Infraestructure.csproj.CopyComplete
 C:\Users\Quezada\Desktop\Proyecto\TareaDeCurso\Infraestructure\bin\Debug\Infraestructure.dll.config
 C:\Users\Quezada\Desktop\Proyecto\TareaDeCurso\Infraestructure\bin\Debug\Infraestructure.dll
 C:\Users\Quezada\Desktop\Proyecto\TareaDeCurso\Infraestructure\bin\Debug\Infraestructure.pdb
@@ -203,3 +202,4 @@ C:\Users\Quezada\Desktop\P\TareaDeCurso\Infraestructure\obj\Debug\Infraestructur
 C:\Users\Quezada\Desktop\P\TareaDeCurso\Infraestructure\obj\Debug\Infraestructure.csproj.CopyComplete
 C:\Users\Quezada\Desktop\P\TareaDeCurso\Infraestructure\obj\Debug\Infraestructure.dll
 C:\Users\Quezada\Desktop\P\TareaDeCurso\Infraestructure\obj\Debug\Infraestructure.pdb
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\Infraestructure\obj\Debug\Infraestructure.csproj.CopyComplete

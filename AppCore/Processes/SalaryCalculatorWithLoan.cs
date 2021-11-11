@@ -22,11 +22,11 @@ namespace AppCore.Processes
         {
             return Salary - PaymenMonth;
         }
-        public override decimal CalculateSalary(decimal Salary, decimal PaymentMonth)
+        public override decimal CalculateSalary(decimal Salary)
         {
             decimal ir = Processes.CalculateIR(Salary), Inss =
                 Processes.CalculateInss(Salary);
-            return Salary - ir - Inss - PaymentMonth;
+            return Salary - ir - Inss;
         }
     }
 }

@@ -8,6 +8,6 @@ namespace AppCore.Interfaces
 {
     public abstract class ISalary
     {
-        public abstract decimal CalculateSalary(decimal Salary, decimal PaymentMonth);
+        public abstract decimal CalculateSalary(decimal Salary);
     }
 }

@@ -24,12 +24,13 @@ namespace Domain.Entities.Empleados
 		public int MesesTrabajadosIndemnizacion { get; set; }
 		public int AñosTrabajadosIndemnizacion { get; set; }
 		public int MesesTrabajadosVacaciones { get; set; }
-		public Empleado(string nombreCompleto, Remuneraciones rem, string codINSS)
+		public decimal PagoPendiente { get; set; }
+		public Empleado(string nombreCompleto, Remuneraciones rem, string codINSS, Deducciones deducciones)
         {
 			NombreCompleto = nombreCompleto;
 			Remuneraciones = rem;
 			CodigoINSS = codINSS;
-			
+			Deducciones = deducciones;
 			Estado = EstadoTrabajador.Activo;
         }
 	}

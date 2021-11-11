@@ -101,7 +101,8 @@ namespace NominasTrabajo
 						SalarioBase = decimal.Parse(txtSalario.Texts),
 						HorasExtras = int.Parse(txtHorasTrabajadas.Texts)
 					};
-					Empleado empleado = new Empleado(txtNombre.Texts, rem, txtCodigoInss.Texts)
+					Deducciones deducciones = new Deducciones();
+					Empleado empleado = new Empleado(txtNombre.Texts, rem, txtCodigoInss.Texts, deducciones)
 					{
 						Cargos = (Cargos)cmbCargos.SelectedIndex,
 						Id = empleadoService.GetLastId() + 1,

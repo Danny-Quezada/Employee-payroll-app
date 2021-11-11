@@ -66,12 +66,20 @@ namespace NominasTrabajo
                     HorasExtras = int.Parse(txtHrsExtras.Text),
 
                 };
-                Empleado empleado = new Empleado(txtNombre.Text, rem, txtNoINSS.Text)
+				Deducciones deducciones = new Deducciones();
+                Empleado empleado = new Empleado(txtNombre.Text, rem, txtNoINSS.Text, deducciones)
                 {
                     Cargos = (Cargos)cmbCargos.SelectedIndex,
                     Id = int.Parse(txtId.Text),
 					Imagen=ImagenAArray(rjCircularPictureBox1.Image)
                 };
+				empleado.MesesTrabajadosAguinaldo = emp.MesesTrabajadosAguinaldo;
+				empleado.MesesPrestamo = emp.MesesPrestamo;
+				empleado.MesesTrabajadosIndemnizacion = emp.MesesTrabajadosIndemnizacion;
+				empleado.AñosTrabajadosIndemnizacion = emp.AñosTrabajadosIndemnizacion;
+				empleado.Prestamo = emp.Prestamo;
+				empleado.MesesTrabajadosVacaciones = emp.MesesTrabajadosVacaciones;
+				empleado.PagoPendiente = emp.PagoPendiente;
                 empleadoService.Update(empleado,a);
 
                 Dispose();

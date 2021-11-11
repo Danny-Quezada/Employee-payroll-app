@@ -63,13 +63,17 @@ namespace NominasTrabajo
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            int id = Convert.ToInt32(guna2DataGridView1.Rows[n].Cells[0].Value);
+            Empleado empleado = empleadoService.GetEmpleadoById(id);
             if (e.RowIndex >= 0 && nomina == null)
             {
                 n = e.RowIndex;
                 btnModificar.Visible = true;
                 btnEliminar.Visible = true;
-                btnPrestamo.Visible = true;
-
+                if (empleado.MesesTrabajadosIndemnizacion > 6)
+                {
+                    btnPrestamo.Visible = true;
+                }
             }
             else
             {
@@ -166,6 +170,8 @@ namespace NominasTrabajo
             try
             {
                 var a = (guna2DataGridView1.Rows[n].Cells[0].Value);
+                Empleado empleado = empleadoService.GetEmpleadoById((int)a);
+                EmpleadoDgv empleadoDgv = empleadoService.GetResumenEmpleado((int)a);
                 if (empleadoService.Despedir((int)a))
                 {
                     MessageBox.Show("El empleado ha sido despedido correctamente", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -173,6 +179,7 @@ namespace NominasTrabajo
                 guna2DataGridView1.Rows[n].DefaultCellStyle.ForeColor = Color.Red;
                 guna2DataGridView1.Rows.Clear();
                 llenarDgv(empleadoService.GetResumenEmpleados());
+                MensajeDeDeuda(empleado);
             }    
             catch (Exception ex)
             {
@@ -287,10 +294,17 @@ namespace NominasTrabajo
                 {
                     throw new ArgumentException("El empleado no se encuentra en la lista de empleados activos");
                 }
-                FrmPrestamo frmPrestamo = new FrmPrestamo(empleadoService, empleado);
-                frmPrestamo.ShowDialog();
-                guna2DataGridView1.Rows.Clear();
-                llenarDgv(empleadoService.GetResumenEmpleados());
+                if (empleado.Prestamo == 0)
+                {
+                    FrmPrestamo frmPrestamo = new FrmPrestamo(empleadoService, empleado);
+                    frmPrestamo.ShowDialog();
+                    guna2DataGridView1.Rows.Clear();
+                    llenarDgv(empleadoService.GetResumenEmpleados());
+                }
+                else
+                {
+                    MessageBox.Show("No se puede pedir un prestamo debido a que ya tiene un prestamo vigente", "Error en pedir un prestamo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {
@@ -342,5 +356,12 @@ namespace NominasTrabajo
 			
             }
 		}
+        private void MensajeDeDeuda(Empleado e)
+        {
+            if (e.PagoPendiente > 0)
+            {
+                MessageBox.Show($"El empleado {e.NombreCompleto} le quedo debiendo a la empresa: {e.PagoPendiente}", "Pago pendiente del empleado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 	}
 }

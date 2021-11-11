@@ -243,7 +243,6 @@ C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\NominasTrabajo\obj\De
 C:\Users\Kevin Roa\Desktop\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.Formularios.FrmListaNominas.resources
 C:\Users\Kevin Roa\Desktop\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.Formularios.Mes_inicial.resources
 C:\Users\Kevin Roa\Desktop\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.Formularios.FrmPrestamo.resources
-C:\Users\Kevin Roa\Desktop\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.csproj.CopyComplete
 C:\Users\Quezada\Desktop\Proyecto\TareaDeCurso\NominasTrabajo\bin\Debug\NominasTrabajo.exe.config
 C:\Users\Quezada\Desktop\Proyecto\TareaDeCurso\NominasTrabajo\bin\Debug\NominasTrabajo.exe
 C:\Users\Quezada\Desktop\Proyecto\TareaDeCurso\NominasTrabajo\bin\Debug\NominasTrabajo.pdb
@@ -334,3 +333,4 @@ C:\Users\Quezada\Desktop\P\TareaDeCurso\NominasTrabajo\bin\Debug\System.Numerics
 C:\Users\Quezada\Desktop\P\TareaDeCurso\NominasTrabajo\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Quezada\Desktop\P\TareaDeCurso\NominasTrabajo\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Quezada\Desktop\P\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.csproj.CopyComplete
+C:\Users\Kevin Roa\Desktop\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.Formularios.FrmRecontratar.resources

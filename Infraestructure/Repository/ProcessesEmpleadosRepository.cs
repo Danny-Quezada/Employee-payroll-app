@@ -55,7 +55,7 @@ namespace Infraestructure.Repository
             if (AñosTrabajados <= 3)
             {
                 decimal SalaryWithYear = salary * AñosTrabajados;
-                decimal SalaryProportionalWithMonth = (salary * (MesesTrabajados * 30)) / 360;
+                decimal SalaryProportionalWithMonth = (salary * (MesesTrabajados * 30)) / 365;
                 return SalaryWithYear + SalaryProportionalWithMonth;
             }
             else if (AñosTrabajados > 3)
@@ -65,7 +65,7 @@ namespace Infraestructure.Repository
                 decimal SalaryWithYear = salary * 3;
                 decimal SalaryPerDay = salary / 30;
                 decimal SalaryWithMoreYear = SalaryPerDay * (20 * AñosTemp);
-                decimal SalaryProportionalWithMonth = SalaryPerDay * (((MesesTrabajados * 30) * 20) / 360);
+                decimal SalaryProportionalWithMonth = SalaryPerDay * (((MesesTrabajados * 30) * 20) / 365);
                 return SalaryWithYear + SalaryWithMoreYear + SalaryProportionalWithMonth;
             }
             return 0;

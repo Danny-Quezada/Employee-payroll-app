@@ -85,6 +85,7 @@ namespace NominasTrabajo.Formularios
                     {
                         emp.Prestamo = decimal.Parse(txtPrestamo.Texts) / ((cmbTiempo.SelectedIndex + 1) * 12);
                         emp.MesesPrestamo = (cmbTiempo.SelectedIndex + 1) * 12;
+                        MessageBox.Show($"El pago mensual que dara por el prestamo será de: {emp.Prestamo}", "Aviso importante", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         empleadoService.Update(emp,1);
                         this.Hide();
                     }
