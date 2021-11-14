@@ -30,9 +30,9 @@ namespace NominasTrabajo
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
 			this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
 			this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +67,7 @@ namespace NominasTrabajo
 			this.btnPrestamo = new Guna.UI2.WinForms.Guna2ImageButton();
 			this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
 			this.guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
+			this.btnEstadisticas = new Guna.UI2.WinForms.Guna2ImageButton();
 			((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -77,8 +78,8 @@ namespace NominasTrabajo
 			// 
 			this.guna2DataGridView1.AllowUserToAddRows = false;
 			this.guna2DataGridView1.AllowUserToDeleteRows = false;
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-			this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+			this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
 			this.guna2DataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -87,14 +88,14 @@ namespace NominasTrabajo
 			this.guna2DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.guna2DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
 			this.guna2DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
+			dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+			dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
 			this.guna2DataGridView1.ColumnHeadersHeight = 59;
 			this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Numero,
@@ -115,14 +116,14 @@ namespace NominasTrabajo
             this.Vacaciones,
             this.Indemnizacion,
             this.INATEC});
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(244)))));
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+			dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(244)))));
+			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
 			this.guna2DataGridView1.EnableHeadersVisualStyles = false;
 			this.guna2DataGridView1.GridColor = System.Drawing.Color.White;
 			this.guna2DataGridView1.Location = new System.Drawing.Point(12, 70);
@@ -304,6 +305,7 @@ namespace NominasTrabajo
 			this.lblNomina.Size = new System.Drawing.Size(133, 45);
 			this.lblNomina.TabIndex = 2;
 			this.lblNomina.Text = "Nómina";
+			this.lblNomina.Click += new System.EventHandler(this.lblNomina_Click);
 			// 
 			// btnVerNominas
 			// 
@@ -517,6 +519,26 @@ namespace NominasTrabajo
 			this.guna2ImageButton2.TabIndex = 14;
 			this.guna2ImageButton2.Click += new System.EventHandler(this.guna2ImageButton2_Click);
 			// 
+			// btnEstadisticas
+			// 
+			this.btnEstadisticas.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+			this.btnEstadisticas.CheckedState.Parent = this.btnEstadisticas;
+			this.btnEstadisticas.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnEstadisticas.HoverState.ImageSize = new System.Drawing.Size(59, 59);
+			this.btnEstadisticas.HoverState.Parent = this.btnEstadisticas;
+			this.btnEstadisticas.Image = ((System.Drawing.Image)(resources.GetObject("btnEstadisticas.Image")));
+			this.btnEstadisticas.ImageOffset = new System.Drawing.Point(0, 0);
+			this.btnEstadisticas.ImageRotate = 0F;
+			this.btnEstadisticas.Location = new System.Drawing.Point(183, 0);
+			this.btnEstadisticas.Name = "btnEstadisticas";
+			this.btnEstadisticas.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+			this.btnEstadisticas.PressedState.Parent = this.btnEstadisticas;
+			this.btnEstadisticas.ShadowDecoration.Parent = this.btnEstadisticas;
+			this.btnEstadisticas.Size = new System.Drawing.Size(81, 69);
+			this.btnEstadisticas.TabIndex = 15;
+			this.btnEstadisticas.Visible = false;
+			this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
+			// 
 			// FrmPrincipal
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -524,6 +546,7 @@ namespace NominasTrabajo
 			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(1221, 700);
+			this.Controls.Add(this.btnEstadisticas);
 			this.Controls.Add(this.guna2ImageButton2);
 			this.Controls.Add(this.guna2ImageButton1);
 			this.Controls.Add(this.btnPrestamo);
@@ -589,5 +612,6 @@ namespace NominasTrabajo
         private System.Windows.Forms.DataGridViewTextBoxColumn INATEC;
 		private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton2;
 		private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
+		private Guna.UI2.WinForms.Guna2ImageButton btnEstadisticas;
 	}
 }

@@ -294,6 +294,7 @@ namespace NominasTrabajo
             llenarDgv(nomina.Empleados);
             btnAgregar.Visible = false;
             btnNext.Visible = false;
+            btnEstadisticas.Visible = true;
             //TODO: aqui se habilitarian los botones de imprimir y excel
         }
 
@@ -420,6 +421,17 @@ namespace NominasTrabajo
                 stream.Close();
 			}
 		}
-		
-    }
+
+		private void btnEstadisticas_Click(object sender, EventArgs e)
+		{
+            FrmEstadisticas Estadisticas = new FrmEstadisticas();
+            Estadisticas.Nomina = nomina;
+            Estadisticas.ShowDialog();
+		}
+
+		private void lblNomina_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

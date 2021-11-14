@@ -9,6 +9,7 @@ using Autofac;
 using Domain.Interfaces;
 using Infraestructure.EmpleadosRepos;
 using Infraestructure.Repository;
+using NominasTrabajo.Formularios;
 
 namespace NominasTrabajo
 {
@@ -38,6 +39,7 @@ namespace NominasTrabajo
 
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
+			//Application.Run(new FrmEstadisticas());
 			Application.Run(new FrmLogin(container.Resolve<IEmpleadoService>(), container.Resolve<IProcesses>(), container.Resolve<IEmpresaService>(), container.Resolve<INominaService>()));
 		}
 	}

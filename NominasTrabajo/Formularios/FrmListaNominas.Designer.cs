@@ -48,6 +48,7 @@ namespace NominasTrabajo.Formularios
 			this.cmbMeses = new Guna.UI2.WinForms.Guna2ComboBox();
 			this.txtFinder = new Guna.UI2.WinForms.Guna2TextBox();
 			this.btnFiltrar = new Guna.UI2.WinForms.Guna2GradientButton();
+			this.guna2BorderlessForm2 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
 			this.guna2GradientPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -55,7 +56,13 @@ namespace NominasTrabajo.Formularios
 			// 
 			// guna2BorderlessForm1
 			// 
+			this.guna2BorderlessForm1.BorderRadius = 30;
 			this.guna2BorderlessForm1.ContainerControl = this;
+			// 
+			// guna2Elipse1
+			// 
+			this.guna2Elipse1.BorderRadius = 30;
+			this.guna2Elipse1.TargetControl = this;
 			// 
 			// listView1
 			// 
@@ -123,9 +130,9 @@ namespace NominasTrabajo.Formularios
 			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
 			this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(762, 3);
+			this.pictureBox1.Location = new System.Drawing.Point(762, 12);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(35, 28);
+			this.pictureBox1.Size = new System.Drawing.Size(26, 28);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox1.TabIndex = 14;
 			this.pictureBox1.TabStop = false;
@@ -136,7 +143,7 @@ namespace NominasTrabajo.Formularios
 			this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
 			this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-			this.pictureBox3.Location = new System.Drawing.Point(733, 3);
+			this.pictureBox3.Location = new System.Drawing.Point(733, 12);
 			this.pictureBox3.Name = "pictureBox3";
 			this.pictureBox3.Size = new System.Drawing.Size(23, 28);
 			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -211,6 +218,7 @@ namespace NominasTrabajo.Formularios
 			// txtFinder
 			// 
 			this.txtFinder.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.txtFinder.BorderRadius = 2;
 			this.txtFinder.Cursor = System.Windows.Forms.Cursors.IBeam;
 			this.txtFinder.DefaultText = "";
 			this.txtFinder.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -260,6 +268,11 @@ namespace NominasTrabajo.Formularios
 			this.btnFiltrar.Text = "FILTRAR";
 			this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
 			// 
+			// guna2BorderlessForm2
+			// 
+			this.guna2BorderlessForm2.BorderRadius = 30;
+			this.guna2BorderlessForm2.ContainerControl = this;
+			// 
 			// FrmListaNominas
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -306,5 +319,6 @@ namespace NominasTrabajo.Formularios
         private Guna.UI2.WinForms.Guna2ComboBox cmbMeses;
         private Guna.UI2.WinForms.Guna2GradientButton btnFiltrar;
         private System.Windows.Forms.ColumnHeader TotalNomina;
-    }
+		private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm2;
+	}
 }

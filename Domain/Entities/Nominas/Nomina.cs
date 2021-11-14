@@ -14,8 +14,9 @@ namespace Domain.Entities.Nominas
         public EmpleadoDgv[] Empleados { get; set; }
         public Meses Mes { get; set; }
         public int Año { get; set; }
+       
         public int TotalEmpleados => Empleados.Length; 
         //TODO: aqui faltaria añadirle la sumatoria de otras cosas que paga la empresa
-        public decimal TotalNomina => Empleados.Sum(x => x.Total_Deducciones + x.Total_Ingresos);
+        public decimal TotalNomina => Empleados.Sum(x => x.Total_Deducciones + x.Total_Ingresos+x.Aguinaldo+x.Ingreso_Horas_Extras+x.INSS_Patronal+x.Vacaciones);
     }
 }
