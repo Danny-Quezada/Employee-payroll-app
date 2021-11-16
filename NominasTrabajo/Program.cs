@@ -8,6 +8,7 @@ using AppCore.Services;
 using Autofac;
 using Domain.Interfaces;
 using Infraestructure.EmpleadosRepos;
+using Infraestructure.MongoRepository;
 using Infraestructure.Repository;
 using NominasTrabajo.Formularios;
 
@@ -23,7 +24,8 @@ namespace NominasTrabajo
 		{
 			var builder = new ContainerBuilder();
 
-			builder.RegisterType<EmpleadoListRepository>().As<IEmpleadoRepository>();
+			builder.RegisterType<EmpleadosMongoRepository>().As<IEmpleadoRepository>();
+			//builder.RegisterType<EmpleadoListRepository>().As<IEmpleadoRepository>();
 			builder.RegisterType<EmpleadoService>().As<IEmpleadoService>();
 
 			builder.RegisterType<ProcessesEmpleadosRepository>().As<IProcessesEmpleado>();
@@ -32,7 +34,8 @@ namespace NominasTrabajo
 			builder.RegisterType<ProcessesEmpresaRepository>().As<IProcessesEmpresa>();
 			builder.RegisterType<ProcessesEmpresaServices>().As<IEmpresaService>();
 
-			builder.RegisterType<NominaRepository>().As<INominaRepository>();
+			//builder.RegisterType<NominaRepository>().As<INominaRepository>();
+			builder.RegisterType<NominaMongoRepository>().As<INominaRepository>();
 			builder.RegisterType<NominaService>().As<INominaService>();
 
 			var container = builder.Build();

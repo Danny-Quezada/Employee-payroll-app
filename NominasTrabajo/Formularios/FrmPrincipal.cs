@@ -62,6 +62,11 @@ namespace NominasTrabajo
                 Meses mes = (Meses)Mes;
                 lblNomina.Text = $"Nómina del mes de {mes} del año {year}";
             }
+            //TODO: el mes que se le pasa aqui es incorrecto 
+            if (empleadoService.GetResumenEmpleados(Mes) != null)
+            {
+                llenarDgv(empleadoService.GetResumenEmpleados(Mes));
+            }
         }
 
 
