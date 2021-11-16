@@ -12,6 +12,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -92,7 +93,7 @@ namespace NominasTrabajo
 		{
 			try
 			{
-				verificarDatos(txtNombre.Texts, txtSalario.Texts, txtCodigoInss.Texts, txtHorasTrabajadas.Texts);
+				verificarDatos(txtNombre.Texts, txtSalario.Texts, txtCodigoInss.Texts, txtHorasTrabajadas.Texts, txtCorreo.Texts, txtNumero.Texts);
 				bool bandera = ValidacionINSS();
 				if (bandera)
 				{
@@ -115,7 +116,7 @@ namespace NominasTrabajo
 					{
 						MesesTrabajadosVacaciones = 1
 					};
-					Empleado empleado = new Empleado(txtNombre.Texts, rem, txtCodigoInss.Texts, deducciones, aguinaldo, indemnizacion, prestamo, vacaciones)
+					Empleado empleado = new Empleado(txtNombre.Texts, rem, txtCodigoInss.Texts, deducciones, aguinaldo, indemnizacion, prestamo, vacaciones, txtNumero.Texts, txtCorreo.Texts)
 					{
 						Cargos = (Cargos)cmbCargos.SelectedIndex,
 						Id = empleadoService.GetLastId() + 1,
@@ -135,9 +136,9 @@ namespace NominasTrabajo
                 MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-		private void verificarDatos(string nombre, string salario, string noINSS, string hrs)
+		private void verificarDatos(string nombre, string salario, string noINSS, string hrs, string correo, string numero)
         {
-			if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(noINSS) || string.IsNullOrEmpty(salario) ||  cmbCargos.SelectedIndex==-1)
+			if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(noINSS) || string.IsNullOrEmpty(salario) ||  cmbCargos.SelectedIndex==-1 || string.IsNullOrEmpty(correo) || string.IsNullOrEmpty(numero))
             {
 				throw new ArgumentException("Hay campos vacios, rellenelos por favor");
             }
@@ -154,7 +155,18 @@ namespace NominasTrabajo
             {
 				throw new ArgumentException("Un trabajador no puede tener esas horas extra");
 			}
-        }
+			if (!Regex.IsMatch(correo, @"\A(\w+\.?\w*\@\w+\.)(com)\Z"))
+			{
+				throw new ArgumentException("Correo electronico invalido");
+				//Más instrucciones...
+			}
+			if (!Regex.IsMatch(numero,  @"\A[0-9]{4} [0-9]{4}\Z"))
+			{
+				throw new ArgumentException("numero de telefono invalido");
+				//Más instrucciones...
+			}
+
+		}
 
         private void txtHorasTrabajadas_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -232,6 +244,15 @@ namespace NominasTrabajo
 		
 			
 		}
-	}
+
+        private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+			if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+			{
+				MessageBox.Show("Solo se pueden colocar numeros enteros", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				e.Handled = true;
+			}
+		}
+    }
 
 }

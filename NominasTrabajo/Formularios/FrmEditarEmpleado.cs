@@ -3,6 +3,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using AppCore.Interfaces;
 using Domain.Entities.Empleados;
@@ -59,7 +60,7 @@ namespace NominasTrabajo
 		{
             try
             {
-				validaciones(txtId.Text, txtNombre.Text, txtSalario.Text, txtNoINSS.Text, txtHrsExtras.Text);
+				validaciones(txtId.Text, txtNombre.Text, txtSalario.Text, txtNoINSS.Text, txtHrsExtras.Text, txtnumero.Text, txtcorreo.Text);
 				Remuneraciones rem = new Remuneraciones()
 				{
 					SalarioBase = decimal.Parse(txtSalario.Text),
@@ -85,7 +86,7 @@ namespace NominasTrabajo
 				{
 					MesesTrabajadosVacaciones = emp.Vacaciones.MesesTrabajadosVacaciones
 				};
-				Empleado empleado = new Empleado(txtNombre.Text, rem, txtNoINSS.Text, deducciones, aguinaldo, indemnizacion, prestamo, vacaciones)
+				Empleado empleado = new Empleado(txtNombre.Text, rem, txtNoINSS.Text, deducciones, aguinaldo, indemnizacion, prestamo, vacaciones, txtnumero.Text, txtcorreo.Text)
 				{
 					Cargos = (Cargos)cmbCargos.SelectedIndex,
 					Id = int.Parse(txtId.Text),
@@ -101,8 +102,8 @@ namespace NominasTrabajo
 				MessageBox.Show(ex.Message, "ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
 		}
-		public void validaciones(string  id, string nombre, string salario, string noINSS, string hrs) {
-			if (string.IsNullOrEmpty(id) || string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(noINSS) || string.IsNullOrEmpty(salario) || string.IsNullOrEmpty(hrs) || cmbCargos.SelectedIndex == -1)
+		public void validaciones(string  id, string nombre, string salario, string noINSS, string hrs, string numero, string correo) {
+			if (string.IsNullOrEmpty(id) || string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(noINSS) || string.IsNullOrEmpty(salario) || string.IsNullOrEmpty(hrs) || cmbCargos.SelectedIndex == -1 || string.IsNullOrEmpty(numero) || string.IsNullOrEmpty(correo))
 			{
 				throw new ArgumentException("Hay campos vacios, rellenelos por favor");
 			}
@@ -121,6 +122,16 @@ namespace NominasTrabajo
 			if (int.Parse(id) <= 0)
             {
 				throw new ArgumentException("Este trabjador no existe");
+			}
+			if (Regex.IsMatch(correo, @"\A(\w+\.?\w*\@\w+\.)(com)\Z"))
+			{
+				throw new ArgumentException("Correo electronico invalido");
+				//Más instrucciones...
+			}
+			if (Regex.IsMatch(numero, @"\A[0-9]{4} [0-9]{4}\Z"))
+			{
+				throw new ArgumentException("numero de telefono invalido");
+				//Más instrucciones...
 			}
 		}
 
@@ -155,5 +166,19 @@ namespace NominasTrabajo
 	
 			result.Dispose();
 		}
-	}
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtnumero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+			if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+			{
+				MessageBox.Show("Solo se pueden colocar numeros enteros", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				e.Handled = true;
+			}
+		}
+    }
 }
