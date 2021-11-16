@@ -160,7 +160,7 @@ namespace NominasTrabajo
 				throw new ArgumentException("Correo electronico invalido");
 				//Más instrucciones...
 			}
-			if (!Regex.IsMatch(numero,  @"\A[0-9]{4} [0-9]{4}\Z"))
+			if (!Regex.IsMatch(numero,  @"\A[0-9]{4}[0-9]{4}\Z"))
 			{
 				throw new ArgumentException("numero de telefono invalido");
 				//Más instrucciones...
@@ -253,6 +253,19 @@ namespace NominasTrabajo
 				e.Handled = true;
 			}
 		}
-    }
+
+		private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (char.IsDigit(e.KeyChar))
+			{
+				e.Handled = true;
+			}
+		}
+
+		private void txtNumero__TextChanged(object sender, EventArgs e)
+		{
+
+		}
+	}
 
 }

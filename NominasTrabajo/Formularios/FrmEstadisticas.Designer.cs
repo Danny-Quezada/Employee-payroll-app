@@ -45,7 +45,6 @@ namespace NominasTrabajo.Formularios
 			Guna.Charts.WinForms.ChartFont chartFont15 = new Guna.Charts.WinForms.ChartFont();
 			Guna.Charts.WinForms.Tick tick6 = new Guna.Charts.WinForms.Tick();
 			Guna.Charts.WinForms.ChartFont chartFont16 = new Guna.Charts.WinForms.ChartFont();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEstadisticas));
 			Guna.Charts.WinForms.ChartFont chartFont1 = new Guna.Charts.WinForms.ChartFont();
 			Guna.Charts.WinForms.ChartFont chartFont2 = new Guna.Charts.WinForms.ChartFont();
 			Guna.Charts.WinForms.ChartFont chartFont3 = new Guna.Charts.WinForms.ChartFont();
@@ -61,39 +60,44 @@ namespace NominasTrabajo.Formularios
 			Guna.Charts.WinForms.ChartFont chartFont7 = new Guna.Charts.WinForms.ChartFont();
 			Guna.Charts.WinForms.Tick tick3 = new Guna.Charts.WinForms.Tick();
 			Guna.Charts.WinForms.ChartFont chartFont8 = new Guna.Charts.WinForms.ChartFont();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEstadisticas));
 			this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
 			this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
 			this.gunaChart2 = new Guna.Charts.WinForms.GunaChart();
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-			this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-			this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-			this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-			this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-			this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
-			this.label1 = new System.Windows.Forms.Label();
-			this.lblInformacion = new System.Windows.Forms.Label();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.label2 = new System.Windows.Forms.Label();
-			this.lblEmpleados = new System.Windows.Forms.Label();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			this.pictureBox3 = new System.Windows.Forms.PictureBox();
-			this.label3 = new System.Windows.Forms.Label();
-			this.lblNomina = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.lblDespedidos = new System.Windows.Forms.Label();
-			this.gunaChart1 = new Guna.Charts.WinForms.GunaChart();
 			this.pictureBox4 = new System.Windows.Forms.PictureBox();
+			this.lblInformacion = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
+			this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+			this.lblNomina = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
+			this.pictureBox2 = new System.Windows.Forms.PictureBox();
+			this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+			this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+			this.lblEmpleados = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+			this.lblDespedidos = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
+			this.pictureBox3 = new System.Windows.Forms.PictureBox();
+			this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+			this.gunaChart1 = new Guna.Charts.WinForms.GunaChart();
+			this.gunaPieDataset1 = new Guna.Charts.WinForms.GunaPieDataset();
 			this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
 			this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-			this.gunaPieDataset1 = new Guna.Charts.WinForms.GunaPieDataset();
+			this.pictureBox6 = new System.Windows.Forms.PictureBox();
+			this.pictureBox5 = new System.Windows.Forms.PictureBox();
 			this.guna2Panel1.SuspendLayout();
-			this.guna2Panel3.SuspendLayout();
-			this.guna2Panel4.SuspendLayout();
-			this.guna2Panel5.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+			this.guna2Panel3.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+			this.guna2Panel4.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			this.guna2Panel5.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// guna2BorderlessForm1
@@ -111,9 +115,9 @@ namespace NominasTrabajo.Formularios
 			this.gunaChart2.BackColor = System.Drawing.Color.White;
 			chartFont9.FontName = "Arial";
 			this.gunaChart2.Legend.LabelFont = chartFont9;
-			this.gunaChart2.Location = new System.Drawing.Point(283, 322);
+			this.gunaChart2.Location = new System.Drawing.Point(295, 297);
 			this.gunaChart2.Name = "gunaChart2";
-			this.gunaChart2.Size = new System.Drawing.Size(436, 254);
+			this.gunaChart2.Size = new System.Drawing.Size(507, 282);
 			this.gunaChart2.TabIndex = 1;
 			chartFont10.FontName = "Arial";
 			chartFont10.Size = 12;
@@ -156,6 +160,38 @@ namespace NominasTrabajo.Formularios
 			this.guna2Panel1.Size = new System.Drawing.Size(263, 110);
 			this.guna2Panel1.TabIndex = 2;
 			// 
+			// pictureBox4
+			// 
+			this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+			this.pictureBox4.Location = new System.Drawing.Point(3, 15);
+			this.pictureBox4.Name = "pictureBox4";
+			this.pictureBox4.Size = new System.Drawing.Size(100, 50);
+			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox4.TabIndex = 3;
+			this.pictureBox4.TabStop = false;
+			// 
+			// lblInformacion
+			// 
+			this.lblInformacion.AutoSize = true;
+			this.lblInformacion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblInformacion.ForeColor = System.Drawing.Color.Silver;
+			this.lblInformacion.Location = new System.Drawing.Point(3, 79);
+			this.lblInformacion.Name = "lblInformacion";
+			this.lblInformacion.Size = new System.Drawing.Size(45, 17);
+			this.lblInformacion.TabIndex = 1;
+			this.lblInformacion.Text = "label2";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Segoe UI Historic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.ForeColor = System.Drawing.Color.Silver;
+			this.label1.Location = new System.Drawing.Point(111, 36);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(100, 20);
+			this.label1.TabIndex = 0;
+			this.label1.Text = "Información";
+			// 
 			// guna2Panel3
 			// 
 			this.guna2Panel3.BackColor = System.Drawing.Color.White;
@@ -171,6 +207,47 @@ namespace NominasTrabajo.Formularios
 			this.guna2Panel3.TabIndex = 4;
 			this.guna2Panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel3_Paint);
 			// 
+			// lblNomina
+			// 
+			this.lblNomina.AutoSize = true;
+			this.lblNomina.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblNomina.ForeColor = System.Drawing.Color.Silver;
+			this.lblNomina.Location = new System.Drawing.Point(109, 86);
+			this.lblNomina.Name = "lblNomina";
+			this.lblNomina.Size = new System.Drawing.Size(101, 32);
+			this.lblNomina.TabIndex = 3;
+			this.lblNomina.Text = "Nómina";
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.ForeColor = System.Drawing.Color.Silver;
+			this.label3.Location = new System.Drawing.Point(119, 33);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(98, 20);
+			this.label3.TabIndex = 3;
+			this.label3.Text = "Total nómina";
+			// 
+			// pictureBox2
+			// 
+			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+			this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+			this.pictureBox2.Name = "pictureBox2";
+			this.pictureBox2.Size = new System.Drawing.Size(100, 50);
+			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox2.TabIndex = 3;
+			this.pictureBox2.TabStop = false;
+			// 
+			// guna2Panel2
+			// 
+			this.guna2Panel2.BackColor = System.Drawing.Color.White;
+			this.guna2Panel2.Location = new System.Drawing.Point(0, 145);
+			this.guna2Panel2.Name = "guna2Panel2";
+			this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
+			this.guna2Panel2.Size = new System.Drawing.Size(245, 139);
+			this.guna2Panel2.TabIndex = 5;
+			// 
 			// guna2Panel4
 			// 
 			this.guna2Panel4.BackColor = System.Drawing.Color.White;
@@ -184,14 +261,38 @@ namespace NominasTrabajo.Formularios
 			this.guna2Panel4.Size = new System.Drawing.Size(263, 139);
 			this.guna2Panel4.TabIndex = 4;
 			// 
-			// guna2Panel2
+			// lblEmpleados
 			// 
-			this.guna2Panel2.BackColor = System.Drawing.Color.White;
-			this.guna2Panel2.Location = new System.Drawing.Point(0, 145);
-			this.guna2Panel2.Name = "guna2Panel2";
-			this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
-			this.guna2Panel2.Size = new System.Drawing.Size(245, 139);
-			this.guna2Panel2.TabIndex = 5;
+			this.lblEmpleados.AutoSize = true;
+			this.lblEmpleados.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblEmpleados.ForeColor = System.Drawing.Color.Silver;
+			this.lblEmpleados.Location = new System.Drawing.Point(79, 79);
+			this.lblEmpleados.Name = "lblEmpleados";
+			this.lblEmpleados.Size = new System.Drawing.Size(132, 32);
+			this.lblEmpleados.TabIndex = 2;
+			this.lblEmpleados.Text = "Empleados";
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.ForeColor = System.Drawing.Color.Silver;
+			this.label2.Location = new System.Drawing.Point(92, 21);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(168, 20);
+			this.label2.TabIndex = 1;
+			this.label2.Text = "Empleados contratados";
+			this.label2.Click += new System.EventHandler(this.label2_Click);
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+			this.pictureBox1.Location = new System.Drawing.Point(6, 3);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox1.TabIndex = 0;
+			this.pictureBox1.TabStop = false;
 			// 
 			// guna2Panel5
 			// 
@@ -207,111 +308,16 @@ namespace NominasTrabajo.Formularios
 			this.guna2Panel5.Size = new System.Drawing.Size(245, 139);
 			this.guna2Panel5.TabIndex = 6;
 			// 
-			// guna2Panel6
+			// lblDespedidos
 			// 
-			this.guna2Panel6.BackColor = System.Drawing.Color.White;
-			this.guna2Panel6.Location = new System.Drawing.Point(0, 145);
-			this.guna2Panel6.Name = "guna2Panel6";
-			this.guna2Panel6.ShadowDecoration.Parent = this.guna2Panel6;
-			this.guna2Panel6.Size = new System.Drawing.Size(245, 139);
-			this.guna2Panel6.TabIndex = 5;
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Segoe UI Historic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.ForeColor = System.Drawing.Color.Silver;
-			this.label1.Location = new System.Drawing.Point(111, 36);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(100, 20);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "Información";
-			// 
-			// lblInformacion
-			// 
-			this.lblInformacion.AutoSize = true;
-			this.lblInformacion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblInformacion.ForeColor = System.Drawing.Color.Silver;
-			this.lblInformacion.Location = new System.Drawing.Point(3, 79);
-			this.lblInformacion.Name = "lblInformacion";
-			this.lblInformacion.Size = new System.Drawing.Size(45, 17);
-			this.lblInformacion.TabIndex = 1;
-			this.lblInformacion.Text = "label2";
-			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(6, 3);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox1.TabIndex = 0;
-			this.pictureBox1.TabStop = false;
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.ForeColor = System.Drawing.Color.Silver;
-			this.label2.Location = new System.Drawing.Point(92, 21);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(168, 20);
-			this.label2.TabIndex = 1;
-			this.label2.Text = "Empleados contratados";
-			this.label2.Click += new System.EventHandler(this.label2_Click);
-			// 
-			// lblEmpleados
-			// 
-			this.lblEmpleados.AutoSize = true;
-			this.lblEmpleados.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblEmpleados.ForeColor = System.Drawing.Color.Silver;
-			this.lblEmpleados.Location = new System.Drawing.Point(79, 79);
-			this.lblEmpleados.Name = "lblEmpleados";
-			this.lblEmpleados.Size = new System.Drawing.Size(132, 32);
-			this.lblEmpleados.TabIndex = 2;
-			this.lblEmpleados.Text = "Empleados";
-			// 
-			// pictureBox2
-			// 
-			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-			this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(100, 50);
-			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox2.TabIndex = 3;
-			this.pictureBox2.TabStop = false;
-			// 
-			// pictureBox3
-			// 
-			this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-			this.pictureBox3.Location = new System.Drawing.Point(3, 3);
-			this.pictureBox3.Name = "pictureBox3";
-			this.pictureBox3.Size = new System.Drawing.Size(100, 50);
-			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox3.TabIndex = 6;
-			this.pictureBox3.TabStop = false;
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.ForeColor = System.Drawing.Color.Silver;
-			this.label3.Location = new System.Drawing.Point(119, 33);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(98, 20);
-			this.label3.TabIndex = 3;
-			this.label3.Text = "Total nómina";
-			// 
-			// lblNomina
-			// 
-			this.lblNomina.AutoSize = true;
-			this.lblNomina.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblNomina.ForeColor = System.Drawing.Color.Silver;
-			this.lblNomina.Location = new System.Drawing.Point(109, 86);
-			this.lblNomina.Name = "lblNomina";
-			this.lblNomina.Size = new System.Drawing.Size(101, 32);
-			this.lblNomina.TabIndex = 3;
-			this.lblNomina.Text = "Nómina";
+			this.lblDespedidos.AutoSize = true;
+			this.lblDespedidos.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblDespedidos.ForeColor = System.Drawing.Color.Silver;
+			this.lblDespedidos.Location = new System.Drawing.Point(70, 75);
+			this.lblDespedidos.Name = "lblDespedidos";
+			this.lblDespedidos.Size = new System.Drawing.Size(140, 32);
+			this.lblDespedidos.TabIndex = 6;
+			this.lblDespedidos.Text = "Despedidos";
 			// 
 			// label4
 			// 
@@ -324,16 +330,24 @@ namespace NominasTrabajo.Formularios
 			this.label4.TabIndex = 6;
 			this.label4.Text = "Empleados despedidos";
 			// 
-			// lblDespedidos
+			// pictureBox3
 			// 
-			this.lblDespedidos.AutoSize = true;
-			this.lblDespedidos.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblDespedidos.ForeColor = System.Drawing.Color.Silver;
-			this.lblDespedidos.Location = new System.Drawing.Point(70, 75);
-			this.lblDespedidos.Name = "lblDespedidos";
-			this.lblDespedidos.Size = new System.Drawing.Size(140, 32);
-			this.lblDespedidos.TabIndex = 6;
-			this.lblDespedidos.Text = "Despedidos";
+			this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+			this.pictureBox3.Location = new System.Drawing.Point(3, 3);
+			this.pictureBox3.Name = "pictureBox3";
+			this.pictureBox3.Size = new System.Drawing.Size(100, 50);
+			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox3.TabIndex = 6;
+			this.pictureBox3.TabStop = false;
+			// 
+			// guna2Panel6
+			// 
+			this.guna2Panel6.BackColor = System.Drawing.Color.White;
+			this.guna2Panel6.Location = new System.Drawing.Point(0, 145);
+			this.guna2Panel6.Name = "guna2Panel6";
+			this.guna2Panel6.ShadowDecoration.Parent = this.guna2Panel6;
+			this.guna2Panel6.Size = new System.Drawing.Size(245, 139);
+			this.guna2Panel6.TabIndex = 5;
 			// 
 			// gunaChart1
 			// 
@@ -344,7 +358,7 @@ namespace NominasTrabajo.Formularios
 			this.gunaChart1.Legend.LabelFont = chartFont1;
 			this.gunaChart1.Location = new System.Drawing.Point(306, 31);
 			this.gunaChart1.Name = "gunaChart1";
-			this.gunaChart1.Size = new System.Drawing.Size(413, 260);
+			this.gunaChart1.Size = new System.Drawing.Size(487, 260);
 			this.gunaChart1.TabIndex = 7;
 			chartFont2.FontName = "Arial";
 			chartFont2.Size = 12;
@@ -375,15 +389,10 @@ namespace NominasTrabajo.Formularios
 			this.gunaChart1.ZAxes.Ticks = tick3;
 			this.gunaChart1.Load += new System.EventHandler(this.gunaChart1_Load_1);
 			// 
-			// pictureBox4
+			// gunaPieDataset1
 			// 
-			this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-			this.pictureBox4.Location = new System.Drawing.Point(3, 15);
-			this.pictureBox4.Name = "pictureBox4";
-			this.pictureBox4.Size = new System.Drawing.Size(100, 50);
-			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox4.TabIndex = 3;
-			this.pictureBox4.TabStop = false;
+			this.gunaPieDataset1.Label = "Pie1";
+			this.gunaPieDataset1.TargetChart = this.gunaChart1;
 			// 
 			// guna2Elipse2
 			// 
@@ -395,17 +404,38 @@ namespace NominasTrabajo.Formularios
 			this.guna2Elipse3.BorderRadius = 20;
 			this.guna2Elipse3.TargetControl = this.gunaChart2;
 			// 
-			// gunaPieDataset1
+			// pictureBox6
 			// 
-			this.gunaPieDataset1.Label = "Pie1";
-			this.gunaPieDataset1.TargetChart = this.gunaChart1;
+			this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+			this.pictureBox6.Location = new System.Drawing.Point(743, 2);
+			this.pictureBox6.Name = "pictureBox6";
+			this.pictureBox6.Size = new System.Drawing.Size(22, 23);
+			this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox6.TabIndex = 11;
+			this.pictureBox6.TabStop = false;
+			this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+			// 
+			// pictureBox5
+			// 
+			this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+			this.pictureBox5.Location = new System.Drawing.Point(771, 2);
+			this.pictureBox5.Name = "pictureBox5";
+			this.pictureBox5.Size = new System.Drawing.Size(22, 23);
+			this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox5.TabIndex = 10;
+			this.pictureBox5.TabStop = false;
+			this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
 			// 
 			// FrmEstadisticas
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
-			this.ClientSize = new System.Drawing.Size(731, 588);
+			this.ClientSize = new System.Drawing.Size(814, 612);
+			this.Controls.Add(this.pictureBox6);
+			this.Controls.Add(this.pictureBox5);
 			this.Controls.Add(this.gunaChart1);
 			this.Controls.Add(this.guna2Panel5);
 			this.Controls.Add(this.guna2Panel3);
@@ -419,16 +449,18 @@ namespace NominasTrabajo.Formularios
 			this.Load += new System.EventHandler(this.FrmEstadisticas_Load);
 			this.guna2Panel1.ResumeLayout(false);
 			this.guna2Panel1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
 			this.guna2Panel3.ResumeLayout(false);
 			this.guna2Panel3.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.guna2Panel4.ResumeLayout(false);
 			this.guna2Panel4.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.guna2Panel5.ResumeLayout(false);
 			this.guna2Panel5.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -460,5 +492,7 @@ namespace NominasTrabajo.Formularios
 		private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
 		private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
 		private Guna.Charts.WinForms.GunaPieDataset gunaPieDataset1;
+		private System.Windows.Forms.PictureBox pictureBox6;
+		private System.Windows.Forms.PictureBox pictureBox5;
 	}
 }

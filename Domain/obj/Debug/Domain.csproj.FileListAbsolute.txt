@@ -57,3 +57,9 @@ C:\Users\JADPA_25\Desktop\Tarea-curso\TareaDeCurso\Domain\bin\Debug\Domain.pdb
 C:\Users\JADPA_25\Desktop\Tarea-curso\TareaDeCurso\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
 C:\Users\JADPA_25\Desktop\Tarea-curso\TareaDeCurso\Domain\obj\Debug\Domain.dll
 C:\Users\JADPA_25\Desktop\Tarea-curso\TareaDeCurso\Domain\obj\Debug\Domain.pdb
+E:\Quezada\Download\Clase\TareaDeCurso\Domain\bin\Debug\Domain.dll
+E:\Quezada\Download\Clase\TareaDeCurso\Domain\bin\Debug\Domain.pdb
+E:\Quezada\Download\Clase\TareaDeCurso\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+E:\Quezada\Download\Clase\TareaDeCurso\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+E:\Quezada\Download\Clase\TareaDeCurso\Domain\obj\Debug\Domain.dll
+E:\Quezada\Download\Clase\TareaDeCurso\Domain\obj\Debug\Domain.pdb

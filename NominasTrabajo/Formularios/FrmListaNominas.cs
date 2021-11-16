@@ -35,6 +35,10 @@ namespace NominasTrabajo.Formularios
 
         private void FrmListaNominas_Load(object sender, EventArgs e)
         {
+			if (nominaService.FindAll().Count > 1)
+			{
+                btnEstadisticas.Visible = true;
+			}
             llenarListView(nominaService.FindAll());
             cmbBusqueda.Items.AddRange(Enum.GetValues(typeof(FiltrosNomina)).Cast<object>().ToArray());
             cmbMeses.Items.AddRange(Enum.GetValues(typeof(Meses)).Cast<object>().ToArray());
@@ -144,6 +148,12 @@ namespace NominasTrabajo.Formularios
 		private void listView1_SelectedIndexChanged(object sender, EventArgs e)
 		{
 
+		}
+
+		private void btnEstadisticas_Click(object sender, EventArgs e)
+		{
+            FrmEstadisticas Estadisticas = new FrmEstadisticas(nominaService);
+            Estadisticas.ShowDialog();
 		}
 	}
 }

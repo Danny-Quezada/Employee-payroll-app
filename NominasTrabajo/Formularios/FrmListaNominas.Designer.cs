@@ -49,6 +49,7 @@ namespace NominasTrabajo.Formularios
 			this.txtFinder = new Guna.UI2.WinForms.Guna2TextBox();
 			this.btnFiltrar = new Guna.UI2.WinForms.Guna2GradientButton();
 			this.guna2BorderlessForm2 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+			this.btnEstadisticas = new Guna.UI2.WinForms.Guna2ImageButton();
 			this.guna2GradientPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -122,7 +123,7 @@ namespace NominasTrabajo.Formularios
 			this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
 			this.guna2GradientPanel1.Name = "guna2GradientPanel1";
 			this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
-			this.guna2GradientPanel1.Size = new System.Drawing.Size(800, 85);
+			this.guna2GradientPanel1.Size = new System.Drawing.Size(867, 85);
 			this.guna2GradientPanel1.TabIndex = 1;
 			// 
 			// pictureBox1
@@ -130,9 +131,9 @@ namespace NominasTrabajo.Formularios
 			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
 			this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(762, 12);
+			this.pictureBox1.Location = new System.Drawing.Point(838, 3);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(26, 28);
+			this.pictureBox1.Size = new System.Drawing.Size(26, 18);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox1.TabIndex = 14;
 			this.pictureBox1.TabStop = false;
@@ -143,9 +144,9 @@ namespace NominasTrabajo.Formularios
 			this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
 			this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-			this.pictureBox3.Location = new System.Drawing.Point(733, 12);
+			this.pictureBox3.Location = new System.Drawing.Point(809, 3);
 			this.pictureBox3.Name = "pictureBox3";
-			this.pictureBox3.Size = new System.Drawing.Size(23, 28);
+			this.pictureBox3.Size = new System.Drawing.Size(23, 18);
 			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox3.TabIndex = 13;
 			this.pictureBox3.TabStop = false;
@@ -273,12 +274,33 @@ namespace NominasTrabajo.Formularios
 			this.guna2BorderlessForm2.BorderRadius = 30;
 			this.guna2BorderlessForm2.ContainerControl = this;
 			// 
+			// btnEstadisticas
+			// 
+			this.btnEstadisticas.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+			this.btnEstadisticas.CheckedState.Parent = this.btnEstadisticas;
+			this.btnEstadisticas.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnEstadisticas.HoverState.ImageSize = new System.Drawing.Size(59, 59);
+			this.btnEstadisticas.HoverState.Parent = this.btnEstadisticas;
+			this.btnEstadisticas.Image = ((System.Drawing.Image)(resources.GetObject("btnEstadisticas.Image")));
+			this.btnEstadisticas.ImageOffset = new System.Drawing.Point(0, 0);
+			this.btnEstadisticas.ImageRotate = 0F;
+			this.btnEstadisticas.Location = new System.Drawing.Point(762, 91);
+			this.btnEstadisticas.Name = "btnEstadisticas";
+			this.btnEstadisticas.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+			this.btnEstadisticas.PressedState.Parent = this.btnEstadisticas;
+			this.btnEstadisticas.ShadowDecoration.Parent = this.btnEstadisticas;
+			this.btnEstadisticas.Size = new System.Drawing.Size(81, 69);
+			this.btnEstadisticas.TabIndex = 16;
+			this.btnEstadisticas.Visible = false;
+			this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
+			// 
 			// FrmListaNominas
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.ClientSize = new System.Drawing.Size(867, 450);
+			this.Controls.Add(this.btnEstadisticas);
 			this.Controls.Add(this.btnFiltrar);
 			this.Controls.Add(this.txtFinder);
 			this.Controls.Add(this.cmbMeses);
@@ -320,5 +342,6 @@ namespace NominasTrabajo.Formularios
         private Guna.UI2.WinForms.Guna2GradientButton btnFiltrar;
         private System.Windows.Forms.ColumnHeader TotalNomina;
 		private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm2;
+		private Guna.UI2.WinForms.Guna2ImageButton btnEstadisticas;
 	}
 }

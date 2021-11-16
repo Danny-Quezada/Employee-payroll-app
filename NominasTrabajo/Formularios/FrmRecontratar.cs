@@ -154,6 +154,10 @@ namespace NominasTrabajo.Formularios
 
 		private void guna2GradientButton1_Click(object sender, EventArgs e)
 		{
+			if (txtBuscar.Texts == string.Empty)
+			{
+				return;
+			}
 			List<Empleado> empleados = new List<Empleado>();
 			if (guna2ComboBox1.SelectedIndex == 0)
 			{

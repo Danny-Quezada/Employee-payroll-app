@@ -1,4 +1,5 @@
-﻿using Domain.Entities.Nominas;
+﻿using AppCore.Interfaces;
+using Domain.Entities.Nominas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,17 @@ namespace NominasTrabajo.Formularios
 {
 	public partial class FrmEstadisticas : Form
 	{
-		public Nomina Nomina { get; set; }
+		public Nomina Nomina;
+		private INominaService NominaService;
 		int Despedidos = 0;
-		public FrmEstadisticas()
+		public FrmEstadisticas(Nomina nomina)
 		{
+			this.Nomina = nomina;
+			InitializeComponent();
+		}
+		public FrmEstadisticas(INominaService nominaService)
+		{
+			this.NominaService = nominaService;
 			InitializeComponent();
 		}
 
@@ -32,14 +40,66 @@ namespace NominasTrabajo.Formularios
 		
 		private void FrmEstadisticas_Load(object sender, EventArgs e)
 		{
-			
+
+			if (NominaService == null)
+			{
+				NominaIndividual();
+			}
+			else if (Nomina == null)
+			{
+				Nominas();
+			}
+		}
+		private void Nominas()
+		{
+			var Nominas = NominaService.FindAll();
+
+			lblInformacion.Text = $"Nóminas totales: {Nominas.Count}";
+			lblEmpleados.Text = $"         {Nominas.Max(x => x.TotalEmpleados)}";
+			decimal Total = Math.Round(Nominas.Sum(x => x.TotalNomina));
+			var ListaEmpleadosGlobal = Nominas.Select(x => x.Empleados).ToArray();
+			for (int i = 0; i < ListaEmpleadosGlobal.Length; i++)
+			{
+				Despedidos += ListaEmpleadosGlobal[i].Count(x => x.Estado == Domain.Enums.EstadoTrabajador.Inactivo);
+
+			}
+			lblDespedidos.Text = $"       {Despedidos}";
+			lblNomina.Text = $" {Total}";
+			foreach (Nomina n in Nominas)
+			{
+
+				gunaPieDataset1.DataPoints.Add($"Nomina { n.Mes.ToString()}", Convert.ToDouble(n.TotalNomina));
+			}
+
+			var dataset1 = new Guna.Charts.WinForms.GunaStackedHorizontalBarDataset();
+			dataset1.Label = "Empleados despedidos";
+			for (int i = 0; i < ListaEmpleadosGlobal.Length; i++)
+			{
+				Despedidos = ListaEmpleadosGlobal[i].Count(x => x.Estado == Domain.Enums.EstadoTrabajador.Inactivo);
+				dataset1.DataPoints.Add("Empleados despedidos", Despedidos);
+			}
+
+			var dataset2 = new Guna.Charts.WinForms.GunaStackedHorizontalBarDataset();
+
+			dataset2.Label = "Empleados contratados";
+			foreach (Nomina n in Nominas)
+			{
+				dataset2.DataPoints.Add("Empleados contratados", Convert.ToDouble(n.Empleados.Length));
+			}
+			dataset2.FillColors = Guna.Charts.WinForms.ChartUtils.RandomColors(3);
+			gunaChart2.Datasets.Add(dataset1);
+			gunaChart2.Datasets.Add(dataset2);
+		}
+		private void NominaIndividual()
+		{
+
 			lblInformacion.Text = $"Nómina del mes de {Nomina.Mes} del año {Nomina.Año}";
 			lblEmpleados.Text = $"         {Nomina.TotalEmpleados}";
 			decimal Total = Math.Round(Nomina.TotalNomina);
-			
-			for(int i=0; i<Nomina.Empleados.Length; i++)
+
+			for (int i = 0; i < Nomina.Empleados.Length; i++)
 			{
-				if (Nomina.Empleados[i].Estado ==Domain.Enums.EstadoTrabajador.Inactivo)
+				if (Nomina.Empleados[i].Estado == Domain.Enums.EstadoTrabajador.Inactivo)
 				{
 					Despedidos++;
 				}
@@ -49,19 +109,18 @@ namespace NominasTrabajo.Formularios
 			gunaPieDataset1.DataPoints.Add("Empleados Contratados", Nomina.TotalEmpleados);
 			gunaChart1.Legend.Position = Guna.Charts.WinForms.LegendPosition.Right;
 			gunaPieDataset1.DataPoints.Add("Empleados Despedidos", Despedidos);
-
+			var dataset2 = new Guna.Charts.WinForms.GunaStackedHorizontalBarDataset();
+			dataset2.DataPoints.Add("Empleados", Despedidos);
+			dataset2.Label = "Empleados despedidos";
+			dataset2.FillColors = Guna.Charts.WinForms.ChartUtils.RandomColors(Nomina.TotalEmpleados, 133);
+			gunaChart2.Datasets.Add(dataset2);
 			var dataset1 = new Guna.Charts.WinForms.GunaStackedHorizontalBarDataset();
 			dataset1.DataPoints.Add("Empleados contratados", Nomina.TotalEmpleados);
+			dataset1.Label = "Empleados contratados";
 			dataset1.FillColors = Guna.Charts.WinForms.ChartUtils.RandomColors(Nomina.TotalEmpleados);
 			gunaChart2.Datasets.Add(dataset1);
-			var dataset2 = new Guna.Charts.WinForms.GunaStackedHorizontalBarDataset();
-			dataset2.DataPoints.Add("Empleados despedidos", Despedidos);
-			dataset2.FillColors = Guna.Charts.WinForms.ChartUtils.RandomColors(Nomina.TotalEmpleados);	
-			gunaChart2.Datasets.Add(dataset2);
-	
-		
-		}
 
+		}
 		private void gunaChart1_Load_1(object sender, EventArgs e)
 		{
 
@@ -75,6 +134,16 @@ namespace NominasTrabajo.Formularios
 		private void label2_Click(object sender, EventArgs e)
 		{
 
+		}
+
+		private void pictureBox5_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+
+		private void pictureBox6_Click(object sender, EventArgs e)
+		{
+			this.WindowState = FormWindowState.Minimized;
 		}
 	}
 }

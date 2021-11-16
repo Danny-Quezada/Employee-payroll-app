@@ -446,8 +446,7 @@ namespace NominasTrabajo
 
 		private void btnEstadisticas_Click(object sender, EventArgs e)
 		{
-            FrmEstadisticas Estadisticas = new FrmEstadisticas();
-            Estadisticas.Nomina = nomina;
+            FrmEstadisticas Estadisticas = new FrmEstadisticas(nomina);
             Estadisticas.ShowDialog();
 		}
 
