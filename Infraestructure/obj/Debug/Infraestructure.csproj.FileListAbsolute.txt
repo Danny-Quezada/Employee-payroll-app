@@ -263,3 +263,4 @@ E:\Quezada\Download\Tareaa\TareaDeCurso\Infraestructure\obj\Debug\Infraestructur
 E:\Quezada\Download\Tareaa\TareaDeCurso\Infraestructure\obj\Debug\Infraestructure.csproj.CopyComplete
 E:\Quezada\Download\Tareaa\TareaDeCurso\Infraestructure\obj\Debug\Infraestructure.dll
 E:\Quezada\Download\Tareaa\TareaDeCurso\Infraestructure\obj\Debug\Infraestructure.pdb
+C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\Infraestructure\obj\Debug\Infraestructure.csproj.CopyComplete

@@ -239,7 +239,6 @@ C:\Users\larry\Desktop\Tarea-curso\TareaDeCurso\NominasTrabajo\obj\Debug\Nominas
 C:\Users\larry\Desktop\Tarea-curso\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.Formularios.Mes_inicial.resources
 C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.Formularios.Mes_inicial.resources
 C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.Formularios.FrmListaNominas.resources
-C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.csproj.CopyComplete
 C:\Users\Kevin Roa\Desktop\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.Formularios.FrmListaNominas.resources
 C:\Users\Kevin Roa\Desktop\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.Formularios.Mes_inicial.resources
 C:\Users\Kevin Roa\Desktop\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.Formularios.FrmPrestamo.resources
@@ -435,3 +434,10 @@ E:\Quezada\Download\Tareaa\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.
 E:\Quezada\Download\Tareaa\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.csproj.CopyComplete
 E:\Quezada\Download\Tareaa\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.exe
 E:\Quezada\Download\Tareaa\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.pdb
+C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\NominasTrabajo\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\NominasTrabajo\bin\Debug\Guna.Charts.WinForms.dll
+C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\NominasTrabajo\bin\Debug\itextsharp.dll
+C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\NominasTrabajo\bin\Debug\itextsharp.xml
+C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.Formularios.FrmEstadisticas.resources
+C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.Formularios.FrmPrestamo.resources
+C:\Users\Roberto\Desktop\ProyectoDeCursoProgI\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.Formularios.FrmRecontratar.resources

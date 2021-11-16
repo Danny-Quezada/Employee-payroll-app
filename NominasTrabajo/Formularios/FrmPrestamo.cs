@@ -57,43 +57,40 @@ namespace NominasTrabajo.Formularios
         {
             WindowState = FormWindowState.Minimized;
         }
-        private int ValidacionCamposVacios()
+        private void ValidacionCamposVacios()
         {
-            if(txtPrestamo.Texts == "" || cmbTiempo.Text == null)
+            if (string.IsNullOrEmpty(txtPrestamo.Texts) || cmbTiempo.SelectedIndex == -1)
             {
-                MessageBox.Show("Usted no ha rellenado todos los campos para la solicitud de su prestamo", "Error con los datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return 1;
-            }
-            else
-            {
-                return 0;
+                throw new ArgumentException("Usted no ha rellenado todos los campos para la solicitud de su prestamo");
+                
             }
         }
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
-            if(decimal.Parse(txtPrestamo.Texts) < 0)
+            try
             {
-                MessageBox.Show("Monto del prestamo incorrecto, el monto debe de ser mayor a 0", "Error en el monto del prestamo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                int validacion = ValidacionCamposVacios();
-                if (validacion == 0)
+                ValidacionCamposVacios();
+                if (decimal.Parse(txtPrestamo.Texts) <= 0)
                 {
-                    bool bandera = ValidacionPrestamo(decimal.Parse(txtPrestamo.Texts), emp.Remuneraciones.SalarioBase, cmbTiempo.SelectedIndex);
-                    if (bandera)
-                    {
-                        emp.Prestamo.Cuota_Prestamo = decimal.Parse(txtPrestamo.Texts) / ((cmbTiempo.SelectedIndex + 1) * 12);
-                        emp.Prestamo.MesesPrestamo = (cmbTiempo.SelectedIndex + 1) * 12;
-                        MessageBox.Show($"El pago mensual que dara por el prestamo será de: {emp.Prestamo}", "Aviso importante", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        empleadoService.Update(emp,1);
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("La cuota que pagara mensualmente no puede ser mayor a su salario base", "Error en el monto del prestamo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    throw new ArgumentException("Monto del prestamo incorrecto, el monto debe de ser mayor a 0");
                 }
+                bool bandera = ValidacionPrestamo(decimal.Parse(txtPrestamo.Texts), emp.Remuneraciones.SalarioBase, cmbTiempo.SelectedIndex);
+                if (bandera)
+                {
+                    emp.Prestamo.Cuota_Prestamo = decimal.Parse(txtPrestamo.Texts) / ((cmbTiempo.SelectedIndex + 1) * 12);
+                    emp.Prestamo.MesesPrestamo = (cmbTiempo.SelectedIndex + 1) * 12;
+                    MessageBox.Show($"El pago mensual que dara por el prestamo será de: {emp.Prestamo.Cuota_Prestamo}", "Aviso importante", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    empleadoService.Update(emp, 1);
+                    this.Hide();
+                }
+                else
+                {
+                    throw new ArgumentException("La cuota que pagara mensualmente no puede ser mayor a su salario base");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,"ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 

@@ -68,31 +68,48 @@ namespace NominasTrabajo
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (empleadoService.FindAll(1).Count == 0)
+            try
             {
-                return;
-            }
-            int id = Convert.ToInt32(guna2DataGridView1.Rows[n].Cells[0].Value);
-            Empleado empleado = empleadoService.GetEmpleadoById(id);
-            if (e.RowIndex >= 0 && nomina == null)
-            {
-                n = e.RowIndex;
-                btnModificar.Visible = true;
-                btnEliminar.Visible = true;
-                if (empleado.Estado == EstadoTrabajador.Inactivo)
+                if ((e.RowIndex >= 0 && e.RowIndex<guna2DataGridView1.Rows.Count-1) && nomina == null)
                 {
-                    return;
+                    n = e.RowIndex;
+                    //if (guna2DataGridView1.Rows[n].Cells[0].Value.ToString() == "")
+                    //{
+                    //    throw new ArgumentException();
+                    //}
+                    int id = Convert.ToInt32(guna2DataGridView1.Rows[n].Cells[0].Value);
+                    Empleado empleado = empleadoService.GetEmpleadoById(id);
+                    if (empleado == null)
+                    {
+                        throw new Exception();
+                    }
+                    if (empleado.Estado == EstadoTrabajador.Inactivo)
+                    {
+                        throw new Exception();
+                    }
+                    //aqui modifique
+                    if (empleado.MesesTrabajados > 6)
+                    {
+                        btnPrestamo.Visible = true;
+                    }
+                    else
+                    {
+                        btnPrestamo.Visible = false;
+                    }
+                    btnModificar.Visible = true;
+                    btnEliminar.Visible = true;
                 }
-                if (empleado.Indemnizacion.MesesTrabajadosIndemnizacion > 6)
+                else
                 {
-                    btnPrestamo.Visible = true;
+                    throw new Exception();
                 }
             }
-            else
+            catch (Exception)
             {
                 btnModificar.Visible = false;
                 btnEliminar.Visible = false;
                 btnPrestamo.Visible = false;
+                return;
             }
         }
 
@@ -252,6 +269,11 @@ namespace NominasTrabajo
             if (empleadoService.GetResumenEmpleados(Mes) != null)
             {
                 btnVerNominas.Visible = true;
+
+                btnEliminar.Visible = false;
+                btnModificar.Visible = false;
+                btnPrestamo.Visible = false;
+
                 Nomina nomina = new Nomina()
                 {
                     Id = nominaService.GetLastId() + 1,

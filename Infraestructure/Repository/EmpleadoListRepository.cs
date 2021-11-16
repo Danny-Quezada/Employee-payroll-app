@@ -34,6 +34,8 @@ namespace Infraestructure.EmpleadosRepos
             List<Empleado> empleados = (List<Empleado>)FindAll(1);
             foreach (Empleado a in empleados)
             {
+                a.MesesTrabajados++;
+
                 if (a.Vacaciones.MesesTrabajadosVacaciones == 6)
                 {
                     a.Vacaciones.MesesTrabajadosVacaciones = 1;
@@ -93,6 +95,9 @@ namespace Infraestructure.EmpleadosRepos
             }
             bool exitoso = Delete(e);
             e.Estado = EstadoTrabajador.Inactivo;
+
+            e.MesesTrabajados = 1;
+
             despedidosDelMes.Add(e);
             empleadosDespedidos.Add(e);
             return exitoso;

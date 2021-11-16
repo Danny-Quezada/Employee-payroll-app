@@ -190,16 +190,37 @@ namespace NominasTrabajo
         }
 		private bool ValidacionINSS()
         {
-			List<Empleado> empleados = (List<Empleado>)empleadoService.FindAll(1);
-			empleados.AddRange(empleadoService.FindAll(2));
-			foreach (Empleado a in empleados)
-			{
-				if (a.CodigoINSS == txtCodigoInss.Texts)
+			//List<Empleado> empleados = (List<Empleado>)empleadoService.FindAll(1);
+			//empleados.AddRange(empleadoService.FindAll(2));
+			//foreach (Empleado a in empleados)
+			//{
+			//	if (a.CodigoINSS == txtCodigoInss.Texts)
+			//	{
+			//		return false;
+			//	}
+			//}
+			//return true;
+			List<Empleado> empleados1 = empleadoService.FindAll(1).ToList();
+			List<Empleado> empleados2 = empleadoService.FindAll(2).ToList();
+			bool bandera = true;
+			foreach(Empleado e in empleados1)
+            {
+                if (e.CodigoINSS == txtCodigoInss.Texts)
+                {
+					return bandera = false;
+                }
+            }
+            if (bandera)
+            {
+				foreach (Empleado e in empleados2)
 				{
-					return false;
+					if (e.CodigoINSS == txtCodigoInss.Texts)
+					{
+						return bandera = false;
+					}
 				}
 			}
-			return true;
+			return bandera;
 		}
 
 		private void btnRecontratar_Click(object sender, EventArgs e)

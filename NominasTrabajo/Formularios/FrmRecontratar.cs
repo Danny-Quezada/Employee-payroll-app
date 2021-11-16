@@ -165,7 +165,17 @@ namespace NominasTrabajo.Formularios
 			}
 
 		}
-
+		private void Validar()
+        {
+			if (guna2ComboBox1.SelectedIndex == 0)
+			{
+				
+			}
+			else if (guna2ComboBox1.SelectedIndex == 1 || guna2ComboBox1.SelectedIndex == 2)
+			{
+				
+			}
+		}
 		private void guna2DataGridView1_DoubleClick(object sender, EventArgs e)
 		{
 			RellenarDgv();
