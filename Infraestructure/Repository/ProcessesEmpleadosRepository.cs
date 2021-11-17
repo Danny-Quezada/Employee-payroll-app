@@ -23,12 +23,12 @@ namespace Infraestructure.Repository
         public decimal CalculateHorasExtras(int HorasExtras, decimal Salary)
         {
             decimal SalaryPerHour = 2 * (Salary / 240);
-            return SalaryPerHour * HorasExtras;
+            return Math.Round(SalaryPerHour * HorasExtras,3);
         }
 
         public decimal CalculateInss(decimal Salary)
         {
-            return Salary * InssDedudccion;
+            return Math.Round(Salary * InssDedudccion,3);
         }
 
         public decimal CalculateIR(decimal Salary)
@@ -42,12 +42,12 @@ namespace Infraestructure.Repository
                     break;
                 }
             }
-            return ir;
+            return Math.Round(ir,3);
         }
 
         public decimal CalculateAguinaldo(decimal Salary, int MesesTrabajados)
         {
-            return (Salary / 12) * MesesTrabajados;
+            return Math.Round((Salary / 12) * MesesTrabajados,3);
         }
 
         public decimal CalculateIndemnizacion(decimal salary, int MesesTrabajados, int AñosTrabajados)
@@ -56,7 +56,7 @@ namespace Infraestructure.Repository
             {
                 decimal SalaryWithYear = salary * AñosTrabajados;
                 decimal SalaryProportionalWithMonth = (salary * (MesesTrabajados * 30)) / 365;
-                return SalaryWithYear + SalaryProportionalWithMonth;
+                return Math.Round(SalaryWithYear + SalaryProportionalWithMonth, 3);
             }
             else if (AñosTrabajados > 3)
             {
@@ -70,7 +70,7 @@ namespace Infraestructure.Repository
                 decimal SalaryPerDay = salary / 30;
                 decimal SalaryWithMoreYear = SalaryPerDay * (20 * AñosTemp);
                 decimal SalaryProportionalWithMonth = SalaryPerDay * (((MesesTrabajados * 30) * 20) / 365);
-                return SalaryWithYear + SalaryWithMoreYear + SalaryProportionalWithMonth;
+                return Math.Round(SalaryWithYear + SalaryWithMoreYear + SalaryProportionalWithMonth, 3);
             }
             return 0;
         }
@@ -82,7 +82,7 @@ namespace Infraestructure.Repository
                 if (MesesTrabajados == 6)
                 {
                     decimal SalaryPerDay = salary / 30;
-                    return 15 * SalaryPerDay;
+                    return Math.Round(15 * SalaryPerDay, 3);
                 }
                 else
                 {
@@ -93,7 +93,7 @@ namespace Infraestructure.Repository
             {
                 decimal dias = ((decimal)(2.5 * MesesTrabajados));
                 decimal SalaryPerDay = salary / 30;
-                return SalaryPerDay * dias;
+                return Math.Round(SalaryPerDay * dias, 3);
             }
             return 0;
         }
