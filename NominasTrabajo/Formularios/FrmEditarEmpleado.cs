@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -30,6 +31,9 @@ namespace NominasTrabajo
 			txtNoINSS.Text = emp.CodigoINSS.ToString();
 			txtNombre.Text = emp.NombreCompleto;
 			txtSalario.Text = emp.Remuneraciones.SalarioBase.ToString();
+			txtcorreo.Text = emp.CorreoELectronico;
+			txtcedula.Text = emp.Cedula;
+			txtnumero.Text = emp.Numero;
 			rjCircularPictureBox1.Image = byteArrayToImage(emp.Imagen);
 			rjCircularPictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
 			cmbCargos.SelectedIndex = (int)emp.Cargos;
@@ -58,9 +62,10 @@ namespace NominasTrabajo
 
 		private void guna2GradientButton1_Click(object sender, EventArgs e)
 		{
-            try
-            {
-				validaciones(txtId.Text, txtNombre.Text, txtSalario.Text, txtNoINSS.Text, txtHrsExtras.Text, txtnumero.Text, txtcorreo.Text);
+			try
+			{
+				validaciones(txtId.Text, txtNombre.Text, txtSalario.Text, txtNoINSS.Text, txtHrsExtras.Text, txtnumero.Text, txtcorreo.Text, txtcedula.Text);
+				ValidacionesDeRepetidos();
 				Remuneraciones rem = new Remuneraciones()
 				{
 					SalarioBase = decimal.Parse(txtSalario.Text),
@@ -86,7 +91,7 @@ namespace NominasTrabajo
 				{
 					MesesTrabajadosVacaciones = emp.Vacaciones.MesesTrabajadosVacaciones
 				};
-				Empleado empleado = new Empleado(txtNombre.Text, rem, txtNoINSS.Text, deducciones, aguinaldo, indemnizacion, prestamo, vacaciones, txtnumero.Text, txtcorreo.Text)
+				Empleado empleado = new Empleado(txtNombre.Text, rem, txtNoINSS.Text, deducciones, aguinaldo, indemnizacion, prestamo, vacaciones, txtnumero.Text, txtcorreo.Text, txtcedula.Text)
 				{
 					Cargos = (Cargos)cmbCargos.SelectedIndex,
 					Id = int.Parse(txtId.Text),
@@ -97,13 +102,14 @@ namespace NominasTrabajo
 
 				Dispose();
 			}
-            catch (Exception ex)
-            {
-				MessageBox.Show(ex.Message, "ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
-		public void validaciones(string  id, string nombre, string salario, string noINSS, string hrs, string numero, string correo) {
-			if (string.IsNullOrEmpty(id) || string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(noINSS) || string.IsNullOrEmpty(salario) || string.IsNullOrEmpty(hrs) || cmbCargos.SelectedIndex == -1 || string.IsNullOrEmpty(numero) || string.IsNullOrEmpty(correo))
+		public void validaciones(string id, string nombre, string salario, string noINSS, string hrs, string numero, string correo, string cedula)
+		{
+			if (string.IsNullOrEmpty(id) || string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(noINSS) || string.IsNullOrEmpty(salario) || string.IsNullOrEmpty(hrs) || cmbCargos.SelectedIndex == -1 || string.IsNullOrEmpty(numero) || string.IsNullOrEmpty(correo) || string.IsNullOrEmpty(cedula))
 			{
 				throw new ArgumentException("Hay campos vacios, rellenelos por favor");
 			}
@@ -120,22 +126,27 @@ namespace NominasTrabajo
 				throw new ArgumentException("Un trabajador no puede ganar eso");
 			}
 			if (int.Parse(id) <= 0)
-            {
+			{
 				throw new ArgumentException("Este trabjador no existe");
 			}
-			if (Regex.IsMatch(correo, @"\A(\w+\.?\w*\@\w+\.)(com)\Z"))
+			if (!Regex.IsMatch(correo, @"\A(\w+\.?\w*\@\w+\.)(com)\Z"))
 			{
 				throw new ArgumentException("Correo electronico invalido");
 				//Más instrucciones...
 			}
-			if (Regex.IsMatch(numero, @"\A[0-9]{4} [0-9]{4}\Z"))
+			if (!Regex.IsMatch(numero, @"\A[0-9]{4}(\-)[0-9]{4}\Z"))
 			{
 				throw new ArgumentException("numero de telefono invalido");
 				//Más instrucciones...
 			}
+			if (!Regex.IsMatch(cedula, @"\A[0-9]{3}(\-)[0-9]{6}(\-)[0-9]{4}[A-Z]\Z"))
+			{
+				throw new ArgumentException("cedula ivalida");
+				//Más instrucciones...
+			}
 		}
 
-        private void rjTextBox4_KeyPress(object sender, KeyPressEventArgs e)
+		private void rjTextBox4_KeyPress(object sender, KeyPressEventArgs e)
         {
 			if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
 			{
@@ -143,7 +154,6 @@ namespace NominasTrabajo
 				e.Handled = true;
 			}
 		}
-		//TODO: validarDecimales
         private void rjTextBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
 			if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -171,13 +181,87 @@ namespace NominasTrabajo
         {
 
         }
+		private void ValidacionesDeRepetidos()
+		{
+			List<Empleado> empleados1 = empleadoService.FindAll(1).ToList();
+			List<Empleado> empleados2 = empleadoService.FindAll(2).ToList();
 
-        private void txtnumero_KeyPress(object sender, KeyPressEventArgs e)
-        {
-			if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+			foreach (Empleado e in empleados1)
 			{
-				MessageBox.Show("Solo se pueden colocar numeros enteros", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				e.Handled = true;
+				if (emp.Id != e.Id)
+				{
+
+					if (e.CodigoINSS == txtNoINSS.Text)
+					{
+						throw new ArgumentException("no se puede repetir el codigo inss");
+					}
+				}
+			}
+			foreach (Empleado e in empleados2)
+			{
+				if (emp.Id != e.Id)
+				{
+
+					if (e.CodigoINSS == txtNoINSS.Text)
+					{
+						throw new ArgumentException("no se puede repetir el codigo inss");
+					}
+
+				}
+			}
+			//validar cedula
+			foreach (Empleado e in empleados1)
+			{
+				if (emp.Id != e.Id)
+				{
+
+					if (e.Cedula == txtcedula.Text)
+					{
+						throw new ArgumentException("no se puede repetir la cedula");
+					}
+
+				}
+			}
+			foreach (Empleado e in empleados2)
+			{
+				if (e.Cedula == txtcedula.Text)
+				{
+					throw new ArgumentException("no se puede repetir la cedula");
+				}
+			}
+			//validar numero de telefono
+			foreach (Empleado e in empleados1)
+			{
+
+				if (e.Numero == txtnumero.Text && e.Id != emp.Id)
+				{
+					throw new ArgumentException("no se puede repetir el numero de telefono");
+				}
+			}
+			foreach (Empleado e in empleados2)
+			{
+				if (e.Numero == txtnumero.Text && e.Id != emp.Id)
+				{
+					throw new ArgumentException("no se puede repetir el numero de telefono");
+				}
+			}
+			//validar correo electronico
+			foreach (Empleado e in empleados1)
+			{
+				if (e.CorreoELectronico == txtcorreo.Text && e.Id != emp.Id)
+				{
+					throw new ArgumentException("no se puede repetir el correo electronico");
+				}
+			}
+			foreach (Empleado e in empleados2)
+			{
+
+				if (e.CorreoELectronico == txtcorreo.Text && e.Id != emp.Id)
+				{
+					throw new ArgumentException("no se puede repetir el correo electronico");
+				}
+
+
 			}
 		}
     }

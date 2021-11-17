@@ -339,7 +339,7 @@ namespace Infraestructure.MongoRepository
                 //buscar la manera de que actualizar no sea tan largo
 
                 var updateFilter = Builders<Empleado>.Update.Set("NombreCompleto", e.NombreCompleto).Set("CodigoINSS", e.CodigoINSS).Set("Deducciones", e.Deducciones)
-                    .Set("Imagen", e.Imagen).Set("Remuneraciones", e.Remuneraciones).Set("Cargos", e.Cargos).Set("Estado", e.Estado)
+                    .Set("Imagen", e.Imagen).Set("Remuneraciones", e.Remuneraciones).Set("Cargos", e.Cargos).Set("Estado", e.Estado).Set("Cedula", e.Cedula)
                     .Set("Prestamo", e.Prestamo).Set("Aguinaldo", e.Aguinaldo).Set("Indemnizacion", e.Indemnizacion).Set("Vacaciones", e.Vacaciones)
                     .Set("PagoPendiente", e.PagoPendiente).Set("MesesTrabajados", e.MesesTrabajados).Set("CorreoELectronico", e.CorreoELectronico).Set("Numero",e.Numero);
                 var emp = coleccion.FindOneAndUpdate(filter, updateFilter);

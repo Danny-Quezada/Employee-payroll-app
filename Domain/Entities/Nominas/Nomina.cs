@@ -21,8 +21,7 @@ namespace Domain.Entities.Nominas
         public int Año { get; set; }
         [BsonElement("TotalEmpleados")]
         public int TotalEmpleados => Empleados.Length;
-        //TODO: aqui faltaria añadirle la sumatoria de otras cosas que paga la empresa
         [BsonElement("TotalNomina")]
-        public decimal TotalNomina => Empleados.Sum(x => x.Total_Deducciones + x.Total_Ingresos+x.Aguinaldo+x.Ingreso_Horas_Extras+x.INSS_Patronal+x.Vacaciones);
+        public decimal TotalNomina => Empleados.Sum(x => x.Neto_A_Recibir + x.Aguinaldo + x.INSS_Patronal + x.Vacaciones + x.Indemnizacion + x.INATEC);
     }
 }

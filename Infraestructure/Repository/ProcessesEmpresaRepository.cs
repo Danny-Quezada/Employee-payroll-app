@@ -17,18 +17,18 @@ namespace Infraestructure.Repository
         };
         public decimal CalculateInatec(decimal SalarioTrabajadores)
         {
-            return SalarioTrabajadores * InatecDeduccion;
+            return Math.Round(SalarioTrabajadores * InatecDeduccion, 3);
         }
 
         public decimal CalculateInssPatronal(decimal Salary, int CantidadTrabajadores)
         {
             if (CantidadTrabajadores < 50)
             {
-                return Salary * InssPatronal[0];
+                return Math.Round(Salary * InssPatronal[0], 3);
             }
             else if (CantidadTrabajadores >= 50)
             {
-                return Salary * InssPatronal[1];
+                return Math.Round(Salary * InssPatronal[1], 3);
             }
             return 0;
         }

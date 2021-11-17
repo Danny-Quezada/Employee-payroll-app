@@ -17,6 +17,8 @@ namespace Domain.Entities.Empleados
 		public string NombreCompleto { get; set; }
 		[BsonElement("Id")]
 		public int Id { get; set; }
+		[BsonElement("Cedula")]
+		public string Cedula { get; set; }
 		[BsonElement("CodigoINSS")]
 		public string CodigoINSS { get; set; }
 		[BsonElement("Deducciones")]
@@ -43,7 +45,7 @@ namespace Domain.Entities.Empleados
 		public string Numero { get; set; }
 		[BsonElement("CorreoELectronico")]
 		public string CorreoELectronico { get; set; }
-		public Empleado(string nombreCompleto, Remuneraciones rem, string codINSS, Deducciones deducciones, Aguinaldo aguinaldo, Indemnizacion indemnizacion, Prestamo prestamo, Vacaciones vacaciones, string numero, string correo)
+		public Empleado(string nombreCompleto, Remuneraciones rem, string codINSS, Deducciones deducciones, Aguinaldo aguinaldo, Indemnizacion indemnizacion, Prestamo prestamo, Vacaciones vacaciones, string numero, string correo, string cedula)
 		{
 			NombreCompleto = nombreCompleto;
 			Remuneraciones = rem;
@@ -57,6 +59,7 @@ namespace Domain.Entities.Empleados
 			MesesTrabajados = 1;
 			Numero = numero;
 			CorreoELectronico = correo;
+			Cedula = cedula;
 		}
 	}
 }

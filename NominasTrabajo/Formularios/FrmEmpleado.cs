@@ -93,66 +93,63 @@ namespace NominasTrabajo
 		{
 			try
 			{
-				verificarDatos(txtNombre.Texts, txtSalario.Texts, txtCodigoInss.Texts, txtHorasTrabajadas.Texts, txtCorreo.Texts, txtNumero.Texts);
-				bool bandera = ValidacionINSS();
-				if (bandera)
-				{
-					Remuneraciones rem = new Remuneraciones()
-					{
-						SalarioBase = decimal.Parse(txtSalario.Texts),
-						HorasExtras = int.Parse(txtHorasTrabajadas.Texts)
-					};
-					Deducciones deducciones = new Deducciones();
-					Prestamo prestamo = new Prestamo();
-					Aguinaldo aguinaldo = new Aguinaldo()
-					{
-						MesesTrabajadosAguinaldo = 1
-					};
-					Indemnizacion indemnizacion = new Indemnizacion()
-					{
-						MesesTrabajadosIndemnizacion = 1
-					};
-					Vacaciones vacaciones = new Vacaciones()
-					{
-						MesesTrabajadosVacaciones = 1
-					};
-					Empleado empleado = new Empleado(txtNombre.Texts, rem, txtCodigoInss.Texts, deducciones, aguinaldo, indemnizacion, prestamo, vacaciones, txtNumero.Texts, txtCorreo.Texts)
-					{
-						Cargos = (Cargos)cmbCargos.SelectedIndex,
-						Id = empleadoService.GetLastId() + 1,
-						Imagen = ImagenAArray(PBImagen.Image)
+				verificarDatos(txtNombre.Texts, txtSalario.Texts, txtCodigoInss.Texts, txtHorasTrabajadas.Texts, txtCorreo.Texts, txtNumero.Texts, txtcedula.Texts);
+				ValidacionesDeRepetidos();
 
-					};
-					empleadoService.Create(empleado);
-					Dispose();
-				}
-				else
-                {
-					MessageBox.Show("Dos empleados no pueden tener el mismo código INSS", "Error en el código INSS", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-		private void verificarDatos(string nombre, string salario, string noINSS, string hrs, string correo, string numero)
-        {
-			if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(noINSS) || string.IsNullOrEmpty(salario) ||  cmbCargos.SelectedIndex==-1 || string.IsNullOrEmpty(correo) || string.IsNullOrEmpty(numero))
-            {
+
+				Remuneraciones rem = new Remuneraciones()
+				{
+					SalarioBase = decimal.Parse(txtSalario.Texts),
+					HorasExtras = int.Parse(txtHorasTrabajadas.Texts)
+				};
+				Deducciones deducciones = new Deducciones();
+				Prestamo prestamo = new Prestamo();
+				Aguinaldo aguinaldo = new Aguinaldo()
+				{
+					MesesTrabajadosAguinaldo = 1
+				};
+				Indemnizacion indemnizacion = new Indemnizacion()
+				{
+					MesesTrabajadosIndemnizacion = 1
+				};
+				Vacaciones vacaciones = new Vacaciones()
+				{
+					MesesTrabajadosVacaciones = 1
+				};
+				Empleado empleado = new Empleado(txtNombre.Texts, rem, txtCodigoInss.Texts, deducciones, aguinaldo, indemnizacion, prestamo, vacaciones, txtNumero.Texts, txtCorreo.Texts, txtcedula.Texts)
+				{
+					Cargos = (Cargos)cmbCargos.SelectedIndex,
+					Id = empleadoService.GetLastId() + 1,
+					Imagen = ImagenAArray(PBImagen.Image)
+
+				};
+				empleadoService.Create(empleado);
+				Dispose();
+
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+		private void verificarDatos(string nombre, string salario, string noINSS, string hrs, string correo, string numero, string cedula)
+		{
+			if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(noINSS) || string.IsNullOrEmpty(salario) || cmbCargos.SelectedIndex == -1 || string.IsNullOrEmpty(correo) || string.IsNullOrEmpty(numero) || string.IsNullOrEmpty(cedula))
+			{
 				throw new ArgumentException("Hay campos vacios, rellenelos por favor");
-            }
-            if (noINSS.Length != 8)
-            {
+			}
+			if (noINSS.Length != 8)
+			{
 				throw new ArgumentException("El numero del INSS no puede tener menos o mas de 8 digitos");
-            }
-            
-            if (decimal.Parse(salario) <= 0)
-            {
+			}
+
+			if (decimal.Parse(salario) <= 0)
+			{
 				throw new ArgumentException("Un trabajador no puede ganar eso");
-            }
-			if(int.Parse(hrs)<0 || int.Parse(hrs) > 36)
-            {
+			}
+			if (int.Parse(hrs) < 0 || int.Parse(hrs) > 36)
+			{
 				throw new ArgumentException("Un trabajador no puede tener esas horas extra");
 			}
 			if (!Regex.IsMatch(correo, @"\A(\w+\.?\w*\@\w+\.)(com)\Z"))
@@ -160,15 +157,20 @@ namespace NominasTrabajo
 				throw new ArgumentException("Correo electronico invalido");
 				//Más instrucciones...
 			}
-			if (!Regex.IsMatch(numero,  @"\A[0-9]{4}[0-9]{4}\Z"))
+			if (!Regex.IsMatch(numero, @"\A[0-9]{4}(\-)[0-9]{4}\Z"))
 			{
 				throw new ArgumentException("numero de telefono invalido");
+				//Más instrucciones...
+			}
+			if (!Regex.IsMatch(cedula, @"\A[0-9]{3}(\-)[0-9]{6}(\-)[0-9]{4}[A-Z]\Z"))
+			{
+				throw new ArgumentException("cedula ivalida");
 				//Más instrucciones...
 			}
 
 		}
 
-        private void txtHorasTrabajadas_KeyPress(object sender, KeyPressEventArgs e)
+		private void txtHorasTrabajadas_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
@@ -200,8 +202,8 @@ namespace NominasTrabajo
         {
 
         }
-		private bool ValidacionINSS()
-        {
+		private void ValidacionesDeRepetidos()
+		{
 			//List<Empleado> empleados = (List<Empleado>)empleadoService.FindAll(1);
 			//empleados.AddRange(empleadoService.FindAll(2));
 			//foreach (Empleado a in empleados)
@@ -214,25 +216,67 @@ namespace NominasTrabajo
 			//return true;
 			List<Empleado> empleados1 = empleadoService.FindAll(1).ToList();
 			List<Empleado> empleados2 = empleadoService.FindAll(2).ToList();
-			bool bandera = true;
-			foreach(Empleado e in empleados1)
-            {
-                if (e.CodigoINSS == txtCodigoInss.Texts)
-                {
-					return bandera = false;
-                }
-            }
-            if (bandera)
-            {
-				foreach (Empleado e in empleados2)
+
+			foreach (Empleado e in empleados1)
+			{
+				if (e.CodigoINSS == txtCodigoInss.Texts)
 				{
-					if (e.CodigoINSS == txtCodigoInss.Texts)
-					{
-						return bandera = false;
-					}
+					throw new ArgumentException("no se puede repetir el codigo inss");
 				}
 			}
-			return bandera;
+			foreach (Empleado e in empleados2)
+			{
+				if (e.CodigoINSS == txtCodigoInss.Texts)
+				{
+					throw new ArgumentException("no se puede repetir el codigo inss");
+				}
+			}
+			//validar cedula
+			foreach (Empleado e in empleados1)
+			{
+				if (e.Cedula == txtcedula.Texts)
+				{
+					throw new ArgumentException("no se puede repetir la cedula");
+				}
+			}
+			foreach (Empleado e in empleados2)
+			{
+				if (e.Cedula == txtcedula.Texts)
+				{
+					throw new ArgumentException("no se puede repetir la cedula");
+				}
+			}
+			//validar numero de telefono
+			foreach (Empleado e in empleados1)
+			{
+				if (e.Numero == txtNumero.Texts)
+				{
+					throw new ArgumentException("no se puede repetir el numero de telefono");
+				}
+			}
+			foreach (Empleado e in empleados2)
+			{
+				if (e.Numero == txtNumero.Texts)
+				{
+					throw new ArgumentException("no se puede repetir el numero de telefono");
+				}
+			}
+			//validar correo electronico
+			foreach (Empleado e in empleados1)
+			{
+				if (e.CorreoELectronico == txtCorreo.Texts)
+				{
+					throw new ArgumentException("no se puede repetir el correo electronico");
+				}
+			}
+			foreach (Empleado e in empleados2)
+			{
+				if (e.Numero == txtCorreo.Texts)
+				{
+					throw new ArgumentException("no se puede repetir el correo electronico");
+				}
+			}
+
 		}
 
 		private void btnRecontratar_Click(object sender, EventArgs e)
@@ -247,14 +291,10 @@ namespace NominasTrabajo
 
         private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
         {
-			if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-			{
-				MessageBox.Show("Solo se pueden colocar numeros enteros", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				e.Handled = true;
-			}
-		}
 
-		private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			if (char.IsDigit(e.KeyChar))
 			{
