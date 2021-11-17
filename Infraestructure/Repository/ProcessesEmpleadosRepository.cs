@@ -60,6 +60,10 @@ namespace Infraestructure.Repository
             }
             else if (AñosTrabajados > 3)
             {
+                if (AñosTrabajados > 6)
+                {
+                     AñosTrabajados = 6;
+                }
                 int AñosTemp = AñosTrabajados - 3;
 
                 decimal SalaryWithYear = salary * 3;
