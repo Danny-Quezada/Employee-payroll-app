@@ -202,14 +202,18 @@ namespace NominasTrabajo
 
 			foreach (Empleado e in empleados1)
 			{
-				if (emp.Id != e.Id)
+				if (emp.Id != e.Id) 
 				{
+
 					if (e.CodigoINSS == txtNoINSS.Text)
 					{
 						throw new ArgumentException("no se puede repetir el codigo inss");
 					}
 
 				}
+					
+
+				
 
 				
 			}
@@ -217,12 +221,16 @@ namespace NominasTrabajo
 			{
 				if (emp.Id != e.Id)
 				{
+
 					if (e.CodigoINSS == txtNoINSS.Text)
 					{
 						throw new ArgumentException("no se puede repetir el codigo inss");
 					}
 
 				}
+				
+
+				
 
 				
 			}
@@ -231,74 +239,72 @@ namespace NominasTrabajo
 			{
 				if (emp.Id != e.Id)
 				{
+
 					if (e.Cedula == txtcedula.Text)
 					{
 						throw new ArgumentException("no se puede repetir la cedula");
 					}
 
 				}
+				
+				
 
 				
 			}
 			foreach (Empleado e in empleados2)
 			{
-				if (emp.Id != e.Id)
-				{
+			
 					if (e.Cedula == txtcedula.Text)
 					{
 						throw new ArgumentException("no se puede repetir la cedula");
 					}
 
-				}
+				
 			}
 			//validar numero de telefono
 			foreach (Empleado e in empleados1)
 			{
-				if (emp.Id != e.Id)
-				{
-					if (e.Numero == txtnumero.Text)
+			
+					if (e.Numero == txtnumero.Text &&  e.Id != emp.Id)
 					{
 						throw new ArgumentException("no se puede repetir el numero de telefono");
 					}
 
-				}
+				
 				
 			}
 			foreach (Empleado e in empleados2)
 			{
-				if (emp.Id != e.Id)
-				{
-					if (e.Numero == txtnumero.Text)
+				
+					if (e.Numero == txtnumero.Text && e.Id != emp.Id)
 					{
 						throw new ArgumentException("no se puede repetir el numero de telefono");
 					}
 
-				}
+				
 			}
 			//validar correo electronico
 			foreach (Empleado e in empleados1)
 			{
-				if (emp.Id != e.Id)
-				{
-					if (e.CorreoELectronico == txtcorreo.Text)
+			
+					if (e.CorreoELectronico == txtcorreo.Text && e.Id != emp.Id)
 					{
 						throw new ArgumentException("no se puede repetir el correo electronico");
 					}
 
-				}
+				
 
 				
 			}
 			foreach (Empleado e in empleados2)
 			{
-				if (emp.Id != e.Id)
-				{
-					if (e.CorreoELectronico == txtcorreo.Text)
+			
+					if (e.CorreoELectronico == txtcorreo.Text && e.Id != emp.Id)
 					{
 						throw new ArgumentException("no se puede repetir el correo electronico");
 					}
 
-				}
+				
 			}
 		}
 	}
