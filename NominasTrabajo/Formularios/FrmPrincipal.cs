@@ -26,6 +26,7 @@ namespace NominasTrabajo
 
     public partial class FrmPrincipal : Form
     {
+        
         private int Mes;
         private int year = 2021;
         private int n = 0;

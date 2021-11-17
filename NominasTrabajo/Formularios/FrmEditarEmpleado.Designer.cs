@@ -48,6 +48,7 @@ namespace NominasTrabajo
             this.txtHrsExtras = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtcorreo = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtnumero = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtcedula = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -260,7 +261,7 @@ namespace NominasTrabajo
             this.txtNoINSS.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.txtNoINSS.BorderRadius = 18;
             this.txtNoINSS.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNoINSS.DefaultText = "Número de INSS";
+            this.txtNoINSS.DefaultText = "Código INSS";
             this.txtNoINSS.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtNoINSS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtNoINSS.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -271,13 +272,12 @@ namespace NominasTrabajo
             this.txtNoINSS.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNoINSS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNoINSS.HoverState.Parent = this.txtNoINSS;
-            this.txtNoINSS.Location = new System.Drawing.Point(106, 226);
+            this.txtNoINSS.Location = new System.Drawing.Point(106, 253);
             this.txtNoINSS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNoINSS.Name = "txtNoINSS";
             this.txtNoINSS.PasswordChar = '\0';
             this.txtNoINSS.PlaceholderText = "";
             this.txtNoINSS.SelectedText = "";
-            this.txtNoINSS.SelectionStart = 14;
             this.txtNoINSS.ShadowDecoration.Parent = this.txtNoINSS;
             this.txtNoINSS.Size = new System.Drawing.Size(217, 35);
             this.txtNoINSS.TabIndex = 20;
@@ -299,7 +299,7 @@ namespace NominasTrabajo
             this.txtSalario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSalario.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSalario.HoverState.Parent = this.txtSalario;
-            this.txtSalario.Location = new System.Drawing.Point(106, 282);
+            this.txtSalario.Location = new System.Drawing.Point(106, 385);
             this.txtSalario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.PasswordChar = '\0';
@@ -327,7 +327,7 @@ namespace NominasTrabajo
             this.txtHrsExtras.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHrsExtras.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtHrsExtras.HoverState.Parent = this.txtHrsExtras;
-            this.txtHrsExtras.Location = new System.Drawing.Point(106, 328);
+            this.txtHrsExtras.Location = new System.Drawing.Point(106, 428);
             this.txtHrsExtras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtHrsExtras.Name = "txtHrsExtras";
             this.txtHrsExtras.PasswordChar = '\0';
@@ -355,12 +355,13 @@ namespace NominasTrabajo
             this.txtcorreo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcorreo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtcorreo.HoverState.Parent = this.txtcorreo;
-            this.txtcorreo.Location = new System.Drawing.Point(106, 371);
+            this.txtcorreo.Location = new System.Drawing.Point(106, 296);
             this.txtcorreo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtcorreo.Name = "txtcorreo";
             this.txtcorreo.PasswordChar = '\0';
             this.txtcorreo.PlaceholderText = "";
             this.txtcorreo.SelectedText = "";
+            this.txtcorreo.SelectionStart = 18;
             this.txtcorreo.ShadowDecoration.Parent = this.txtcorreo;
             this.txtcorreo.Size = new System.Drawing.Size(217, 35);
             this.txtcorreo.TabIndex = 23;
@@ -381,16 +382,43 @@ namespace NominasTrabajo
             this.txtnumero.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnumero.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtnumero.HoverState.Parent = this.txtnumero;
-            this.txtnumero.Location = new System.Drawing.Point(106, 423);
+            this.txtnumero.Location = new System.Drawing.Point(106, 339);
             this.txtnumero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtnumero.Name = "txtnumero";
             this.txtnumero.PasswordChar = '\0';
             this.txtnumero.PlaceholderText = "";
             this.txtnumero.SelectedText = "";
+            this.txtnumero.SelectionStart = 18;
             this.txtnumero.ShadowDecoration.Parent = this.txtnumero;
             this.txtnumero.Size = new System.Drawing.Size(217, 35);
             this.txtnumero.TabIndex = 24;
-            this.txtnumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnumero_KeyPress);
+           
+            // 
+            // txtcedula
+            // 
+            this.txtcedula.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.txtcedula.BorderRadius = 18;
+            this.txtcedula.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtcedula.DefaultText = "cedula";
+            this.txtcedula.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtcedula.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtcedula.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtcedula.DisabledState.Parent = this.txtcedula;
+            this.txtcedula.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtcedula.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtcedula.FocusedState.Parent = this.txtcedula;
+            this.txtcedula.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcedula.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtcedula.HoverState.Parent = this.txtcedula;
+            this.txtcedula.Location = new System.Drawing.Point(106, 210);
+            this.txtcedula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtcedula.Name = "txtcedula";
+            this.txtcedula.PasswordChar = '\0';
+            this.txtcedula.PlaceholderText = "";
+            this.txtcedula.SelectedText = "";
+            this.txtcedula.ShadowDecoration.Parent = this.txtcedula;
+            this.txtcedula.Size = new System.Drawing.Size(217, 35);
+            this.txtcedula.TabIndex = 25;
             // 
             // FrmEditarEmpleado
             // 
@@ -398,6 +426,7 @@ namespace NominasTrabajo
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(680, 550);
+            this.Controls.Add(this.txtcedula);
             this.Controls.Add(this.txtnumero);
             this.Controls.Add(this.txtcorreo);
             this.Controls.Add(this.txtHrsExtras);
@@ -447,5 +476,6 @@ namespace NominasTrabajo
         private Guna.UI2.WinForms.Guna2TextBox txtId;
         private Guna.UI2.WinForms.Guna2TextBox txtnumero;
         private Guna.UI2.WinForms.Guna2TextBox txtcorreo;
+        private Guna.UI2.WinForms.Guna2TextBox txtcedula;
     }
 }

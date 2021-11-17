@@ -26,7 +26,8 @@ namespace Domain.Entities.Empleados
 		public int MesesTrabajados { get; set; }
 		public string Numero { get; set; }
 		public string CorreoELectronico { get; set; }
-		public Empleado(string nombreCompleto, Remuneraciones rem, string codINSS, Deducciones deducciones, Aguinaldo aguinaldo, Indemnizacion indemnizacion, Prestamo prestamo, Vacaciones vacaciones, string numero, string correo)
+		public string Cedula { get; set; }
+		public Empleado(string nombreCompleto, Remuneraciones rem, string codINSS, Deducciones deducciones, Aguinaldo aguinaldo, Indemnizacion indemnizacion, Prestamo prestamo, Vacaciones vacaciones, string numero, string correo, string cedula)
 		{
 			NombreCompleto = nombreCompleto;
 			Remuneraciones = rem;
@@ -40,6 +41,7 @@ namespace Domain.Entities.Empleados
 			MesesTrabajados = 1;
 			Numero = numero;
 			CorreoELectronico = correo;
+			Cedula = cedula;
 		}
 	}
 }

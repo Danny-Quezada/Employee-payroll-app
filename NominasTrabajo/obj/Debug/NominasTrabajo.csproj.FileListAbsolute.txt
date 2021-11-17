@@ -540,3 +540,11 @@ E:\Quezada\Download\Clase\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.c
 E:\Quezada\Download\Clase\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.csproj.CopyComplete
 E:\Quezada\Download\Clase\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.exe
 E:\Quezada\Download\Clase\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.pdb
+C:\Users\larry\Desktop\Tarea-curso\TareaDeCurso\NominasTrabajo\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\larry\Desktop\Tarea-curso\TareaDeCurso\NominasTrabajo\bin\Debug\Guna.Charts.WinForms.dll
+C:\Users\larry\Desktop\Tarea-curso\TareaDeCurso\NominasTrabajo\bin\Debug\itextsharp.dll
+C:\Users\larry\Desktop\Tarea-curso\TareaDeCurso\NominasTrabajo\bin\Debug\itextsharp.xml
+C:\Users\larry\Desktop\Tarea-curso\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.Formularios.FrmEstadisticas.resources
+C:\Users\larry\Desktop\Tarea-curso\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.Formularios.FrmListaNominas.resources
+C:\Users\larry\Desktop\Tarea-curso\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.Formularios.FrmPrestamo.resources
+C:\Users\larry\Desktop\Tarea-curso\TareaDeCurso\NominasTrabajo\obj\Debug\NominasTrabajo.Formularios.FrmRecontratar.resources

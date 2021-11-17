@@ -93,10 +93,10 @@ namespace NominasTrabajo
 		{
 			try
 			{
-				verificarDatos(txtNombre.Texts, txtSalario.Texts, txtCodigoInss.Texts, txtHorasTrabajadas.Texts, txtCorreo.Texts, txtNumero.Texts);
-				bool bandera = ValidacionINSS();
-				if (bandera)
-				{
+				verificarDatos(txtNombre.Texts, txtSalario.Texts, txtCodigoInss.Texts, txtHorasTrabajadas.Texts, txtCorreo.Texts, txtNumero.Texts, txtCedula.Texts);
+				ValidacionesDeRepetidos();
+				
+				
 					Remuneraciones rem = new Remuneraciones()
 					{
 						SalarioBase = decimal.Parse(txtSalario.Texts),
@@ -116,7 +116,7 @@ namespace NominasTrabajo
 					{
 						MesesTrabajadosVacaciones = 1
 					};
-					Empleado empleado = new Empleado(txtNombre.Texts, rem, txtCodigoInss.Texts, deducciones, aguinaldo, indemnizacion, prestamo, vacaciones, txtNumero.Texts, txtCorreo.Texts)
+					Empleado empleado = new Empleado(txtNombre.Texts, rem, txtCodigoInss.Texts, deducciones, aguinaldo, indemnizacion, prestamo, vacaciones, txtNumero.Texts, txtCorreo.Texts, txtCedula.Texts)
 					{
 						Cargos = (Cargos)cmbCargos.SelectedIndex,
 						Id = empleadoService.GetLastId() + 1,
@@ -125,20 +125,17 @@ namespace NominasTrabajo
 					};
 					empleadoService.Create(empleado);
 					Dispose();
-				}
-				else
-                {
-					MessageBox.Show("Dos empleados no pueden tener el mismo código INSS", "Error en el código INSS", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+				
+				
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-		private void verificarDatos(string nombre, string salario, string noINSS, string hrs, string correo, string numero)
+		private void verificarDatos(string nombre, string salario, string noINSS, string hrs, string correo, string numero, string cedula)
         {
-			if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(noINSS) || string.IsNullOrEmpty(salario) ||  cmbCargos.SelectedIndex==-1 || string.IsNullOrEmpty(correo) || string.IsNullOrEmpty(numero))
+			if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(noINSS) || string.IsNullOrEmpty(salario) ||  cmbCargos.SelectedIndex==-1 || string.IsNullOrEmpty(correo) || string.IsNullOrEmpty(numero) || string.IsNullOrEmpty(cedula))
             {
 				throw new ArgumentException("Hay campos vacios, rellenelos por favor");
             }
@@ -160,9 +157,14 @@ namespace NominasTrabajo
 				throw new ArgumentException("Correo electronico invalido");
 				//Más instrucciones...
 			}
-			if (!Regex.IsMatch(numero,  @"\A[0-9]{4}[0-9]{4}\Z"))
+			if (!Regex.IsMatch(numero, @"\A[0-9]{4}(\-)[0-9]{4}\Z"))
 			{
 				throw new ArgumentException("numero de telefono invalido");
+				//Más instrucciones...
+			}
+			if (!Regex.IsMatch(cedula, @"\A[0-9]{3}(\-)[0-9]{6}(\-)[0-9]{4}[A-Z]\Z"))
+			{
+				throw new ArgumentException("cedula ivalida");
 				//Más instrucciones...
 			}
 
@@ -200,7 +202,7 @@ namespace NominasTrabajo
         {
 
         }
-		private bool ValidacionINSS()
+		private void ValidacionesDeRepetidos()
         {
 			//List<Empleado> empleados = (List<Empleado>)empleadoService.FindAll(1);
 			//empleados.AddRange(empleadoService.FindAll(2));
@@ -214,25 +216,67 @@ namespace NominasTrabajo
 			//return true;
 			List<Empleado> empleados1 = empleadoService.FindAll(1).ToList();
 			List<Empleado> empleados2 = empleadoService.FindAll(2).ToList();
-			bool bandera = true;
+			
 			foreach(Empleado e in empleados1)
             {
                 if (e.CodigoINSS == txtCodigoInss.Texts)
                 {
-					return bandera = false;
+					throw new ArgumentException("no se puede repetir el codigo inss");
                 }
             }
-            if (bandera)
-            {
-				foreach (Empleado e in empleados2)
+			foreach (Empleado e in empleados2)
+			{
+				if (e.CodigoINSS == txtCodigoInss.Texts)
 				{
-					if (e.CodigoINSS == txtCodigoInss.Texts)
-					{
-						return bandera = false;
-					}
+					throw new ArgumentException("no se puede repetir el codigo inss");
 				}
 			}
-			return bandera;
+			//validar cedula
+			foreach (Empleado e in empleados1)
+			{
+				if (e.Cedula == txtCedula.Texts)
+				{
+					throw new ArgumentException("no se puede repetir la cedula");
+				}
+			}
+			foreach (Empleado e in empleados2)
+			{
+				if (e.Cedula == txtCedula.Texts)
+				{
+					throw new ArgumentException("no se puede repetir la cedula");
+				}
+			}
+			//validar numero de telefono
+			foreach (Empleado e in empleados1)
+			{
+				if (e.Numero == txtNumero.Texts)
+				{
+					throw new ArgumentException("no se puede repetir el numero de telefono");
+				}
+			}
+			foreach (Empleado e in empleados2)
+			{
+				if (e.Numero == txtNumero.Texts)
+				{
+					throw new ArgumentException("no se puede repetir el numero de telefono");
+				}
+			}
+			//validar correo electronico
+			foreach (Empleado e in empleados1)
+			{
+				if (e.CorreoELectronico == txtCorreo.Texts)
+				{
+					throw new ArgumentException("no se puede repetir el correo electronico");
+				}
+			}
+			foreach (Empleado e in empleados2)
+			{
+				if (e.Numero == txtCorreo.Texts)
+				{
+					throw new ArgumentException("no se puede repetir el correo electronico");
+				}
+			}
+
 		}
 
 		private void btnRecontratar_Click(object sender, EventArgs e)
@@ -245,14 +289,7 @@ namespace NominasTrabajo
 			
 		}
 
-        private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
-        {
-			if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-			{
-				MessageBox.Show("Solo se pueden colocar numeros enteros", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				e.Handled = true;
-			}
-		}
+        
 
 		private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
 		{
