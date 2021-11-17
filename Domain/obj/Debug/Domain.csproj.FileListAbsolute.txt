@@ -75,3 +75,9 @@ C:\Users\Roberto\Desktop\ProyCurso\TareaDeCurso\Domain\obj\Debug\Domain.csproj.A
 C:\Users\Roberto\Desktop\ProyCurso\TareaDeCurso\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
 C:\Users\Roberto\Desktop\ProyCurso\TareaDeCurso\Domain\obj\Debug\Domain.dll
 C:\Users\Roberto\Desktop\ProyCurso\TareaDeCurso\Domain\obj\Debug\Domain.pdb
+E:\Quezada\Download\TareaFinalizada\TareaDeCurso\Domain\bin\Debug\Domain.dll
+E:\Quezada\Download\TareaFinalizada\TareaDeCurso\Domain\bin\Debug\Domain.pdb
+E:\Quezada\Download\TareaFinalizada\TareaDeCurso\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+E:\Quezada\Download\TareaFinalizada\TareaDeCurso\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+E:\Quezada\Download\TareaFinalizada\TareaDeCurso\Domain\obj\Debug\Domain.dll
+E:\Quezada\Download\TareaFinalizada\TareaDeCurso\Domain\obj\Debug\Domain.pdb

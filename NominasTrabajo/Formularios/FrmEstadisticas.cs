@@ -52,6 +52,7 @@ namespace NominasTrabajo.Formularios
 		}
 		private void Nominas()
 		{
+			gunaChart2.XAxes.Display = false;
 			var Nominas = NominaService.FindAll();
 
 			lblInformacion.Text = $"Nóminas totales: {Nominas.Count}";
@@ -109,15 +110,22 @@ namespace NominasTrabajo.Formularios
 			gunaPieDataset1.DataPoints.Add("Empleados Contratados", Nomina.TotalEmpleados);
 			gunaChart1.Legend.Position = Guna.Charts.WinForms.LegendPosition.Right;
 			gunaPieDataset1.DataPoints.Add("Empleados Despedidos", Despedidos);
+			//Creando grafica de barra del Salario base y sus SalarioTotal.
+			var Empleados = Nomina.Empleados;
+
 			var dataset2 = new Guna.Charts.WinForms.GunaStackedHorizontalBarDataset();
-			dataset2.DataPoints.Add("Empleados", Despedidos);
-			dataset2.Label = "Empleados despedidos";
-			dataset2.FillColors = Guna.Charts.WinForms.ChartUtils.RandomColors(Nomina.TotalEmpleados, 133);
-			gunaChart2.Datasets.Add(dataset2);
 			var dataset1 = new Guna.Charts.WinForms.GunaStackedHorizontalBarDataset();
-			dataset1.DataPoints.Add("Empleados contratados", Nomina.TotalEmpleados);
-			dataset1.Label = "Empleados contratados";
-			dataset1.FillColors = Guna.Charts.WinForms.ChartUtils.RandomColors(Nomina.TotalEmpleados);
+			for (int i=0; i<Empleados.Length; i++)
+			{
+				dataset2.DataPoints.Add(Empleados[i].Nombre_Completo, Convert.ToDouble(Empleados[i].Salario_Mensual));
+				dataset2.Label = "Salario Base";
+				dataset1.DataPoints.Add(Empleados[i].Nombre_Completo, Convert.ToDouble(Empleados[i].Total_Ingresos));
+				dataset1.Label = "Sueldo total";
+				
+			}
+			gunaChart2.XAxes.Display = false;
+			dataset1.FillColors = Guna.Charts.WinForms.ChartUtils.RandomColors(Nomina.TotalEmpleados,222);
+			gunaChart2.Datasets.Add(dataset2);
 			gunaChart2.Datasets.Add(dataset1);
 
 		}

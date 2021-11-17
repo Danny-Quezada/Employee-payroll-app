@@ -115,9 +115,9 @@ namespace NominasTrabajo.Formularios
 			this.gunaChart2.BackColor = System.Drawing.Color.White;
 			chartFont9.FontName = "Arial";
 			this.gunaChart2.Legend.LabelFont = chartFont9;
-			this.gunaChart2.Location = new System.Drawing.Point(295, 297);
+			this.gunaChart2.Location = new System.Drawing.Point(286, 310);
 			this.gunaChart2.Name = "gunaChart2";
-			this.gunaChart2.Size = new System.Drawing.Size(507, 282);
+			this.gunaChart2.Size = new System.Drawing.Size(507, 327);
 			this.gunaChart2.TabIndex = 1;
 			chartFont10.FontName = "Arial";
 			chartFont10.Size = 12;
@@ -200,7 +200,7 @@ namespace NominasTrabajo.Formularios
 			this.guna2Panel3.Controls.Add(this.label3);
 			this.guna2Panel3.Controls.Add(this.pictureBox2);
 			this.guna2Panel3.Controls.Add(this.guna2Panel2);
-			this.guna2Panel3.Location = new System.Drawing.Point(15, 292);
+			this.guna2Panel3.Location = new System.Drawing.Point(18, 333);
 			this.guna2Panel3.Name = "guna2Panel3";
 			this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
 			this.guna2Panel3.Size = new System.Drawing.Size(245, 139);
@@ -255,7 +255,7 @@ namespace NominasTrabajo.Formularios
 			this.guna2Panel4.Controls.Add(this.lblEmpleados);
 			this.guna2Panel4.Controls.Add(this.label2);
 			this.guna2Panel4.Controls.Add(this.pictureBox1);
-			this.guna2Panel4.Location = new System.Drawing.Point(15, 147);
+			this.guna2Panel4.Location = new System.Drawing.Point(18, 188);
 			this.guna2Panel4.Name = "guna2Panel4";
 			this.guna2Panel4.ShadowDecoration.Parent = this.guna2Panel4;
 			this.guna2Panel4.Size = new System.Drawing.Size(263, 139);
@@ -302,7 +302,7 @@ namespace NominasTrabajo.Formularios
 			this.guna2Panel5.Controls.Add(this.label4);
 			this.guna2Panel5.Controls.Add(this.pictureBox3);
 			this.guna2Panel5.Controls.Add(this.guna2Panel6);
-			this.guna2Panel5.Location = new System.Drawing.Point(15, 437);
+			this.guna2Panel5.Location = new System.Drawing.Point(18, 488);
 			this.guna2Panel5.Name = "guna2Panel5";
 			this.guna2Panel5.ShadowDecoration.Parent = this.guna2Panel5;
 			this.guna2Panel5.Size = new System.Drawing.Size(245, 139);
@@ -408,7 +408,7 @@ namespace NominasTrabajo.Formularios
 			// 
 			this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-			this.pictureBox6.Location = new System.Drawing.Point(743, 2);
+			this.pictureBox6.Location = new System.Drawing.Point(752, 2);
 			this.pictureBox6.Name = "pictureBox6";
 			this.pictureBox6.Size = new System.Drawing.Size(22, 23);
 			this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -420,7 +420,7 @@ namespace NominasTrabajo.Formularios
 			// 
 			this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-			this.pictureBox5.Location = new System.Drawing.Point(771, 2);
+			this.pictureBox5.Location = new System.Drawing.Point(780, 2);
 			this.pictureBox5.Name = "pictureBox5";
 			this.pictureBox5.Size = new System.Drawing.Size(22, 23);
 			this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -433,7 +433,7 @@ namespace NominasTrabajo.Formularios
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
-			this.ClientSize = new System.Drawing.Size(814, 612);
+			this.ClientSize = new System.Drawing.Size(814, 649);
 			this.Controls.Add(this.pictureBox6);
 			this.Controls.Add(this.pictureBox5);
 			this.Controls.Add(this.gunaChart1);

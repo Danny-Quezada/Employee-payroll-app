@@ -159,12 +159,12 @@ namespace NominasTrabajo
 			}
 			if (!Regex.IsMatch(numero, @"\A[0-9]{4}(\-)[0-9]{4}\Z"))
 			{
-				throw new ArgumentException("numero de telefono invalido");
+				throw new ArgumentException("Número de telefono invalido");
 				//Más instrucciones...
 			}
 			if (!Regex.IsMatch(cedula, @"\A[0-9]{3}(\-)[0-9]{6}(\-)[0-9]{4}[A-Z]\Z"))
 			{
-				throw new ArgumentException("cedula ivalida");
+				throw new ArgumentException("Cédula invalida");
 				//Más instrucciones...
 			}
 
