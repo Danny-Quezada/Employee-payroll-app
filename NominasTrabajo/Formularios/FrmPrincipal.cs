@@ -88,7 +88,7 @@ namespace NominasTrabajo
                     {
                         throw new Exception();
                     }
-                    //aqui modifique
+                   
                     if (empleado.MesesTrabajados > 6)
                     {
                         btnPrestamo.Visible = true;
@@ -166,9 +166,7 @@ namespace NominasTrabajo
             frmEmpleado.ShowDialog();
             
                 guna2DataGridView1.Rows.Clear();
-                //guna2DataGridView1.DataSource = empleadoService.GetResumenEmpleados();
                 llenarDgv(empleadoService.GetResumenEmpleados(Mes));
-            
           
         }
 
@@ -355,37 +353,43 @@ namespace NominasTrabajo
 		}
 		private void Excel(DataGridView Lista)
 		{
-			if (guna2DataGridView1.Rows.Count > 0)
-			{
-              
+            if (guna2DataGridView1.Rows.Count > 0)
+            {
+
                 Microsoft.Office.Interop.Excel.Application Excel = new Microsoft.Office.Interop.Excel.Application(); // Creo el objeto Excel 
                 Excel.Application.Workbooks.Add(true);  // Creo la hoja de excel
-               
+
                 // Recorriendo y creando los encabezados del Excel.
                 int indiceColumna = 0;
-                foreach(DataGridViewColumn col in Lista.Columns)
-				{
+                foreach (DataGridViewColumn col in Lista.Columns)
+                {
                     indiceColumna++;
-                    Excel.Cells[1, indiceColumna] = col.HeaderText;
-				}
+                    Excel.Cells[2, indiceColumna] = col.HeaderText;
+                }
+                //Decorando el encabezado de la misma manera que el Datagridview.
+                Excel.Cells.Range["A2", "R2"].Interior.Color = Color.FromArgb(109, 122, 224);
+                Excel.Cells.Range["A2", "R2"].Font.Color = Color.White;
+                Excel.Cells.Range["A2", "R2"].Font.Bold = true;
+                Excel.Cells.Range["A2", "R2"].Borders.Color = Color.White;
 
                 // Recorriendo las filas con su respectiva celdas y almacenandola en el Excel.
-                int indiceFila = 0;
-                foreach(DataGridViewRow fila in Lista.Rows)
-				{
+                int indiceFila = 1;
+                foreach (DataGridViewRow fila in Lista.Rows)
+                {
                     indiceFila++;
                     indiceColumna = 0;
-                    foreach(DataGridViewColumn col in Lista.Columns)
-					{
+                    foreach (DataGridViewCell col in fila.Cells)
+                    {
                         indiceColumna++;
-						Excel.Cells[indiceFila + 1, indiceColumna] = fila.Cells[col.Name].Value;
                         
-					}
-				}
+                        Excel.Cells[indiceFila + 1, indiceColumna] = col.Value.ToString();
+                        Excel.Cells.Range[$"A{indiceFila + 1}", "R2"].Borders.Color = Color.Black;
+                    }
+                }
+                
 
                 // Haciendo que las columnas se adecuen deacuerdo a la información.
                 Excel.Columns.AutoFit();
-                Excel.Cells.Borders.ColorIndex = Color.Black;
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
 				saveFileDialog.Filter = "Archivo excel (*xlsx)|*.xlsx";
                 saveFileDialog.FileName = $"{lblNomina.Text}";
@@ -425,15 +429,18 @@ namespace NominasTrabajo
                 pdftable.WidthPercentage = 100;
                 pdftable.HorizontalAlignment = Element.ALIGN_LEFT;
                 pdftable.DefaultCell.BorderWidth = 1;
-
+                
                 // Definiendo el tipo de fuente para el PDF.
                 iTextSharp.text.Font text = new iTextSharp.text.Font(bf, 10, iTextSharp.text.Font.NORMAL);
-
+                
                 // Recorriendo las columnas escribir los Encabezados del DataGridView.
                 foreach (DataGridViewColumn col in dgw.Columns)
                 {
-                    PdfPCell cel = new PdfPCell(new Phrase(col.HeaderText, text));
-                    cel.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
+                   
+                    var ColorDeFuente = new BaseColor(255,255,255);
+                    var TimesRoman = FontFactory.GetFont("Times-Roman", 10, ColorDeFuente);
+                    PdfPCell cel = new PdfPCell(new Phrase(col.HeaderText, TimesRoman));
+                    cel.BackgroundColor = new iTextSharp.text.BaseColor(109, 122, 224); // Color del encabezado igual a del datagridview
                     pdftable.AddCell(cel);
                 }
 

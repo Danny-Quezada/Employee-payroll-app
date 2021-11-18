@@ -52,7 +52,7 @@ namespace NominasTrabajo.Formularios
 		}
 		private void Nominas()
 		{
-			gunaChart2.XAxes.Display = false;
+			gunaChart2.XAxes.Display = true;
 			var Nominas = NominaService.FindAll();
 
 			lblInformacion.Text = $"Nóminas totales: {Nominas.Count}";
