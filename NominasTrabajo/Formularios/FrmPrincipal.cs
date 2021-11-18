@@ -62,11 +62,7 @@ namespace NominasTrabajo
                 Meses mes = (Meses)Mes;
                 lblNomina.Text = $"Nómina del mes de {mes} del año {year}";
             }
-            //TODO: el mes que se le pasa aqui es incorrecto 
-            if (empleadoService.GetResumenEmpleados(Mes) != null)
-            {
-                llenarDgv(empleadoService.GetResumenEmpleados(Mes));
-            }
+            
         }
 
 
@@ -359,45 +355,57 @@ namespace NominasTrabajo
 		}
 		private void Excel(DataGridView Lista)
 		{
-			if (guna2DataGridView1.Rows.Count > 0)
-			{
+            if (guna2DataGridView1.Rows.Count > 0)
+            {
+
                 Microsoft.Office.Interop.Excel.Application Excel = new Microsoft.Office.Interop.Excel.Application(); // Creo el objeto Excel 
                 Excel.Application.Workbooks.Add(true);  // Creo la hoja de excel
-                int indiceColumna = 0;
 
-                foreach(DataGridViewColumn col in Lista.Columns)
-				{
+                // Recorriendo y creando los encabezados del Excel.
+                int indiceColumna = 0;
+                foreach (DataGridViewColumn col in Lista.Columns)
+                {
                     indiceColumna++;
-                    Excel.Cells[1, indiceColumna] = col.HeaderText;
-				}
-                int indiceFila = 0;
-                foreach(DataGridViewRow fila in Lista.Rows)
-				{
+                    Excel.Cells[2, indiceColumna] = col.HeaderText;
+                }
+                //Decorando el encabezado de la misma manera que el Datagridview.
+                Excel.Cells.Range["A2", "R2"].Interior.Color = Color.FromArgb(109, 122, 224);
+                Excel.Cells.Range["A2", "R2"].Font.Color = Color.White;
+                Excel.Cells.Range["A2", "R2"].Font.Bold = true;
+                Excel.Cells.Range["A2", "R2"].Borders.Color = Color.White;
+
+                // Recorriendo las filas con su respectiva celdas y almacenandola en el Excel.
+                int indiceFila = 1;
+                foreach (DataGridViewRow fila in Lista.Rows)
+                {
                     indiceFila++;
                     indiceColumna = 0;
-                    foreach(DataGridViewColumn col in Lista.Columns)
-					{
+                    foreach (DataGridViewCell col in fila.Cells)
+                    {
                         indiceColumna++;
-						Excel.Cells[indiceFila + 1, indiceColumna] = fila.Cells[col.Name].Value;
-                        
-					}
-				}
 
+                        Excel.Cells[indiceFila + 1, indiceColumna] = col.Value.ToString();
+                        Excel.Cells.Range[$"A{indiceFila + 1}", "R2"].Borders.Color = Color.Black;
+                    }
+                }
+
+
+                // Haciendo que las columnas se adecuen deacuerdo a la información.
                 Excel.Columns.AutoFit();
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
-				saveFileDialog.Filter = "Archivo excel (*xlsx)|*.xlsx";
+                saveFileDialog.Filter = "Archivo excel (*xlsx)|*.xlsx";
                 saveFileDialog.FileName = $"{lblNomina.Text}";
-				if (saveFileDialog.ShowDialog() == DialogResult.OK)
-				{
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
                     Console.WriteLine(saveFileDialog.FileName);
                     Excel.ActiveWorkbook.SaveCopyAs(saveFileDialog.FileName);
                     Excel.ActiveWorkbook.Saved = true;
                     Excel.Quit();
-				}
+                }
 
-			
+
             }
-		}
+        }
         private void MensajeDeDeuda(Empleado e)
         {
             if (e.PagoPendiente > 0)
@@ -412,44 +420,64 @@ namespace NominasTrabajo
         }
         private void exportar(DataGridView dgw,string FileName)
 		{
-            BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
-            PdfPTable pdftable = new PdfPTable(dgw.Columns.Count);
-            pdftable.DefaultCell.Padding = 3;
-            pdftable.WidthPercentage = 100;
-            pdftable.HorizontalAlignment = Element.ALIGN_LEFT;
-            pdftable.DefaultCell.BorderWidth = 1;
-            iTextSharp.text.Font text= new iTextSharp.text.Font(bf, 10, iTextSharp.text.Font.NORMAL);
-            foreach(DataGridViewColumn col in dgw.Columns)
-			{
-                PdfPCell cel = new PdfPCell(new Phrase(col.HeaderText, text));
-                cel.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
-                pdftable.AddCell(cel);
-			}
-            foreach(DataGridViewRow row in dgw.Rows)
-			{
-                foreach(DataGridViewCell cell in row.Cells)
-				{
-					
-                    pdftable.AddCell(new Phrase(cell.Value.ToString(), text));
-                    
-				}
-			}
-            SaveFileDialog save = new SaveFileDialog();
-            save.FileName = FileName;
-            save.DefaultExt = ".pdf";
-			if (save.ShowDialog() == DialogResult.OK)
-			{
-                FileStream stream = new FileStream(save.FileName,FileMode.Create);
-                Document doc = new Document(PageSize.A3,10f,10f,10f,0);
-                PdfWriter.GetInstance(doc, stream);
-                doc.Open();
-                doc.Add(pdftable);
-                doc.Close();
-                stream.Close();
-			}
-		}
+            if (guna2DataGridView1.Rows.Count > 0)
+            {
+                // Creando tipo de fuente, UTF-8, tipo de diseño. 
+                BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
 
-		private void btnEstadisticas_Click(object sender, EventArgs e)
+                // Añadiendo columnas que tendrá el PDF, margenes, tamaño, alineamiento, bordes.
+                PdfPTable pdftable = new PdfPTable(dgw.Columns.Count);
+                pdftable.DefaultCell.Padding = 3;
+                pdftable.WidthPercentage = 100;
+                pdftable.HorizontalAlignment = Element.ALIGN_LEFT;
+                pdftable.DefaultCell.BorderWidth = 1;
+
+                // Definiendo el tipo de fuente para el PDF.
+                iTextSharp.text.Font text = new iTextSharp.text.Font(bf, 10, iTextSharp.text.Font.NORMAL);
+
+                // Recorriendo las columnas escribir los Encabezados del DataGridView.
+                foreach (DataGridViewColumn col in dgw.Columns)
+                {
+
+                    var ColorDeFuente = new BaseColor(255, 255, 255);
+                    var TimesRoman = FontFactory.GetFont("Times-Roman", 10, ColorDeFuente);
+                    PdfPCell cel = new PdfPCell(new Phrase(col.HeaderText, TimesRoman));
+                    cel.BackgroundColor = new iTextSharp.text.BaseColor(109, 122, 224); // Color del encabezado igual a del datagridview
+                    pdftable.AddCell(cel);
+                }
+
+                // Recorriendo filas y cada celdas de esas filas del DataGridView para ponerselas al PDF.
+                foreach (DataGridViewRow row in dgw.Rows)
+                {
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+
+                        pdftable.AddCell(new Phrase(cell.Value.ToString(), text));
+
+                    }
+                }
+
+                // Guardando el PDF, poniendo el nombre del PDF (Desde la nómina en la cuál esta el usuario)
+                SaveFileDialog save = new SaveFileDialog();
+                save.FileName = FileName;
+                save.DefaultExt = ".pdf";
+                if (save.ShowDialog() == DialogResult.OK)
+                {
+                    // Almacenando y creando el PDF con las especificaciones del tamaño de la hoja.
+                    FileStream stream = new FileStream(save.FileName, FileMode.Create);
+                    Document doc = new Document(PageSize.A3, 10f, 10f, 10f, 0);
+                    // Creando la instacia de dicho PDF con los parámetros del documento y guardando en la carpeta seleccionada por el usuario.
+                    PdfWriter.GetInstance(doc, stream);
+                    doc.Open();
+                    doc.Add(pdftable);
+                    doc.Close();
+                    stream.Close();
+                }
+            }
+
+        }
+
+        private void btnEstadisticas_Click(object sender, EventArgs e)
 		{
             FrmEstadisticas Estadisticas = new FrmEstadisticas(nomina);
             Estadisticas.ShowDialog();
